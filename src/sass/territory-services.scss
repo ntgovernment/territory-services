@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Ubuntu:wght@300;400;500;700&display=swap");
+
+// Import bootstrap mixins
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/mixins/banner";
+@include bsBanner("");
+
+// scss-docs-start import-stack
+
+// Configuration
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/functions";
+
+//Bootstrap variables
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/variables";
+
+// Import NTGov theme
+@import "../../NTGov-DS/src/sass/ntgbase/variables.scss";
+
+//Territory services
+@import "territory-services/variables.scss";
+
+// Define NTG colours
+$ntg-theme-colours: (
+  ntg-primary: $primary,
+  ntg-primary-mid: $primary-mid,
+  ntg-primary-light: $light-blue,
+  ntg-secondary: $secondary,
+  ntg-ochre: $ntg-ochre,
+  ntg-ochre-mid: $ntg-ochre-mid,
+  ntg-charcoal-grey: $ntg-charcoal-grey,
+  ntg-arafura-blue: $ntg-arafura-blue,
+  ntg-arafura-blue-mid: $ntg-arafura-blue-variant,
+  ntg-sky-blue: $ntg-sky-blue,
+  ntg-teal-blue: $ntg-teal-blue,
+  ntg-bottle-green: $ntg-bottle-green,
+  ntg-coral: $ntg-hot-coral,
+  ntg-rubine-red: $ntg-rubine-red,
+  ntg-deep-mauve: $ntg-deep-mauve,
+  ntg-light: $ntg-light,
+  ntg-white: $ntg-color-white,
+  ntg-black: $ntg-color-black,
+  ntg-dark: $ntg-color-dark,
+  ntg-brown: $ntg-brown,
+  ntg-grey-900: $ntg-charcoal-grey,
+  ntg-grey-700: $ntg-grey-600,
+  ntg-grey-500: $ntg-grey-500,
+  ntg-grey-400: $ntg-grey-400,
+  ntg-grey-100: $ntg-grey-200,
+  ntg-color-header-bg: $ntg-color-header-background,
+  ntg-color-header-background-neutral: $ntg-color-header-background-neutral,
+  ntg-background-alt: $ntg-background-alt,
+  ntg-background-light: $ntg-background-light,
+  ts-light-blue: $ts-light-blue,
+  warning-yellow: $ts-canary-yellow,
+);
+
+$ts-table-variant: (
+  "light-blue": $ts-light-blue,
+  "light-grey": $ts-grey-light,
+);
+
+// Merge NTG colours with BS defaults
+$theme-colors: map-merge($ntg-theme-colours, $theme-colors);
+$table-variants: map-merge($ts-table-variant, $table-variants);
+
+///////////////////////////////////////////////////
+
+// Bootstrap version 5.2.4 //
+
+///////////////////////////////////////////////////
+
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/maps";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/mixins";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/utilities";
+
+// Layout & components - Bootstrap
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/root";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/reboot";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/type";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/images";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/containers";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/grid";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/tables";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/forms";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/buttons";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/transitions";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/dropdown";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/button-group";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/nav";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/navbar";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/card";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/accordion";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/breadcrumb";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/pagination";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/badge";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/alert";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/progress";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/list-group";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/close";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/toasts";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/modal";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/tooltip";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/popover";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/carousel";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/spinners";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/offcanvas";
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/placeholders";
+
+// Helpers
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/helpers";
+
+// Utilities
+@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/utilities/api";
+// scss-docs-end import-stack
+
+///////////////////////////////////////////////////
+
+// NTG Base version 5 //
+
+///////////////////////////////////////////////////
+
+// Import NTGov
+
+// Configuration
+@import "../../NTGov-DS/src/sass/ntgbase/rem.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/svgs.scss";
+
+// Components
+// @import "../../NTGov-DS/src/sass/ntgbase/components/ntgovau-accordion.scss";
+// @import "../../NTGov-DS/src/sass/ntgbase/components/ntgovau-alerts.scss";
+// @import "../../NTGov-DS/src/sass/ntgbase/components/ntgovau-callout.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/components/ntgovau-nav-block.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/components/ntgovau-one-col-text.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/components/ntgovau-video.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/components/ntgovau-minicards.scss";
+// @import "../../NTGov-DS/src/sass/ntgbase/components/ntgovau-topics-cards.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/components/ntgovau-quick-exit.scss";
+// @import "../../NTGov-DS/src/sass/ntgbase/components/ntgovau-hero-banner.scss";
+
+// Layout Partials
+// @import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-utilities.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/global-spacing.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/mixins.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-agency-header.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-back-to-top.scss";
+// @import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-breadcrumb.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-buttons.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-featured-banner.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-figures.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-footer.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-footer-copyright.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-footer-logos.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-forms.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-header.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-icons.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-images.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-ingpage-nav.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-legacy.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-lists.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-nav.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-pagination-general.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-pagination-search.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-related-links.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-search.scss";
+// @import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-sidenav.scss";
+// @import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-sitemap.scss";
+// @import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-social-share.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-squiz-integrations.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-sticky-nav.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-subtopic.scss";
+// @import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-tables.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-tabs.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-topic.scss";
+// @import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-typography.scss";
+@import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-print.scss";
+
+// Layout Partials
+@import "territory-services/partials/ts-back-to-top.scss";
+@import "territory-services/partials/ts-breadcrumb.scss";
+@import "territory-services/partials/ts-buttons.scss";
+@import "territory-services/partials/ts-feedback-form.scss";
+@import "territory-services/partials/ts-footer.scss";
+@import "territory-services/partials/ts-header.scss";
+@import "territory-services/partials/ts-nav-tabs.scss";
+@import "territory-services/partials/ts-nav.scss";
+@import "territory-services/partials/ts-tables.scss";
+@import "territory-services/partials/ts-themes.scss";
+@import "territory-services/partials/ts-typography.scss";
+@import "territory-services/partials/ts-link-lists.scss";
+@import "territory-services/partials/ts-process-list.scss";
+@import "territory-services/partials/ts-steps.scss";
+@import "territory-services/partials/ts-navigation-sequential.scss";
+@import "territory-services/partials/ts-pagination.scss";
+@import "territory-services/partials/ts-side-nav.scss";
+@import "territory-services/partials/ts-inpage-nav.scss";
+@import "territory-services/partials/ts-social-share.scss";
+@import "territory-services/partials/ts-forms.scss";
+@import "territory-services/partials/ts-bg.scss";
+@import "territory-services/partials/ts-print.scss";
+
+// @import "territory-services/components/*";
+// @import "territory-services/partials/*";
+// Components
+@import "territory-services/components/ts-accordion.scss";
+@import "territory-services/components/ts-alerts.scss";
+@import "territory-services/components/ts-callouts.scss";
+@import "territory-services/components/ts-form-controls.scss";
+@import "territory-services/components/ts-hero-banner.scss";
+@import "territory-services/components/ts-highlight-cards.scss";
+@import "territory-services/components/ts-highlights.scss";
+@import "territory-services/components/ts-image-cards.scss";
+@import "territory-services/components/ts-rich-media.scss";
+@import "territory-services/components/ts-topic-cards.scss";

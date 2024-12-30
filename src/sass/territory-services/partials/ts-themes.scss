@@ -1,0 +1,13 @@
+.ts-dark-theme {
+    &:root {
+        --bs-body-bg: #1C1C1C;
+        --bs-body-color: #FFFFFF;
+        --bs-link-color: #CEDFEA;
+        --bs-link-hover-color: #FCE0D2;
+
+    }
+
+    a:focus, a:focus-within, a.focused-link,a:active, a.active-link {
+        color: $ts-arafura-blue;
+    }
+}

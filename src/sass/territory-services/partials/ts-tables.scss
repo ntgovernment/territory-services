@@ -1,0 +1,52 @@
+.table {
+    &-primary {
+       --bs-table-bg : #FFFFFF;
+       --bs-table-striped-bg: #EBF4FA;
+       --bs-table-border-color: var(--bs-table-striped-bg);
+       border: 1px solid $primary;
+
+       thead {
+            --bs-table-bg: #{$primary};
+            --bs-table-color: #{$white};
+            color: var(--bs-table-color);
+       }
+
+       thead, tbody, tfoot, tr, td, th {
+            border-color: var(--bs-table-striped-bg);
+        }
+    }
+
+    &-light-blue {
+       --bs-table-bg : #FFFFFF;
+       --bs-table-striped-bg: #EBF4FA;
+       --bs-table-border-color: var(--bs-table-striped-bg);
+       border: 1px solid $ts-light-blue;
+
+       thead {
+            --bs-table-bg: #{$ts-light-blue};
+            --bs-table-color: #{$black};
+            color: var(--bs-table-color);
+       }
+
+       thead, tbody, tfoot, tr, td, th {
+            border-color: var(--bs-table-striped-bg);
+        }
+    }
+
+    &-light-grey {
+       --bs-table-bg : #FFFFFF;
+       --bs-table-striped-bg: #F8F8F8;
+       --bs-table-border-color: var(--bs-table-striped-bg);
+       border: 1px solid $ts-grey-light;
+
+       thead {
+            --bs-table-bg: #{$ts-grey-light};
+            --bs-table-color: #{$black};
+            color: var(--bs-table-color);
+       }
+
+       thead, tbody, tfoot, tr, td, th {
+            border-color: var(--bs-table-striped-bg);
+        }
+    }
+}

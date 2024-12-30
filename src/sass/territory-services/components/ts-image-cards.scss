@@ -1,0 +1,54 @@
+.ntg-image-cards {
+    .card {
+        background-color: $white;
+        border: 2px solid $ts-grey-light;
+    }
+
+    .card-img-top {
+        object-fit: cover;
+        position: relative;
+        top: -2px;
+        left: -2px;
+        width: calc(100% + 4px);
+    }
+
+    .card-body {
+        padding: 1.5rem;
+
+        a {
+            text-decoration: none;
+            transition: 0.2s;
+
+            &:hover {
+                text-decoration: underline;
+
+                i {
+                    margin-left: 0.75rem;
+                }
+            }
+        }
+
+        i {
+            @include font-size(16px);
+            margin-left: 0.5rem;
+            transition: 0.2s;
+        }
+    }
+
+    .card-title {
+        margin-bottom: 1rem;
+        @include font-size(19px);
+    }
+
+    &.bg-ntg-background-alt {
+        .card-img-top {
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .card {
+            border: none;
+        }
+    }
+}

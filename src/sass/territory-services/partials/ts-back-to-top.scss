@@ -1,0 +1,28 @@
+.back-to-top {
+    padding: 0;
+    background: transparent;
+
+    a {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $ts-grey-medium;
+        transition: 0.2s background ease-in-out;
+
+        &:hover {
+            background-color: darken($ts-grey-medium, 15);
+            display: flex;
+            padding: 0;
+
+            // bacck
+        }
+        &::after {
+            line-height: inherit;
+        }
+    }
+
+}

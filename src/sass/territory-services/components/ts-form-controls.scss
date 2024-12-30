@@ -1,0 +1,112 @@
+.form-control,
+.form-select,
+.form-check-input,
+.form-switch .form-check-input {
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rgba(250, 100, 0, 0.25)
+    }
+}
+
+.valid-feedback, .invalid-feedback, .form-text {
+    @extend .small;
+}
+
+.form-check-input:checked[type=radio] {
+    background-color: #FFFFFF;
+}
+
+.form-switch .form-check-input {
+    height: 25px;
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rgba($color: $primary, $alpha: 0.2) ;
+    }
+}
+
+.form-switch .form-check-input:disabled {
+    background-color: $ts-grey-medium;
+    border-color: $ts-grey-medium;
+}
+
+//Squiz matrix form overrides
+.sq-form-question {
+    margin-bottom: 1.5rem;
+    $this: &;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .sq-form-question-password-verify {
+        margin-top: 1rem;
+    }
+
+    &-title {
+        @extend .form-label;
+
+        + #{$this}-note{
+            margin-top: -0.25rem;
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    &-option-list,
+    &-tickbox-list {
+        #{$this}-answer {
+
+            ul {
+                li {
+                    @extend .form-check;
+
+                    input[type=radio].sq-form-field {
+                        border: 2px solid #808080;
+                    }
+                    
+                    &::before {
+                        content: unset !important;
+                    }
+                }
+            }
+    
+        }
+    }
+
+    &-answer {
+        input:not([type="checkbox"]):not([type="radio"]),
+        textarea {
+            @extend .form-control;
+        }
+        
+        select {
+            @extend .form-select;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            @extend .form-check-input;
+
+            + label {
+                @extend .form-check-label;
+            }
+        }
+    }
+
+    &-note {
+        @extend .form-text;
+        font-style: normal;
+        display: block;
+    }
+
+    &-error {
+        input,
+        select,
+        textarea {
+            @extend .is-invalid;
+        }
+
+        .sq-form-error {
+            @extend .invalid-feedback;
+            display: block;
+        }
+    }
+}
+

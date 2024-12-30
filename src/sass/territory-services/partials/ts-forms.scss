@@ -1,0 +1,7 @@
+.form-search {
+  .form-control {
+    &.is-valid {
+      background-image: none !important;
+    }
+  }
+}

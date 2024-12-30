@@ -1,0 +1,99 @@
+.ntg-group-topics {
+    .card {
+        height: 100%;
+        border: 2px solid $ts-grey-light;
+
+        &-body {
+            padding: 1.5rem;
+        }
+
+        &-title {
+            @include font-size(19px);
+            margin-bottom: 0;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        [class*="fa-"] {
+            &:not(.fa-arrow-right-long) {
+                @include font-size(32px);
+                color: $secondary;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .fa-arrow-right-long {
+            color: $primary;
+            transition: 0.2s;
+        }
+
+        &:not(.card--sub) {
+            .card-title {
+                width: calc(100% - 19px - 0.5rem);
+            }
+
+            .fa-arrow-right-long {
+                position: absolute;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+
+        &--sub {
+            .card-body {
+                a {
+                    text-decoration: none;
+                    transition: 0.2s;
+
+                    &:hover {
+                        text-decoration: underline;
+
+                        .fa-arrow-right-long {
+                            color: inherit;
+                            margin-left: 0.75rem;
+                        }
+                    }
+                }
+
+                .fa-arrow-right-long {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+
+        .card-title {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &.landing-page {
+        .card {
+            &-body {
+                padding-bottom: 0 !important;
+
+            }
+        }
+
+        a.stretched-link {
+            text-decoration: none !important;
+            &:hover {
+                text-decoration: underline !important;
+                i {
+                    margin-left: 0.3rem;
+                }
+            }
+        }
+
+        i {
+            transition: 0.2s;
+        }
+    }
+
+}

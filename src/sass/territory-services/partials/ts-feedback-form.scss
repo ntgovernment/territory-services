@@ -1,0 +1,130 @@
+#success-message, #submitting-feedback {
+    display: flex;
+    align-items: center;
+}
+
+#success-message i {
+    font-size: 2rem;
+    color: $success;
+}
+
+.ntg-feedback-form {
+    fieldset {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 1rem;
+
+        @include media-breakpoint-down(sm) {
+            flex-flow: column;
+            align-items: flex-start;
+        }   
+
+        legend {
+            @include font-size(19px);
+            width: max-content;
+            margin-bottom: 0;
+
+            @include media-breakpoint-down(xxl) {
+                font-size: $font-size-base;
+            }
+        }
+
+        ul {
+            display: flex;
+            gap: 1rem;
+            padding-left: 0;
+            margin-bottom: 0;
+
+            @include media-breakpoint-down(sm) {
+                gap: 0.5rem;
+            }
+
+            li {
+                margin-bottom: 0;
+                &::before {
+                    content: unset;
+                }
+
+                &:focus-within {
+                    label {
+                        color: $white !important;
+                        background-color: $primary !important;
+                        outline: $primary solid 2px;
+                        outline-offset: 2px;
+                    }
+                }
+            }
+        }
+
+        .radio-group {
+            &:focus-within {
+                label {
+                    color: $white !important;
+                    background-color: $primary !important;
+                    outline: $primary solid 2px;
+                    outline-offset: 2px;
+                }
+            }
+        }
+
+        input[type="radio"]:checked + label {
+            color: $white;
+            background-color: $primary;
+        }
+
+        label {
+            color: $primary;
+            background-color: transparent;
+            border: 2px solid $primary;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s color ease-in-out, 0.2s background-color ease-in-out;
+            cursor: pointer;
+
+            
+        
+            &.unselected {
+                color: $primary !important;
+                background-color: transparent !important;
+            }
+
+            &:hover {
+                color: $white !important;
+                background-color: $primary !important;
+            }
+
+          
+            i.fa-thumbs-up {
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    #message {
+        textarea {
+            width: 100%;
+            max-width: 578px;
+            min-height: 145px;
+            padding: 1rem;
+            border: 2px solid $ts-grey-medium;
+            border-radius: $border-radius $border-radius 0 $border-radius;
+        }
+
+        input[type="submit"] {
+            display: block;
+        }
+
+        > * {
+            margin-bottom: 1rem;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

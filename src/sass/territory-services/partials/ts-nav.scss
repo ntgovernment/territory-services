@@ -1,0 +1,94 @@
+.navbar-toggler {
+  $this: &;
+  border: 0;
+  border-radius: 0;
+
+  @media (min-width: 630px) and (max-width: 768px) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+
+  @media (max-width: 630px) {
+    position: relative;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: 0;
+  }
+
+  &:focus {
+    outline: 2px solid #fff;
+    box-shadow: none;
+  }
+
+  &-icon {
+    z-index: 1;
+    position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E") !important;
+
+    &::before {
+      content: unset !important;
+    }
+  }
+
+  &:not(.collapsed) {
+    background-color: $primary;
+
+    &::before {
+      content: "";
+      background-color: $primary;
+      position: absolute;
+      left: 0;
+      right: -16px;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  &.collapsed #{$this}-icon {
+    background-image: url("data:image/svg+xml,%3Csvg id='Group_309' data-name='Group 309' xmlns='http://www.w3.org/2000/svg' width='27' height='22' viewBox='0 0 27 22'%3E%3Crect id='Rectangle_141' data-name='Rectangle 141' width='27' height='4' fill='%23454347'/%3E%3Crect id='Rectangle_142' data-name='Rectangle 142' width='22' height='4' transform='translate(0 9)' fill='%23454347'/%3E%3Crect id='Rectangle_143' data-name='Rectangle 143' width='27' height='4' transform='translate(0 18)' fill='%23454347'/%3E%3C/svg%3E%0A") !important;
+  }
+}
+
+.navbar-mobile {
+  background-color: $primary;
+
+  a.nav-link {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #cedfea;
+    position: relative;
+    color: $white;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      width: 5px;
+      left: -0.75rem;
+      background-color: transparent;
+      transition: 0.2s background-color ease-in-out;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+      &::before {
+        background-color: #cedfea;
+      }
+      background-color: inherit;
+    }
+  }
+}

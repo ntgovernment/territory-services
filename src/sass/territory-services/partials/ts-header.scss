@@ -1,0 +1,375 @@
+.bg-primary {
+  background-color: $ts-blue !important;
+}
+
+.ntg-header {
+  background: transparent;
+  padding: 0;
+
+  .header-nav-top {
+    background-color: $ts-grey-white;
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+
+    nav {
+      gap: 1.5rem;
+      padding: 0.25rem 0;
+
+      a {
+        color: $body-color;
+        padding: 0.15rem 0;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+
+        &.active {
+          border-bottom-color: $primary;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          border-bottom-color: $ts-grey-charcoal;
+        }
+
+        &.login-link,
+        &.user-link {
+          margin-left: 25px;
+
+          &::before {
+            @extend .font-awesome-family-pro;
+            content: "\f007";
+            position: absolute;
+            left: 0;
+            margin-top: 2px;
+          }
+        }
+      }
+
+      .dropdown > a {
+        height: 100%;
+        display: inline-block;
+      }
+
+      .dropdown-menu {
+        left: unset !important;
+        right: 0 !important;
+        padding: 0;
+        overflow: hidden;
+
+        li {
+          background-color: $primary;
+          transition: 0.2s background-color ease-in-out;
+          width: 180px;
+
+          &:hover,
+          &:focus-within {
+            background-color: $primary-mid;
+
+            a {
+              .link-icon {
+                color: $white;
+              }
+            }
+          }
+
+          &:first-child {
+            padding-top: 0.5rem;
+          }
+
+          &:last-child {
+            padding-bottom: 0.5rem;
+          }
+
+          a {
+            display: flex;
+            padding: 0.25rem 0;
+            margin: 0 1rem;
+            color: $white;
+            border-bottom: 0;
+
+            .link-icon {
+              color: rgba(#f0f0f0, 0.6);
+              font-size: calc(var(--bs-body-font-size) * 1.1);
+              margin-right: 0.5rem;
+              margin-top: 2px;
+              width: 25px;
+              transition: 0.2s color;
+            }
+          }
+
+          &:last-child a {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar {
+    background-color: $white;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+  }
+
+  .navbar-search-mobile {
+    display: none;
+    padding: 0.5rem 0;
+
+    > .container {
+      gap: 1rem;
+    }
+
+    .btn-close {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23454347'%3E%3Cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E");
+      background-size: 2.5em;
+      opacity: 1;
+      width: 1.25em;
+      height: 1.25em;
+      transition: opacity 0.2s ease-in-out;
+      border-radius: 2px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:focus {
+        outline: 2px solid $white;
+        outline-offset: 0.5rem;
+      }
+    }
+
+    .form-control {
+      padding: 8px 12px 8px 10px;
+    }
+  }
+  a {
+    &:active,
+    &:focus {
+      background-color: inherit;
+      color: inherit;
+    }
+  }
+
+  .site-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include media-breakpoint-down(sm) {
+      max-width: 125px;
+    }
+
+    &:focus,
+    &:focus-within {
+      background-color: transparent;
+    }
+  }
+
+  .site-name {
+    line-height: 1;
+    @include font-size(30px);
+    font-weight: bold;
+    color: $white;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 20px;
+    }
+  }
+
+  img.site-logo {
+    line-height: 1;
+    max-width: 100%;
+    width: 192px;
+    height: 53px;
+
+    @include media-breakpoint-down(md) {
+      max-width: 140px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      max-width: 120px;
+    }
+  }
+
+  nav.nav-masthead {
+    ul:not(.dropdown-menu) {
+      display: flex;
+    }
+
+    a.nav-link {
+      padding: 24px 1rem 24px;
+      font-weight: bold;
+      color: $body-color;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &.dropdown-toggle.show {
+        background-color: $primary;
+        color: $white;
+
+        &::after {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='0.75em' viewBox='0 0 512 512' fill='%23FFFFFF'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E");
+        }
+      }
+    }
+
+    .dropdown {
+      &-toggle {
+        border: 1px solid transparent;
+        border-bottom: 0;
+
+        &.show {
+          background-color: $white !important;
+          color: $black !important;
+          border-radius: 8px 8px 0 0;
+          border-color: $primary;
+          position: relative;
+          z-index: 1001;
+
+          &::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='0.75em' viewBox='0 0 512 512' fill='%23454347'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E") !important;
+          }
+        }
+
+        &::after {
+          border-top: 0;
+          border-right: 0;
+          border-bottom: 0;
+          border-left: 0;
+          width: 0.75em;
+          height: 0.75em;
+          vertical-align: middle;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='0.75em' viewBox='0 0 512 512' fill='%23454347'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+        }
+      }
+
+      &-menu {
+        --bs-dropdown-spacer: 0;
+        border: 0;
+        color: $black;
+        border-radius: 0;
+        width: 410px;
+        padding: 0;
+        border: 1px solid $primary;
+        border-radius: 0 8px 8px 8px;
+        overflow: hidden;
+        top: 99%;
+
+        @include media-breakpoint-down(lg) {
+          right: 0;
+          left: unset;
+        }
+
+        li {
+          background-color: $white;
+          transition: 0.2s all ease-in-out;
+
+          &:hover,
+          &:focus-within {
+            background-color: $ts-grey-charcoal; //$ts-teal-blue
+            a {
+              color: $white;
+            }
+
+            .link-icon {
+              color: $white;
+            }
+          }
+
+          a {
+            display: flex;
+            padding: 0.75rem 0;
+            margin: 0 1rem;
+            color: $black;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(240, 240, 240, 0.3);
+
+            .link-icon {
+              color: $ts-orange; //$primary
+              font-size: calc(var(--bs-body-font-size) * 1.1);
+              margin-right: 0.5rem;
+              margin-top: 2px;
+              width: 27px;
+              transition: 0.2s color ease-in-out;
+            }
+          }
+
+          &:last-child a {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .link-chevron {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::after {
+      content: "";
+      width: 0.75em;
+      height: 0.75em;
+      vertical-align: middle;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='0.75em' viewBox='0 0 512 512' fill='%23FFFFFF'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      transform: rotate(180deg);
+      transition: 0.2s transform ease-in-out;
+    }
+
+    &.collapsed::after {
+      transform: unset;
+    }
+  }
+
+  .btn-search {
+    border-radius: 0;
+    transition: 0.2s background-color ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: $primary;
+      color: $white;
+    }
+
+    &:focus {
+      outline: 2px solid $white;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.5rem; //14px
+    }
+  }
+
+  .ntg-header-search {
+    .form-control {
+      border-color: $primary;
+      border-width: 1px;
+      padding: 11px 12px 11px 10px;
+      &.is-valid {
+        background-image: none !important;
+      }
+    }
+
+    button[type="submit"] {
+      border-color: $primary;
+      background-color: $primary;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0;
+      transition: 0.2s background ease-in-out;
+
+      &:hover {
+        background: darken($color: $primary, $amount: 10);
+      }
+    }
+  }
+}

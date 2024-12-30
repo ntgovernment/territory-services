@@ -1,0 +1,68 @@
+.list-group {
+    &.list-group-flush {
+        li {
+            border-width: 0 0 var(--bs-list-group-border-width);
+            --bs-list-group-item-padding-x: 0;
+        }
+    }
+
+    li {
+        @extend .list-group-item;
+
+        &.disabled, .disabled {
+            color: var(--bs-list-group-disabled-color) ;
+            pointer-events: none;
+            --bs-link-color: var(--bs-list-group-disabled-color);
+        }
+
+        a {
+            --bs-link-color: #{$body-color};
+            --bs-link-hover-color: #{$body-color};
+            display: flex;
+            justify-content: space-between;
+            padding-right: 30px;
+            text-decoration: none;
+            margin-bottom: 0.25rem;
+
+            &::after {
+                @extend .font-awesome-family-pro;
+                content: "\f178";
+                color: $primary;
+                position: absolute;
+                width: 25px;
+                right: var(--bs-list-group-item-padding-x);
+                transition: 0.2s right ease-in-out;
+            }
+            
+            &:hover {
+                text-decoration: underline;
+                
+                &::after {
+                    right: -5px;
+                }
+            }
+        }
+
+        p {
+            @extend .small;
+        }
+
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    ul {
+        li::before {
+            // Additional styles for ul elements within .list-group
+            list-style-type: none; // Remove default list bullet points
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    li:before {
+        /* Reset or override styles for list items within .list-group */
+        content: none;
+    }
+}

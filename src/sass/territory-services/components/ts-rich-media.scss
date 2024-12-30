@@ -1,0 +1,42 @@
+.ntg-rich-media {
+    break-inside: avoid;
+    display: block;
+
+    img {
+        object-fit: cover;
+    }
+
+    figcaption {
+        color: $ts-grey-medium;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: rem(16px);
+    }
+
+    .container-xl {
+        > p {
+            margin-top: 1rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__transcript {
+        background-color: $ts-alice-blue;
+        border-radius: $border-radius;
+        padding: 2rem;
+        margin-top: 1rem;
+
+        @include media-breakpoint-down(lg) {
+            padding: 1rem;
+        }
+
+        > * {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

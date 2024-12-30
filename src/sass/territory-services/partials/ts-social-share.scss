@@ -1,0 +1,52 @@
+.ntg-social-share {
+    &__link {
+      width: 35px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 4px 5px;
+      border: 2px solid $primary;
+      color: $primary;
+      text-decoration: none;
+      transition: 0.2s background-color ease-in-out;
+      border-radius: 4px;
+  
+      i {
+        color: $primary;
+        font-size: 1rem;
+  
+      }
+  
+      &:hover, &:focus {
+        text-decoration: none;
+        background-color: $primary;
+  
+        i {
+          color: $white;
+        }
+      }
+    }
+  }
+  
+  .copied-alert {
+    position: absolute;
+    bottom: calc(100% + 1rem);
+    right: 0;
+    transform: translateX(50%);
+  
+    > span {
+      white-space: nowrap;
+    }
+  }
+  
+  .fadeIn {
+    animation: fadeIn 0.45s ease-in 1;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  

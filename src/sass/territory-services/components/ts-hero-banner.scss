@@ -1,0 +1,156 @@
+.hero-banner {
+  ul {
+    padding-inline-start: 0;
+
+    li:before {
+      content: none;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .ntg-watermark {
+    right: -100px;
+    top: 90%;
+    margin-top: -250px;
+  }
+
+  &.bg-ntg-background-purple-light {
+    background-color: rgba(31, 31, 95, 0.75);
+  }
+}
+
+.ntg-hero-banner {
+  &.bg-primary {
+    color: $white;
+    position: relative;
+    background-color: transparent !important;
+
+    a {
+      text-decoration-color: #cedfea;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $primary;
+      z-index: -2;
+    }
+
+    .ntg-hero-banner__bg {
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 685px;
+      height: 673px;
+      opacity: 15%;
+      z-index: -2;
+
+      @include media-breakpoint-down(md) {
+        background-position: right -228px bottom 40px;
+        height: 458px;
+        width: 468px;
+        top: -48px;
+      }
+
+      @include media-breakpoint-up(md) {
+        background-position: right -259px bottom -265px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        background-position: right -259px bottom -265px;
+      }
+    }
+  }
+
+  &.bg-ntg-charcoal-grey {
+    color: $white;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 210px;
+    margin-top: auto;
+  }
+
+  h2 {
+    font-size: rem(14.5px);
+    text-transform: uppercase;
+  }
+
+  ul {
+    padding-inline-start: 0;
+
+    li {
+      display: inline;
+      margin-right: 0.5rem;
+    }
+
+    li:before {
+      content: none !important;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration-color: $primary;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+    line-height: 2;
+
+    &:hover {
+      text-decoration-color: rgba(250, 100, 0, 0.3);
+    }
+
+    &:focus,
+    &:focus-within,
+    &.focused-link,
+    &:active {
+      color: var(--bs-link-hover-color);
+    }
+  }
+}
+
+@media (max-width: $media-sm) {
+  .hero-banner {
+    .border-start {
+      border-left: none !important;
+    }
+
+    .ps-5 {
+      padding-left: 1rem !important;
+    }
+
+    .ntg-watermark {
+      display: none;
+    }
+  }
+}
+
+@media print {
+  .hero-banner {
+    .text-white {
+      color: black !important;
+    }
+  }
+
+  .ntg-hero-banner {
+    &.bg-ntg-charcoal-grey {
+      color: black !important;
+    }
+  }
+}

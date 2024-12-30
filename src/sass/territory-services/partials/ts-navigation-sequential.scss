@@ -1,0 +1,77 @@
+.ntg-navigation-sequential {
+    $this: &;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    row-gap: 1rem;
+    --button-width-and-spacing: calc(55px + 1rem);
+    padding: 2rem 1rem;
+    border: 1px solid #D8D8D8;
+
+    @include media-breakpoint-up(sm) {
+        flex-flow: row;
+        padding: 0;
+        border: 0;
+    }
+
+    &__link {
+        position: relative;
+    }
+
+    .previous, .next {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .previous #{$this}__link::before, .next #{$this}__link::after {
+        width: 55px;
+        height: 55px;
+        display: inline-flex;
+        background-color: $ts-teal-blue;
+        border-radius: 50%;
+        @extend .font-awesome-family-pro;
+        color: $white;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 0;
+        transform: translateY(-30px);
+    }
+
+    .next {
+        padding-right: var(--button-width-and-spacing);
+        text-align: right;
+        align-self: flex-end;
+        margin-left: auto;
+        
+        @include media-breakpoint-up(sm) {
+            align-self: auto;
+        }
+
+        #{$this}__link {
+            &::after {
+                content: "\f054";
+                right: calc(-1 * var(--button-width-and-spacing));
+            }
+        }
+    }
+
+    .previous {
+        padding-left: var(--button-width-and-spacing);
+        align-self: flex-start;
+        margin-right: auto;
+
+        @include media-breakpoint-up(sm) {
+            align-self: auto;
+        }
+        
+        #{$this}__link {
+            &::before {
+                content: "\f053";
+                left: calc(-1 * var(--button-width-and-spacing));
+            }
+        }
+    }
+}

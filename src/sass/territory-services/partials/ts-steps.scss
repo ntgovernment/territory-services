@@ -1,0 +1,131 @@
+.ntg-steps {
+    $this: &;
+
+    ul {
+        display: flex;
+        padding-left: 0;
+        margin-bottom: 0;
+
+        li {
+            flex: 1 1 0%;
+            max-width: 150px;
+            padding-right: 2rem;
+            overflow: hidden;
+            justify-content: space-between;
+
+            &::before {
+                content: unset !important;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            &.completed {
+                #{$this}__number {
+                    --step-border-color : #{$ts-grey-charcoal};
+                    --step-background-color: #{$ts-grey-charcoal};
+                    --step-color: #{$white};
+                }
+            }
+
+            &.current {
+                #{$this}__number {
+                    --step-border-color : #{$ts-teal-blue};
+                    --step-background-color: #{$ts-teal-blue};
+                    --step-color: #{$white};
+                }
+
+                #{$this}__description {
+                    font-weight: bold;
+                }
+            }
+
+            //Grey border
+            &:not(:last-child) #{$this}__number::after {
+                content: "";
+                display: block;
+                width: 500px;
+                height: 3px;
+                background-color: #D8D8D8;
+                position: absolute;
+                z-index: -1;
+            }
+        }
+    }
+
+    &__number {
+        --step-border-color : #D8D8D8;
+        --step-background-color : #fff;
+        --step-color: $ts-grey-medium;
+
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid var(--step-border-color);
+        background-color: var(--step-background-color);
+        color: var(--step-color);
+        font-weight: bold;
+        line-height: 1;
+
+        @include media-breakpoint-up(md) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__description {
+        font-size: 1rem;
+        margin-top: 0.75rem;
+        display: none;
+        
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+
+    &__mobile-description {
+        display: block;
+        font-weight: bold;
+
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+
+    &--rectangle {
+        li {
+            padding-right: 0.5rem !important;
+
+            @include media-breakpoint-up(md) {
+                padding-right: 1rem !important;
+            }
+        }
+
+        #{$this}__number {
+            border-radius: 0;
+            width: 100%;
+            height: 7px;
+            text-indent: -9999px;
+            --step-background-color: #D8D8D8;
+
+            &::after {
+                content: unset !important;
+            }
+        }
+
+        #{$this}__description {
+            display: none;
+        }
+
+        #{$this}__mobile-description {
+            @include media-breakpoint-up(md) {
+                display: block;
+            }
+        }
+    }
+}

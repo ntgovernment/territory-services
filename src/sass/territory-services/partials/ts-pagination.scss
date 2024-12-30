@@ -1,0 +1,50 @@
+.pagination {
+    --bs-pagination-active-border-color: transparent;
+    
+    li {
+        margin-bottom: 0;
+
+        &::before {
+            content: unset !important;
+        }
+    }
+
+    .page-link {
+        border-top: 0 !important;
+        border-bottom: 3px solid transparent;
+        padding: 0.5rem 1rem;
+        border-radius: 0 !important;
+
+        &:hover, &:focus, &.active {
+            background-color: $ts-grey-light;
+            border-bottom-color: $primary;
+            color: $body-color;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    #filter-options {
+        display: none;
+    }
+    
+    nav .pagination li a {
+            border: none;
+            border-top: none !important;
+        }
+        
+    .page-item {
+        padding-top:10px !important;
+    }
+    
+    li > a.page-item[rel="next"] {
+            display: block;
+    }
+    
+    li > a.page-item[rel="prev"] {
+            display: block;
+            padding-top: 12px !important;
+    }
+
+}

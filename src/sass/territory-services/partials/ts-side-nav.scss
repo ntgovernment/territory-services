@@ -1,0 +1,202 @@
+.ntg-side-nav {
+    margin-bottom: 2rem;
+    --bs-link-color: $body-color;
+    --bs-link-hover-color: $body-color;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        margin: 0;
+        @extend .h3;
+        text-decoration: none;
+        padding-bottom: 1.25rem;
+
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+    }
+
+    #nav-default {     
+        > ul > li > ul {
+            border-left: 2px solid #D8D8D8;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        margin-top: 0 !important; 
+        list-style: none;
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+    }
+
+    li {
+        position: relative;
+        margin-bottom: 0 !important;
+
+        &::before {
+            content: unset !important;
+        }
+
+        a, span {
+            display: block;
+            padding: 0.75rem 0;
+        }
+            
+    }
+
+    a:not(.ntg-side-nav__collapser) {
+        text-decoration: none;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 4px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: calc(-1 * (1rem - 4px));
+            background-color: transparent;
+            transition: 0.2s background-color ease-in-out;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: calc(-1 * (1rem - 4px));
+            right: 0;
+            background-color: transparent;
+            z-index: -1;
+            transition: 0.2s background-color ease-in-out;
+        }
+
+        &:hover,
+        &:focus, 
+        &:active {
+            &::after {
+                background-color: #EBF4FA;
+            }
+        }
+        
+        &:hover,
+        &:focus, 
+        &:active,
+        &.active {
+            text-decoration: none;
+            background-color: transparent;
+
+            &::before {
+                background-color: $primary;
+            }
+
+        }
+    }
+
+
+    .accordion-item {
+        --bs-accordion-inner-border-radius: 8px;
+
+        border: 1px solid #D8D8D8;
+
+        @include media-breakpoint-up(lg) {
+            border: none;
+        }
+
+        .accordion-header {
+            display: block;
+
+            @include media-breakpoint-up(lg) {
+                display: none;
+
+                ~ #nav-default {
+                    display: block !important;
+                }
+            }
+        }
+    }
+    .accordion-button {
+
+        padding: 1rem;
+        box-shadow: none;
+
+        &::after {
+            @extend .font-awesome-family-pro;
+            content: '\f077';
+            font-size: var(--bs-body-font-size);
+            color: $primary;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        &.collapsed::after {
+            content: '\f078';
+        }
+    }
+
+    .accordion-collapse {
+        @include media-breakpoint-down(lg) {
+            padding: 1rem;
+        }
+    }
+
+
+    .ntg-side-nav__toggle {
+        border-radius: 0;
+        border: 1px solid #7d8083;
+    }
+
+    
+    .ntg-side-nav__collapser {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 1rem;
+        padding: 0 1rem;
+        text-decoration: none;
+        padding-right: 0.5rem;
+
+        &:active, &:focus, &:focus-within {
+            background-color: inherit;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-right: 1rem;
+        }
+    }
+
+    .collapser {
+        position: relative;
+        font-size: 0;
+        margin-top: -5px;
+
+        @include media-breakpoint-down(lg) {
+            padding: 0 2px 0 0;
+        }
+    }
+
+    .collapser:after {
+        @extend .font-awesome-family-pro;
+        content: '\f077';
+        font-size: var(--bs-body-font-size);
+        color: $primary;
+        font-weight: bold;
+    }
+
+    .collapsed .collapser:after {
+        content: '\f078';
+    }
+
+    .collapse:not(.show) {
+        display: none;
+    }
+}

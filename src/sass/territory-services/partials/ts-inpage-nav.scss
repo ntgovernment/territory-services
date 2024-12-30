@@ -1,0 +1,39 @@
+.ntg-inpage-nav {
+    border-left: 4px solid $primary;
+    margin: 0 0 3rem 0;
+
+    .nav-item {
+        margin-bottom: 0.5rem;
+        
+        &.heading {
+            @extend .small;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+    }
+
+    .nav-link {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        text-decoration: none;
+        border-bottom: 0 !important;
+
+        &:hover {
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        &::after {
+            content: attr(data-text);
+            content: attr(data-text) / "";
+            height: 0;
+            visibility: hidden;
+            overflow: hidden;
+            user-select: none;
+            pointer-events: none;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,111 @@
+.ntg-process-list {
+    $this: &;
+
+    ul {
+        list-style-type: none;
+        max-width: 450px;
+        padding-left: 0;
+
+        --circle-process-spacing-each-side: 0.75rem;
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0 !important;
+
+            &:last-child {
+                margin-bottom: 0;
+
+                #{$this}__right {
+                    border-left: 0;
+
+                    &::after {
+                        left: 0;
+                    }
+                }
+            }
+
+            &::before {
+                content: unset !important;
+            }
+
+
+            h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+                margin-bottom: 0.5rem;
+            }
+
+            #{$this}__left,  #{$this}__right {
+                *:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+
+            *:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__left {
+        flex: 0 0 80px;
+        @extend .small;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        padding-right: calc(10px + var(--circle-process-spacing-each-side)); //size of circle/2 + space right of circle
+
+        .step-icon {
+            // width: 100%;
+            // max-width: 40px;
+            margin-top: -3px;
+
+        }
+
+        i.step-icon {
+            // width: auto;
+            font-size: 42px;
+            color: $ts-teal-blue;
+        }
+
+        .step-number {
+            font-weight: bold;
+        }
+    }
+
+    &__right {
+        flex-grow: 0;
+        position: relative;
+        padding-left: calc(10px + var(--circle-process-spacing-each-side)); //size of circle/2 + space left of circle - border width
+        padding-bottom: 2rem !important;
+        border-left: 3px solid #D8D8D8;
+
+        
+        *:first-child {
+            line-height: 1;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 3px;
+        }
+        
+        //Circle
+        &::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: $ts-teal-blue;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: -1.5px; // Half the border of the right
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+}

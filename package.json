@@ -1,0 +1,26 @@
+{
+  "name": "projectx",
+  "version": "1.0.0",
+  "description": "NTGC Design system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tech",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^3.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-css": "^0.5.4"
+  },
+  "dependencies": {
+    "grunt-connect": "^0.2.0",
+    "grunt-shell": "^4.0.0"
+  }
+}
