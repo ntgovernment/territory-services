@@ -20,7 +20,7 @@ module.exports = function (grunt) {
       },
       // Command to fetch new design system files from NTGov-DS repo
       fetchNewDesignSystemFiles: {
-        command: 'git clone --depth 1 --branch master ssh://git@bitbucket.nt.gov.au:7999/dc/ntgov-design-system---release.git NTGov-DS',
+        command: 'git clone --depth 1 --branch main https://github.com/ntgovernment/ntg-web-design-system NTGov-DS',
         options: {
           failOnError: false
         }

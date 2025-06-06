@@ -4,81 +4,89 @@ Alerts
 -----------------------------
 */
 .ntg-callout {
-    @extend .alert;
-    border-left-width: 0.5rem !important;
-  
-    /* Alert border and icons */
-    &__icon {      
-        @extend .font-awesome-family-pro;
-        
-      &:before {
-        @extend .font-awesome-family-pro;
-        margin-right: 0.5rem;
-        font-weight: 600;
-      }
-    }
-  
-    &--info {
-        background-color: rgba($color: $info, $alpha: 0.05);
-        border-left-color: $info !important;
+  @extend .alert;
+  border-left-width: 0.5rem !important;
 
-        .ntg-callout__icon:before {
-            content: "\f05a";
-            color: $info;
-        }
-    }
-  
-    &--success {
-        background-color: rgba($color: $success, $alpha: 0.05);
-        border-left-color: $success !important;
+  /* Alert border and icons */
+  &__icon {
+    @extend .font-awesome-family-pro;
 
-      .ntg-callout__icon:before {
-        content: "\f058";
-        color: $success;
-      }
-    }
-  
-    &--warning {
-        background-color: rgba($color: $warning, $alpha: 0.05);
-        border-left-color: $warning !important;
-
-        .ntg-callout__icon:before {
-            content: "\f06a";
-            color: $warning;
-        }
-    }
-  
-    &--error {
-        background-color: rgba($color: $danger, $alpha: 0.05);
-        border-left-color: $danger !important;
-
-        .ntg-callout__icon:before {
-            content: "\f071";
-            color: $danger;
-        }
-    }
-  
-    /* Alert spacing */
-    &__text {
-      padding-right: 2rem !important;
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        margin-bottom: 1rem;
-        margin-top: 0;
-      }
-
-      p:last-child {
-        margin-bottom: 0;
-      }
-
-      ul li:before {
-      list-style-type: disc;
-      color: $ntg-charcoal-grey !important;
-      }
-      
+    &:before {
+      @extend .font-awesome-family-pro;
+      margin-right: 0.5rem;
+      font-weight: 600;
     }
   }
-  
+
+  &--info {
+    background-color: rgba($color: $info, $alpha: 0.05);
+    border-left-color: $info !important;
+
+    .ntg-callout__icon:before {
+      content: "\f05a";
+      color: $info;
+    }
+  }
+
+  &--success {
+    background-color: rgba($color: $success, $alpha: 0.05);
+    border-left-color: $success !important;
+
+    .ntg-callout__icon:before {
+      content: "\f058";
+      color: $success;
+    }
+  }
+
+  &--warning {
+    background-color: rgba($color: $warning, $alpha: 0.05);
+    border-left-color: $warning !important;
+
+    .ntg-callout__icon:before {
+      content: "\f06a";
+      color: $warning;
+    }
+  }
+
+  &--error {
+    background-color: rgba($color: $danger, $alpha: 0.05);
+    border-left-color: $danger !important;
+
+    .ntg-callout__icon:before {
+      content: "\f071";
+      color: $danger;
+    }
+  }
+
+  &--other {
+    background-color: rgba($color: $ntg-alert-other, $alpha: 0.05);
+    border-left-color: $ntg-alert-other !important;
+
+    .ntg-callout__icon:before {
+      content: "\f06a";
+      color: $ntg-alert-other;
+    }
+  }
+
+  /* Alert spacing */
+  &__text {
+    padding-right: 2rem !important;
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul li:before {
+      list-style-type: disc;
+      color: $ntg-charcoal-grey !important;
+    }
+  }
+}
