@@ -50,13 +50,13 @@ $ntg-font-65-medium: 600;
 $ntg-font-55-normal: 500;
 
 // NTG global spacing
-$ntg-spacing-8: rem(8px);
-$ntg-spacing-16: rem(16px);
-$ntg-spacing-24: rem(24px);
-$ntg-spacing-32: rem(32px);
-$ntg-spacing-48: rem(48px);
-$ntg-spacing-72: rem(72px);
-$ntg-spacing-144: rem(144px);
+$ntg-spacing-8: pxToRem(8px);
+$ntg-spacing-16: pxToRem(16px);
+$ntg-spacing-24: pxToRem(24px);
+$ntg-spacing-32: pxToRem(32px);
+$ntg-spacing-48: pxToRem(48px);
+$ntg-spacing-72: pxToRem(72px);
+$ntg-spacing-144: pxToRem(144px);
 
 // NTG maxwidth for line lengths
 $ntg-maxwidth: 48rem; //Keeps things readable on wide viewports
@@ -92,6 +92,7 @@ $grey-dark-100: #595959;
 $grey-dark-400: #494949;
 $light-400: #d6d4d1;
 $grey-400: #f8f7f5;
+$grey-600: $gray-600;
 $ntg-arafura-blue-variant: #005ea5;
 $ntg-brown: $ntg-color-hexE35205-50opacity;
 
@@ -100,6 +101,7 @@ $ntg-alert-info: #00bfe9;
 $ntg-alert-success: #0cac78;
 $ntg-alert-error: #ff635c;
 $ntg-alert-warning: #f69900;
+$ntg-alert-other: $grey-600;
 
 // Lead font weight
 $lead-font-weight: normal;
@@ -141,15 +143,14 @@ $ntg-accordion-icon-color: $ntg-color-dark;
 $ntg-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23{$ntg-accordion-icon-color}'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 $ntg-accordion-button-active-bg: $ntg-grey-200;
 
-
-$ts-orange: #FA6400;
-$ts-orange-mid: #CA4904;
-$ts-orange-dark: #B14004;
+$ts-orange: #fa6400;
+$ts-orange-mid: #ca4904;
+$ts-orange-dark: #b14004;
 $ts-blue: #336699;
-$ts-blue-mid: #1A4E81;
+$ts-blue-mid: #1a4e81;
 
 //Territory services color - Primary brand colors
-$ts-helonica-orange: #EE6320;
+$ts-helonica-orange: #ee6320;
 $ts-hot-coral: #c25062;
 
 //Secondary brand colors
@@ -158,18 +159,18 @@ $ts-arafura-blue: #1f1f5f;
 
 //UI Colors
 $ts-green-envy: #107810;
-$ts-canary-yellow: #FCC000;
-$ts-ruby-red: #C43004;
-$ts-sky-blue: #107CC0;
+$ts-canary-yellow: #fcc000;
+$ts-ruby-red: #c43004;
+$ts-sky-blue: #107cc0;
 
 //Grey
 $ts-grey-charcoal: #454347;
 $ts-grey-medium: #707070;
-$ts-grey-light: #E8E8E8;
-$ts-grey-white: #F8F8F8;
+$ts-grey-light: #e8e8e8;
+$ts-grey-white: #f8f8f8;
 
-$ts-light-blue: #CEE4F2;
-$ts-alice-blue: #EBF4FA;
+$ts-light-blue: #cee4f2;
+$ts-alice-blue: #ebf4fa;
 
 $primary: $ts-blue;
 $primary-mid: $ts-blue-mid;
@@ -189,7 +190,7 @@ $spacer: 16px;
 
 $spacers: (
   0: 0,
-  1: $spacer * .5,
+  1: $spacer * 0.5,
   2: $spacer * 1,
   3: $spacer * 1.5,
   4: $spacer * 2,
@@ -201,25 +202,27 @@ $spacers: (
 
 $border-radius: 8px;
 
-$font-family-sans-serif: "Roboto", "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: "Roboto", "Lato", system-ui, -apple-system, "Segoe UI",
+  Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-icons: "Font Awesome 6 Pro";
 
-$font-size-lg: $font-size-base * 1.200;
-$font-size-sm: math.div($font-size-base, 1.200);
+$font-size-lg: $font-size-base * 1.2;
+$font-size-sm: math.div($font-size-base, 1.2);
 $lead-font-size: $font-size-lg;
 
-$h1-font-size: $font-size-base * 1.2 * 1.2 * 1.2; 
+$h1-font-size: $font-size-base * 1.2 * 1.2 * 1.2;
 $h2-font-size: $font-size-base * 1.2 * 1.2;
-$h3-font-size: $font-size-base * 1.2; 
+$h3-font-size: $font-size-base * 1.2;
 $h4-font-size: $font-size-base; //not required
 $h5-font-size: $font-size-base; //not required
 $h6-font-size: $font-size-base; //not required
 
 $headings-font-weight: bold;
-$headings-margin-bottom: rem($spacer * 1.5);
+$headings-margin-bottom: pxToRem($spacer * 1.5);
 $headings-line-height: 1.3;
 
-$paragraph-margin-bottom: rem($spacer * 1.5);
+$paragraph-margin-bottom: pxToRem($spacer * 1.5);
 
 $body-color: $ts-grey-charcoal;
 $link-color: $primary;
@@ -239,7 +242,7 @@ $accordion-button-active-bg: inherit;
 $form-feedback-icon-valid-color: $success;
 $form-feedback-icon-invalid-color: $danger;
 $form-feedback-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 512 512' fill='#{$form-feedback-icon-valid-color}'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/%3E%3C/svg%3E");
-$form-feedback-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 512 512' fill='#{$form-feedback-icon-invalid-color}'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z'/%3E%3C/svg%3E"); 
+$form-feedback-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 512 512' fill='#{$form-feedback-icon-invalid-color}'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z'/%3E%3C/svg%3E");
 
 //Input
 $input-btn-padding-y: 0.75rem;
@@ -262,7 +265,7 @@ $btn-font-weight: bold;
 $btn-padding-x: 2rem;
 $btn-padding-y: 1rem;
 $btn-white-space: nowrap;
-$btn-focus-box-shadow: #FAD0BB;
+$btn-focus-box-shadow: #fad0bb;
 
 //List group
 $list-group-color: $body-color;
@@ -276,17 +279,16 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1190px
+  xxl: 1190px,
 );
 
 $grid-gutter-width: 2rem;
 
 $gutters: (
   0: 0,
-  1: $spacer * .5,
+  1: $spacer * 0.5,
   2: $spacer * 1,
   3: $spacer * 1.5,
   4: $spacer * 2,
   5: $spacer * 3,
 );
-
