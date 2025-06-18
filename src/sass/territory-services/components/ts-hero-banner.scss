@@ -50,13 +50,13 @@
 
     .ntg-hero-banner__bg {
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 696px;
       position: absolute;
       right: 0;
       bottom: 0;
       width: 685px;
       height: 673px;
-      opacity: 15%;
+      // opacity: 15%;
       z-index: -2;
 
       @include media-breakpoint-down(md) {
@@ -71,7 +71,8 @@
       }
 
       @include media-breakpoint-up(lg) {
-        background-position: right -259px bottom -265px;
+        background-position: right 0px bottom 0px;
+        background-size: 696px;
       }
     }
   }
