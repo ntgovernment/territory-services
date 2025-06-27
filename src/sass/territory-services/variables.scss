@@ -202,9 +202,9 @@ $spacers: (
 
 $border-radius: 8px;
 
-$font-family-sans-serif: "Roboto", "Lato", system-ui, -apple-system, "Segoe UI",
-  Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: "Roboto", system-ui, -apple-system, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";  //Removed "Noto Sans", "Lato", "Liberation Sans", 
 $font-icons: "Font Awesome 6 Pro";
 
 $font-size-lg: $font-size-base * 1.2;
