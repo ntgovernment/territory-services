@@ -103,18 +103,19 @@
 
         #{$this}__body {
             @include media-breakpoint-up(lg) {
-                background-color: $ts-grey-light;
+                color: $white;
+                background-color: $semantic-colours-bg-primary-charcoal-500;
             }
 
             @include media-breakpoint-down(lg) {
                 color: $white;
-                background-color: $ts-grey-charcoal;
+                background-color: $semantic-colours-bg-primary-charcoal-500;
                 padding: 1rem;
             }
 
             &::before {
                 content: '';
-                background-color: $secondary;
+                background-color: $semantic-colours-bg-primary-charcoal-500;
                 height: 8px;
                 position: absolute;
                 top: 0;

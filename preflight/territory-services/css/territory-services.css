@@ -18958,7 +18958,7 @@ Alerts
 @media (max-width: 991.98px) {
   .ntg-highlight--image-overlap .ntg-highlight__body {
     color: #fff;
-    background-color: #343741;
+    background-color: #454347;
   }
 }
 @media (min-width: 992px) {
@@ -18969,7 +18969,7 @@ Alerts
 }
 .ntg-highlight--image-overlap.alternate .ntg-highlight__wrapper::before {
   content: "";
-  background-color: #343741;
+  background-color: #e8e8e8;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -19007,19 +19007,20 @@ Alerts
 }
 @media (min-width: 992px) {
   .ntg-highlight--card-overlap .ntg-highlight__body {
-    background-color: #e8e8e8;
+    color: #fff;
+    background-color: #343741;
   }
 }
 @media (max-width: 991.98px) {
   .ntg-highlight--card-overlap .ntg-highlight__body {
     color: #fff;
-    background-color: #454347;
+    background-color: #343741;
     padding: 1rem;
   }
 }
 .ntg-highlight--card-overlap .ntg-highlight__body::before {
   content: "";
-  background-color: #d6410a;
+  background-color: #343741;
   height: 8px;
   position: absolute;
   top: 0;
@@ -19068,7 +19069,7 @@ Alerts
   }
 }
 .ntg-highlight--full-width:not(.alternate) {
-  background-color: #343741;
+  background-color: #e8e8e8;
 }
 .ntg-highlight--full-width .ntg-highlight__body {
   text-align: center;
@@ -19086,7 +19087,7 @@ Alerts
   align-self: center;
 }
 .ntg-highlight--full-width.alternate .ntg-highlight__wrapper {
-  background-color: #343741;
+  background-color: #007e91;
   border-radius: 8px;
   padding: 4rem 0;
 }
