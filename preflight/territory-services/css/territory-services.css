@@ -17152,19 +17152,19 @@ div[data-component=ntg-sticky-nav] {
 }
 .ntg-feedback-form fieldset ul li:focus-within label {
   color: #fff !important;
-  background-color: #343741 !important;
-  outline: #343741 solid 2px;
+  background-color: #336699 !important;
+  outline: #336699 solid 2px;
   outline-offset: 2px;
 }
 .ntg-feedback-form fieldset .radio-group:focus-within label {
   color: #fff !important;
-  background-color: #343741 !important;
-  outline: #343741 solid 2px;
+  background-color: #336699 !important;
+  outline: #336699 solid 2px;
   outline-offset: 2px;
 }
 .ntg-feedback-form fieldset input[type=radio]:checked + label {
   color: #fff;
-  background-color: #343741;
+  background-color: #336699;
 }
 .ntg-feedback-form fieldset label {
   color: #336699;
@@ -17180,12 +17180,12 @@ div[data-component=ntg-sticky-nav] {
   cursor: pointer;
 }
 .ntg-feedback-form fieldset label.unselected {
-  color: #343741 !important;
+  color: #336699 !important;
   background-color: transparent !important;
 }
 .ntg-feedback-form fieldset label:hover {
   color: #fff !important;
-  background-color: #343741 !important;
+  background-color: #336699 !important;
 }
 .ntg-feedback-form fieldset label i.fa-thumbs-up {
   margin-bottom: 2px;
@@ -18478,22 +18478,26 @@ main ul.marker-chevron li::before {
   align-items: center;
   justify-content: center;
   margin: 0 4px 5px;
-  border: 2px solid #343741;
-  color: #343741;
+  border: 2px solid #336699;
+  color: #336699;
   text-decoration: none;
   transition: 0.2s background-color ease-in-out;
   border-radius: 4px;
 }
 .ntg-social-share__link i {
-  color: #343741;
+  color: #336699 !important;
   font-size: 1rem;
 }
 .ntg-social-share__link:hover, .ntg-social-share__link:focus {
   text-decoration: none;
-  background-color: #343741;
+  background-color: #336699;
 }
 .ntg-social-share__link:hover i, .ntg-social-share__link:focus i {
-  color: #fff;
+  color: #fff !important;
+}
+.ntg-social-share__link::after {
+  content: "" !important;
+  padding: 0 !important;
 }
 
 .copied-alert {

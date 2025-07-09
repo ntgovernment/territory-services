@@ -49,8 +49,8 @@
                 &:focus-within {
                     label {
                         color: $white !important;
-                        background-color: $primary !important;
-                        outline: $primary solid 2px;
+                        background-color: $semantic-colours-bg-input-fill-blue-500 !important;
+                        outline: $semantic-colours-border-blue-500 solid 2px;
                         outline-offset: 2px;
                     }
                 }
@@ -61,8 +61,8 @@
             &:focus-within {
                 label {
                     color: $white !important;
-                    background-color: $primary !important;
-                    outline: $primary solid 2px;
+                    background-color: $semantic-colours-bg-input-fill-blue-500 !important;
+                    outline: $semantic-colours-border-blue-500 solid 2px;
                     outline-offset: 2px;
                 }
             }
@@ -70,7 +70,7 @@
 
         input[type="radio"]:checked + label {
             color: $white;
-            background-color: $primary;
+            background-color: $semantic-colours-bg-input-fill-blue-500;
         }
 
         label {
@@ -89,13 +89,13 @@
             
         
             &.unselected {
-                color: $primary !important;
+                color: $semantic-colours-btn-label-text-blue-500 !important;
                 background-color: transparent !important;
             }
 
             &:hover {
                 color: $white !important;
-                background-color: $primary !important;
+                background-color: $semantic-colours-bg-input-fill-blue-500 !important;
             }
 
           

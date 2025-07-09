@@ -6,25 +6,30 @@
       align-items: center;
       justify-content: center;
       margin: 0 4px 5px;
-      border: 2px solid $primary;
-      color: $primary;
+      border: 2px solid $semantic-colours-border-blue-500;
+      color: $semantic-colours-btn-label-text-blue-500;
       text-decoration: none;
       transition: 0.2s background-color ease-in-out;
       border-radius: 4px;
   
       i {
-        color: $primary;
+        color: $semantic-colours-btn-label-text-blue-500 !important;
         font-size: 1rem;
   
       }
   
       &:hover, &:focus {
         text-decoration: none;
-        background-color: $primary;
+        background-color: $semantic-colours-btn-label-text-blue-500;
   
         i {
-          color: $white;
+          color: $white !important;
         }
+      }
+
+      &::after{
+        content: '' !important;
+        padding: 0 !important;
       }
     }
   }
