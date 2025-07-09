@@ -89,4 +89,9 @@ Alerts
       color: $ntg-charcoal-grey !important;
     }
   }
+
+  & * {
+    font-size: $typography-font-text-paragraph-font-size;
+  }
+
 }

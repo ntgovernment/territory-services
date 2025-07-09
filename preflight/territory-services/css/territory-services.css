@@ -18690,6 +18690,9 @@ Alerts
   list-style-type: disc;
   color: #454347 !important;
 }
+.ntg-callout * {
+  font-size: 19px;
+}
 
 .form-control:focus, .sq-form-question-answer input:focus:not([type=checkbox]):not([type=radio]),
 .sq-form-question-answer textarea:focus,
