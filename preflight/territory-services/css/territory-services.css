@@ -17885,6 +17885,10 @@ header a, .topics a, .gov-buttons a, a.news-image, .most-popular a, .news-list a
   border: none;
 }
 
+h1, .h1, h2, .h2, h3, .h3, .ntg-side-nav__title, h4, .h4, h5, .h5, h6, .h6 {
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
 h1.overline, .overline.h1, h2.overline, .overline.h2, h3.overline, .overline.h3, .overline.ntg-side-nav__title, h4.overline, .overline.h4, h5.overline, .overline.h5, h6.overline, .overline.h6 {
   position: relative;
   padding-top: 1rem;
@@ -17904,6 +17908,11 @@ h1.overline > a, .overline.h1 > a, h2.overline > a, .overline.h2 > a, h3.overlin
 }
 h1.overline > a:hover, .overline.h1 > a:hover, h2.overline > a:hover, .overline.h2 > a:hover, h3.overline > a:hover, .overline.h3 > a:hover, .overline.ntg-side-nav__title > a:hover, h4.overline > a:hover, .overline.h4 > a:hover, h5.overline > a:hover, .overline.h5 > a:hover, h6.overline > a:hover, .overline.h6 > a:hover {
   text-decoration: underline;
+}
+
+p {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 main ul.marker-arrow {
