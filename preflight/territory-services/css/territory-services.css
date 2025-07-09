@@ -18804,7 +18804,8 @@ Alerts
 }
 @media (max-width: 767.98px) {
   .ntg-hero-banner.bg-primary .ntg-hero-banner__bg {
-    background-position: right -228px bottom 40px;
+    background-position: right 0 bottom 180px;
+    background-size: 50vw;
     height: 458px;
     width: 468px;
     top: -48px;
@@ -18812,13 +18813,14 @@ Alerts
 }
 @media (min-width: 768px) {
   .ntg-hero-banner.bg-primary .ntg-hero-banner__bg {
-    background-position: right -259px bottom -265px;
+    background-position: right 0 bottom 0;
+    background-size: 45vw;
   }
 }
 @media (min-width: 992px) {
   .ntg-hero-banner.bg-primary .ntg-hero-banner__bg {
     background-position: right 0px bottom 0px;
-    background-size: 696px;
+    background-size: 40vw;
   }
 }
 .ntg-hero-banner.bg-ntg-charcoal-grey {

@@ -60,19 +60,21 @@
       z-index: -2;
 
       @include media-breakpoint-down(md) {
-        background-position: right -228px bottom 40px;
+        background-position: right 0 bottom 180px;
+        background-size: calc(50vw);
         height: 458px;
         width: 468px;
         top: -48px;
       }
 
       @include media-breakpoint-up(md) {
-        background-position: right -259px bottom -265px;
+        background-position: right 0 bottom 0;
+        background-size: calc(45vw);
       }
 
       @include media-breakpoint-up(lg) {
         background-position: right 0px bottom 0px;
-        background-size: 696px;
+        background-size: calc(40vw);
       }
     }
   }
