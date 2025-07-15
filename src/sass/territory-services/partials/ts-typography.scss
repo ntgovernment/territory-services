@@ -111,10 +111,7 @@ content: none;
     border: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-
-    margin-top: $gap-gap-12;
-    margin-bottom: $gap-gap-4;
+h1, h2, h3, h4, h5, h6 {    
 
     &.overline {
         position: relative;
@@ -169,5 +166,12 @@ main ul.marker {
                 top: -2px;
             }
         }
+    }
+}
+
+.content__main{
+    & h1, h2, h3, h4, h5, h6 {
+        margin-top: $gap-gap-12;
+        margin-bottom: $gap-gap-4;
     }
 }
