@@ -17736,47 +17736,42 @@ i[class*=fa-instagram] {
   background-color: #cedfea;
 }
 
-.table-primary {
-  --bs-table-bg: #FFFFFF;
-  --bs-table-striped-bg: #EBF4FA;
-  --bs-table-border-color: var(--bs-table-striped-bg);
-  border: 1px solid #343741;
+.table {
+  border-radius: 8px;
+  border: 2px solid #e8e8e8;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
 }
-.table-primary thead {
-  --bs-table-bg: #343741;
-  --bs-table-color: #fff;
-  color: var(--bs-table-color);
+.table > tbody > tr > td {
+  border-bottom: 1px solid #f8f8f8;
+  border-left: none;
+  border-right: none;
+  padding: 16px 24px;
 }
-.table-primary thead, .table-primary tbody, .table-primary tfoot, .table-primary tr, .table-primary td, .table-primary th {
-  border-color: var(--bs-table-striped-bg);
+.table > thead > tr > th {
+  background-color: #e8e8e8;
+  border: none;
+  padding: 16px 24px;
 }
-.table-light-blue {
-  --bs-table-bg: #FFFFFF;
-  --bs-table-striped-bg: #EBF4FA;
-  --bs-table-border-color: var(--bs-table-striped-bg);
-  border: 1px solid #cee4f2;
+.table.table-striped {
+  --bs-table-striped-bg: var($semantic-colours-bg-secondary-grey-100);
 }
-.table-light-blue thead {
-  --bs-table-bg: #cee4f2;
-  --bs-table-color: #000;
-  color: var(--bs-table-color);
+.table.table-striped > :not(caption) > thead > tr > :nth-child(even) {
+  background-color: #e8e8e8;
 }
-.table-light-blue thead, .table-light-blue tbody, .table-light-blue tfoot, .table-light-blue tr, .table-light-blue td, .table-light-blue th {
-  border-color: var(--bs-table-striped-bg);
+.table .table-striped-columns {
+  --bs-table-striped-bg: var($semantic-colours-bg-secondary-grey-100);
 }
-.table-light-grey {
-  --bs-table-bg: #FFFFFF;
-  --bs-table-striped-bg: #F8F8F8;
-  --bs-table-border-color: var(--bs-table-striped-bg);
-  border: 1px solid #e8e8e8;
+.table .table-striped-columns thead > tr > th {
+  background-color: #e8e8e8 !important;
 }
-.table-light-grey thead {
-  --bs-table-bg: #e8e8e8;
-  --bs-table-color: #000;
-  color: var(--bs-table-color);
+.table .table-striped-columns tbody > tr > td {
+  border-bottom: none !important;
 }
-.table-light-grey thead, .table-light-grey tbody, .table-light-grey tfoot, .table-light-grey tr, .table-light-grey td, .table-light-grey th {
-  border-color: var(--bs-table-striped-bg);
+.table.table-highlight > thead > tr > th {
+  background-color: #343741;
+  color: #ffffff;
 }
 
 .ts-dark-theme:root {
