@@ -21,10 +21,9 @@
 //Figma
 @import "../figma/sass/_variables.scss";
 
-
 // Define NTG colours
-$primary:$semantic-colours-bg-primary-charcoal-500;
-$secondary:$semantic-colours-icon-feature-orange-600;
+$primary: $semantic-colours-bg-primary-charcoal-500;
+$secondary: $semantic-colours-icon-feature-orange-600;
 
 $ntg-theme-colours: (
   ntg-primary: $primary,
@@ -69,7 +68,7 @@ $ts-table-variant: (
 $theme-colors: map-merge($ntg-theme-colours, $theme-colors);
 $table-variants: map-merge($ts-table-variant, $table-variants);
 
-$ts-grey-medium:$primitive-colours-neutral-grey-500;
+$ts-grey-medium: $primitive-colours-neutral-grey-500;
 
 ///////////////////////////////////////////////////
 
@@ -219,3 +218,4 @@ $ts-grey-medium:$primitive-colours-neutral-grey-500;
 @import "territory-services/components/ts-image-cards.scss";
 @import "territory-services/components/ts-rich-media.scss";
 @import "territory-services/components/ts-topic-cards.scss";
+@import "territory-services/components/ts-floating-button.scss";

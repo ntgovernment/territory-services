@@ -1,58 +1,36 @@
 (function () {
-  var floatingBtn = document.getElementById("floating-button");
-  if (!floatingBtn) return;
+  var $originalBtn = $("#floating-button");
+  if ($originalBtn.length === 0) return;
 
-  // Store the original offsetTop for reference
-  var originalOffsetTop =
-    floatingBtn.getBoundingClientRect().top +
-    window.scrollY +
-    floatingBtn.offsetHeight * 2;
+  // Clone the button without the ID
+  var $fixedBtn = $originalBtn
+    .clone()
+    .removeAttr("id")
+    .addClass("is-fixed")
+    .css({
+      position: "fixed",
+      bottom: "0",
+      zIndex: 9999,
+    });
+
+  // Insert the duplicate just after the original
+  $fixedBtn.insertAfter($originalBtn);
 
   function updateFloatingButton() {
-    var scrollY = window.scrollY || window.pageYOffset;
-    var viewportHeight = window.innerHeight;
-    var btnRect = floatingBtn.getBoundingClientRect();
+    var scrollY = $(window).scrollTop();
+    var viewportHeight = $(window).height();
+    var originalBottom = $originalBtn.offset().top + $originalBtn.outerHeight();
 
-    // If the button's top is below the viewport, fixate it
-    if (originalOffsetTop > scrollY + viewportHeight) {
-      if (!floatingBtn.classList.contains("is-fixed")) {
-        floatingBtn.classList.add("is-fixed");
-      }
+    // If the original button's bottom is above the bottom of the viewport, show the fixed one
+    if (originalBottom < scrollY + viewportHeight) {
+      $fixedBtn.hide();
     } else {
-      floatingBtn.classList.remove("is-fixed");
+      $fixedBtn.show();
     }
   }
 
-  // Add a CSS class for the fixed state
-  var style = document.createElement("style");
-  style.innerHTML = `
-      .floating-button.is-fixed {
-        position: fixed !important;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1050;
-        margin: 0 auto;
-        width: 100%;
-        max-width: 100vw;
-        background: inherit;
-        box-shadow: 0 -2px 16px rgba(0,0,0,0.08);
-        animation: floatingBtnFadeIn 0.1s;
-      }
-      @keyframes floatingBtnFadeIn {
-        from { opacity: 0; transform: translateY(30px);}
-        to { opacity: 1; transform: translateY(0);}
-      }
-    `;
-  document.head.appendChild(style);
-
-  window.addEventListener("scroll", updateFloatingButton);
-  window.addEventListener("resize", function () {
-    // recalculate originalOffsetTop in case of layout changes
-    originalOffsetTop =
-      floatingBtn.getBoundingClientRect().top + window.scrollY;
-    updateFloatingButton();
-  });
+  $(window).on("scroll", updateFloatingButton);
+  $(window).on("resize", updateFloatingButton);
 
   // Initial check
   updateFloatingButton();
