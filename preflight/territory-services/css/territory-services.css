@@ -17986,22 +17986,6 @@ main ul.marker-chevron li::before {
   top: -2px;
 }
 
-.content__main h1, .content__main .h1,
-.content__main h2,
-.content__main .h2,
-.content__main h3,
-.content__main .h3,
-.content__main .ntg-side-nav__title,
-.content__main h4,
-.content__main .h4,
-.content__main h5,
-.content__main .h5,
-.content__main h6,
-.content__main .h6 {
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
 .list-group.list-group-flush li {
   border-width: 0 0 var(--bs-list-group-border-width);
   --bs-list-group-item-padding-x: 0;
@@ -18780,9 +18764,6 @@ Alerts
 .ntg-callout__text ul li:before {
   list-style-type: disc;
   color: #454347 !important;
-}
-.ntg-callout * {
-  font-size: 19px;
 }
 
 .form-control:focus, .sq-form-question-answer input:focus:not([type=checkbox]):not([type=radio]),
