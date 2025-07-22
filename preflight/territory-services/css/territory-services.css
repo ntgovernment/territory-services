@@ -17529,7 +17529,7 @@ i[class*=fa-instagram] {
   border-bottom: 1px solid rgba(240, 240, 240, 0.3);
 }
 .ntg-header nav.nav-masthead .dropdown-menu li a .link-icon {
-  color: #fa6400;
+  color: #d6410a;
   font-size: calc(var(--bs-body-font-size) * 1.1);
   margin-right: 0.5rem;
   margin-top: 2px;
@@ -18867,7 +18867,7 @@ Alerts
 @media (min-width: 1200px) {
   .ntg-hero-banner {
     background-position: right 0 bottom 0;
-    background-size: auto 90%;
+    background-size: auto 75%;
   }
 }
 .ntg-hero-banner.bg-primary {
@@ -18890,35 +18890,6 @@ Alerts
 }
 .ntg-hero-banner.bg-primary .ntg-hero-banner__bg {
   display: none;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 40%;
-  height: 673px;
-  z-index: -2;
-}
-@media (max-width: 767.98px) {
-  .ntg-hero-banner.bg-primary .ntg-hero-banner__bg {
-    background-position: right 0 bottom 180px;
-    background-size: 50vw;
-    height: 458px;
-    width: 468px;
-    top: -48px;
-  }
-}
-@media (min-width: 768px) {
-  .ntg-hero-banner.bg-primary .ntg-hero-banner__bg {
-    background-position: right 0 bottom 0;
-    background-size: 45vw;
-  }
-}
-@media (min-width: 992px) {
-  .ntg-hero-banner.bg-primary .ntg-hero-banner__bg {
-    background-position: right 0px bottom 0px;
-    background-size: 35vw;
-  }
 }
 .ntg-hero-banner.bg-ntg-charcoal-grey {
   color: #fff;

@@ -292,7 +292,7 @@
             border-bottom: 1px solid rgba(240, 240, 240, 0.3);
 
             .link-icon {
-              color: $ts-orange; //$primary
+              color: $semantic-colours-btn-primary-bg-default-orange-600; //$primary
               font-size: calc(var(--bs-body-font-size) * 1.1);
               margin-right: 0.5rem;
               margin-top: 2px;
