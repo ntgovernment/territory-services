@@ -18842,6 +18842,34 @@ Alerts
   background-color: rgba(31, 31, 95, 0.75);
 }
 
+.ntg-hero-banner {
+  background-image: url(https://service.nt.gov.au/__data/assets/file/0005/1529762/brand-graphics.svg);
+  background-repeat: no-repeat;
+}
+@media (max-width: 767.98px) {
+  .ntg-hero-banner {
+    background-position: right 0 bottom 80%;
+    background-size: 50% auto;
+  }
+}
+@media (min-width: 768px) {
+  .ntg-hero-banner {
+    background-position: right 0 bottom 0;
+    background-size: 45% auto;
+  }
+}
+@media (min-width: 992px) {
+  .ntg-hero-banner {
+    background-position: right 0 bottom 0;
+    background-size: 40% auto;
+  }
+}
+@media (min-width: 1200px) {
+  .ntg-hero-banner {
+    background-position: right 0 bottom 0;
+    background-size: auto 90%;
+  }
+}
 .ntg-hero-banner.bg-primary {
   color: #fff;
   position: relative;
@@ -18861,12 +18889,13 @@ Alerts
   z-index: -2;
 }
 .ntg-hero-banner.bg-primary .ntg-hero-banner__bg {
+  display: none;
   background-repeat: no-repeat;
-  background-size: 696px;
+  background-size: 100%;
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 685px;
+  width: 40%;
   height: 673px;
   z-index: -2;
 }
