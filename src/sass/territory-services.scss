@@ -1,8 +1,8 @@
 @import url("https://service.nt.gov.au/_design/fonts/roboto-ubuntu.css");
 
 // Import bootstrap mixins
-@import "../../NTGov-DS/src/sass/bootstrap/5.2.4/mixins/banner";
-@include bsBanner("");
+// @import "../../NTGov-DS/src/sass/bootstrap/5.2.4/mixins/banner";
+// @include bsBanner("");
 
 // scss-docs-start import-stack
 
@@ -18,7 +18,13 @@
 //Territory services
 @import "territory-services/variables.scss";
 
+//Figma
+@import "../figma/sass/_variables.scss";
+
 // Define NTG colours
+$primary: $semantic-colours-bg-primary-charcoal-500;
+$secondary: $semantic-colours-icon-feature-orange-600;
+
 $ntg-theme-colours: (
   ntg-primary: $primary,
   ntg-primary-mid: $primary-mid,
@@ -49,18 +55,20 @@ $ntg-theme-colours: (
   ntg-color-header-background-neutral: $ntg-color-header-background-neutral,
   ntg-background-alt: $ntg-background-alt,
   ntg-background-light: $ntg-background-light,
-  ts-light-blue: $ts-light-blue,
-  warning-yellow: $ts-canary-yellow,
+  ts-light-blue: $semantic-colours-bg-emphasis-blue-100,
+  warning-yellow: $semantic-colours-bg-alert-warning-orange-50,
 );
 
 $ts-table-variant: (
-  "light-blue": $ts-light-blue,
-  "light-grey": $ts-grey-light,
+  "light-blue": $semantic-colours-bg-emphasis-blue-100,
+  "light-grey": $semantic-colours-bg-secondary-grey-100,
 );
 
 // Merge NTG colours with BS defaults
 $theme-colors: map-merge($ntg-theme-colours, $theme-colors);
 $table-variants: map-merge($ts-table-variant, $table-variants);
+
+$ts-grey-medium: $primitive-colours-neutral-grey-500;
 
 ///////////////////////////////////////////////////
 
@@ -210,3 +218,4 @@ $table-variants: map-merge($ts-table-variant, $table-variants);
 @import "territory-services/components/ts-image-cards.scss";
 @import "territory-services/components/ts-rich-media.scss";
 @import "territory-services/components/ts-topic-cards.scss";
+@import "territory-services/components/ts-floating-button.scss";

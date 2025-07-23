@@ -4,92 +4,114 @@
 -----------------------------
 */
 :root {
-    @include media-breakpoint-up(xl) {
-        --bs-body-font-size: 19px;
-    }
+  @include media-breakpoint-up(xl) {
+    --bs-body-font-size: 19px;
+  }
 }
 
 .btn {
-    @include media-breakpoint-up(xl) {
-        --bs-btn-font-size: var(--bs-body-font-size);
-    }
+  @include media-breakpoint-up(xl) {
+    --bs-btn-font-size: var(--bs-body-font-size);
+  }
 }
 
 h1 {
-    @include media-breakpoint-up(xl) {
-        font-size: calc(var(--bs-body-font-size) * 1.333 * 1.333 * 1.333);
-    }
+  @include media-breakpoint-up(xl) {
+    font-size: calc(var(--bs-body-font-size) * 1.333 * 1.333 * 1.333);
+  }
 }
 
 h2 {
-    @include media-breakpoint-up(xl) {
-        font-size: calc(var(--bs-body-font-size) * 1.333 * 1.333);
-    }
+  @include media-breakpoint-up(xl) {
+    font-size: calc(var(--bs-body-font-size) * 1.333 * 1.333);
+  }
 }
 
-h3, .lead {
-    @include media-breakpoint-up(xl) {
-        font-size: calc(var(--bs-body-font-size) * 1.333);
-    }
+h3,
+.lead {
+  @include media-breakpoint-up(xl) {
+    font-size: calc(var(--bs-body-font-size) * 1.333);
+  }
 }
 
-h4, h5, h6, .form-control {
-    font-size: var(--bs-body-font-size);
+h4,
+h5,
+h6,
+.form-control {
+  font-size: var(--bs-body-font-size);
 }
 
-.small, small {
-    @include media-breakpoint-up(xl) {
-        font-size: calc(var(--bs-body-font-size) / 1.333);
-    }
+.small,
+small {
+  @include media-breakpoint-up(xl) {
+    font-size: calc(var(--bs-body-font-size) / 1.333);
+  }
 }
 
 .font-awesome-family-pro {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: var(--fa-display, inline-block);
-    font-style: normal;
-    font-variant: normal;
-    line-height: 1;
-    text-rendering: auto;
-    font-family: 'Font Awesome 6 Pro';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  font-family: "Font Awesome 6 Pro";
 }
 /*
     Main link styles
 */
 a {
+  padding-bottom: 1px;
 
-    padding-bottom: 1px;
+  &:focus,
+  &:focus-within,
+  &.focused-link {
+    background-color: #ebf4fa;
+    color: var(--bs-link-hover-color);
+  }
 
-    &:focus, &:focus-within, &.focused-link {
-        background-color: #EBF4FA;
-        color: var(--bs-link-hover-color);
-    }
-
-    &:active, &.active-link {
-        background-color: #CEDFEA;
-        color: var(--bs-link-hover-color);
-    }
+  &:active,
+  &.active-link {
+    background-color: #cedfea;
+    color: var(--bs-link-hover-color);
+  }
 }
 
 .skip-links a {
-    &:focus, &:focus-within, &:active {
-        background-color: transparent;
-    }
+  &:focus,
+  &:focus-within,
+  &:active {
+    background-color: transparent;
+  }
 }
 // main a:hover, footer a:hover {
 // padding-bottom: 3px;
 // /* Stops hover flicker */
 // }
 
-.border-0 a {border: 0!important;}
+.border-0 a {
+  border: 0 !important;
+}
 
-header a, .topics a, .gov-buttons a, a.news-image, .most-popular a, .news-list a.thumb-link, .topic-popular a, a.related-toggle, .footer-logo a, .footer-social a, .close-page-useful, .rsbtn a {
-text-decoration: none;
-border-width: 0;
+header a,
+.topics a,
+.gov-buttons a,
+a.news-image,
+.most-popular a,
+.news-list a.thumb-link,
+.topic-popular a,
+a.related-toggle,
+.footer-logo a,
+.footer-social a,
+.close-page-useful,
+.rsbtn a {
+  text-decoration: none;
+  border-width: 0;
 }
 
 .accToggle.external::after {
-content: none;
+  content: none;
 }
 
 // .homepage .featured-link {
@@ -100,65 +122,87 @@ content: none;
 // }
 
 // .homepage .homepage-alert-wrapper {
-//     background-color:$ntg-background-light; 
+//     background-color:$ntg-background-light;
 //     padding: 18px;
 // }
 
 .featured-link.mobile {
-    background-color: $ntg-sky-blue; 
-    margin: 0 -8px 0 -8px; 
-    padding-left: 8px !important;
-    border: none;
+  background-color: $ntg-sky-blue;
+  margin: 0 -8px 0 -8px;
+  padding-left: 8px !important;
+  border: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    &.overline {
-        position: relative;
-        padding-top: 1rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.overline {
+    position: relative;
+    padding-top: 1rem;
 
-        &::before {
-            content: '';
-            background-color: $secondary;
-            width: 70px;
-            height: 5px;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        > a {
-            color: inherit;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+    &::before {
+      content: "";
+      background-color: $secondary;
+      width: 70px;
+      height: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
+
+    > a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.content__main p {
+  margin-top: $gap-gap-4;
+  margin-bottom: $gap-gap-4;
 }
 
 main ul.marker {
-    &-arrow {
-        padding-left: 20px;
+  &-arrow {
+    padding-left: 20px;
 
-        li {
-            &::before {
-                content: '\f178';
-                font-size: 10px;
-                top: -2px;
-            }
-        }
+    li {
+      &::before {
+        content: "\f178";
+        font-size: 10px;
+        top: -2px;
+      }
     }
+  }
 
-    &-chevron {
-        padding-left: 20px;
+  &-chevron {
+    padding-left: 20px;
 
-        li {
-            &::before {
-                content: '\f054';
-                font-size: 10px;
-                top: -2px;
-            }
-        }
+    li {
+      &::before {
+        content: "\f054";
+        font-size: 10px;
+        top: -2px;
+      }
     }
+  }
 }
+
+// .content__main {
+//   & h1,
+//   h2,
+//   h3,
+//   h4,
+//   h5,
+//   h6 {
+//     margin-top: $gap-gap-12;
+//     margin-bottom: $gap-gap-4;
+//   }
+// }

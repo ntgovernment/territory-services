@@ -1,52 +1,48 @@
 .table {
-    &-primary {
-       --bs-table-bg : #FFFFFF;
-       --bs-table-striped-bg: #EBF4FA;
-       --bs-table-border-color: var(--bs-table-striped-bg);
-       border: 1px solid $primary;
+  border-radius: $rounding-rounded-lg;
+  border: 2px solid $semantic-colours-bg-secondary-grey-200;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
 
-       thead {
-            --bs-table-bg: #{$primary};
-            --bs-table-color: #{$white};
-            color: var(--bs-table-color);
-       }
+  & > tbody > tr > td {
+    border-bottom: 1px solid $semantic-colours-bg-secondary-grey-100;
+    border-left: none;
+    border-right: none;
+    padding: $padding-p-4 $padding-p-6;
+  }
 
-       thead, tbody, tfoot, tr, td, th {
-            border-color: var(--bs-table-striped-bg);
-        }
+  & > thead > tr > th {
+    background-color: $semantic-colours-bg-secondary-grey-200;
+    border: none; // <-- Prevent cell borders from interfering
+    padding: $padding-p-4 $padding-p-6;
+  }
+
+  &.table-striped {
+    --bs-table-striped-bg: var($semantic-colours-bg-secondary-grey-100);
+
+    & > :not(caption) > thead > tr > :nth-child(even) {
+      background-color: $semantic-colours-bg-secondary-grey-200;
+    }
+  }
+
+  .table-striped-columns {
+    --bs-table-striped-bg: var($semantic-colours-bg-secondary-grey-100);
+
+    // Ensure th is always uniform, not striped
+    & thead > tr > th {
+      background-color: $semantic-colours-bg-secondary-grey-200 !important;
     }
 
-    &-light-blue {
-       --bs-table-bg : #FFFFFF;
-       --bs-table-striped-bg: #EBF4FA;
-       --bs-table-border-color: var(--bs-table-striped-bg);
-       border: 1px solid $ts-light-blue;
-
-       thead {
-            --bs-table-bg: #{$ts-light-blue};
-            --bs-table-color: #{$black};
-            color: var(--bs-table-color);
-       }
-
-       thead, tbody, tfoot, tr, td, th {
-            border-color: var(--bs-table-striped-bg);
-        }
+    & tbody > tr > td {
+      border-bottom: none !important;
     }
+  }
 
-    &-light-grey {
-       --bs-table-bg : #FFFFFF;
-       --bs-table-striped-bg: #F8F8F8;
-       --bs-table-border-color: var(--bs-table-striped-bg);
-       border: 1px solid $ts-grey-light;
-
-       thead {
-            --bs-table-bg: #{$ts-grey-light};
-            --bs-table-color: #{$black};
-            color: var(--bs-table-color);
-       }
-
-       thead, tbody, tfoot, tr, td, th {
-            border-color: var(--bs-table-striped-bg);
-        }
+  &.table-highlight {
+    & > thead > tr > th {
+      background-color: $semantic-colours-bg-primary-charcoal-500;
+      color: $semantic-colours-text-contrast-colour;
     }
+  }
 }
