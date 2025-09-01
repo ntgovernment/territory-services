@@ -19,7 +19,8 @@ $(function() {
   });
 
   $(document).keyup(function(e) {
-    if (e.keyCode == 27) { // escape key
+    // Only trigger quickExit if the quick exit button exists
+    if ($("#quickexit").length && e.keyCode == 27) { // escape key
       quickExit();
     }
   });
