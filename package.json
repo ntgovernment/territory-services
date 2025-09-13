@@ -4,13 +4,20 @@
   "description": "NTGC Design system",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "grunt run",
+    "build": "grunt territory-services",
+    "dev": "grunt run",
+    "grunt": "grunt",
+    "sass": "grunt sass:territoryServices",
+    "watch": "grunt watch",
+    "serve": "grunt connect:server"
   },
   "author": "Tech",
   "license": "MIT",
   "devDependencies": {
     "grunt": "^1.6.1",
-    "grunt-cli": "^1.4.3",
+    "grunt-cli": "^1.5.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-connect": "^3.0.0",
     "grunt-contrib-cssmin": "^4.0.0",
