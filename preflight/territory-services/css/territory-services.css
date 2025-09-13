@@ -17969,6 +17969,14 @@ h6.overline > a:hover,
   margin-bottom: 16px;
 }
 
+.content__main:empty {
+  display: none;
+}
+
+.content__main h3, .content__main .h3, .content__main .ntg-side-nav__title {
+  padding-top: 8px !important;
+}
+
 main ul.marker-arrow {
   padding-left: 20px;
 }
@@ -18695,6 +18703,7 @@ Alerts
 */
 .ntg-callout {
   border-left-width: 0.5rem !important;
+  margin-bottom: 0px !important;
   /* Alert border and icons */
   /* Alert spacing */
 }

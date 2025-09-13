@@ -169,6 +169,14 @@ h6 {
   margin-bottom: $gap-gap-4;
 }
 
+.content__main:empty {
+  display: none;
+}
+
+.content__main h3 {
+  padding-top: 8px !important;
+}
+
 main ul.marker {
   &-arrow {
     padding-left: 20px;

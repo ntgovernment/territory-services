@@ -6,6 +6,7 @@ Alerts
 .ntg-callout {
   @extend .alert;
   border-left-width: 0.5rem !important;
+  margin-bottom: 0px !important;
 
   /* Alert border and icons */
   &__icon {
