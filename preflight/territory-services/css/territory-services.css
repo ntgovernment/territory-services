@@ -17063,11 +17063,11 @@ div[data-component=ntg-sticky-nav] {
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
 }
 .btn-primary {
-  --bs-btn-color: #FFFFFF;
+  --bs-btn-color: var(--btn-primary-default-text, #ffffff);
   --bs-btn-hover-color: var(--bs-btn-color);
   --bs-btn-active-color: var(--bs-btn-color);
-  --bs-btn-bg: #d6410a;
-  --bs-btn-border-color: #d6410a;
+  --bs-btn-bg: var(--btn-primary-default, #d6410a);
+  --bs-btn-border-color: var(--btn-primary-default, #d6410a);
   --bs-btn-hover-bg: #ca4904;
   --bs-btn-hover-border-color: #ca4904;
   --bs-btn-active-bg: #b14004;
@@ -17077,6 +17077,16 @@ div[data-component=ntg-sticky-nav] {
   --bs-btn-disabled-bg: #707070;
   --bs-btn-disabled-border-color: #707070;
   --bs-btn-disabled-opacity: 1;
+  height: 52px;
+  padding: 4px 32px;
+  border-radius: 8px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 29px;
+  gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .btn-primary:focus-visible {
   background-color: var(--bs-btn-bg);
@@ -17116,7 +17126,7 @@ div[data-component=ntg-sticky-nav] {
   text-decoration: underline;
 }
 .btn-tertiary:focus {
-  outline: 3px solid #FAD0BB;
+  outline: 3px solid #fad0bb;
   outline-offset: 10px;
 }
 .btn-arrow::after {
@@ -18500,16 +18510,22 @@ main ul.marker-chevron li::before {
   outline-offset: 2px;
 }
 .decision-tree input[type=button] {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border: 2px solid #d6410a;
-  background: #d6410a;
-  color: #ffffff;
-  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 4px 32px;
+  border: 2px solid var(--btn-primary-default, #d6410a);
+  background: var(--btn-primary-default, #d6410a);
+  color: var(--btn-primary-default-text, #ffffff);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 29px;
   border-radius: 8px;
   margin: 0 10px 24px 0;
   transition: all 300ms ease-in;
   cursor: pointer;
+  gap: 8px;
 }
 .decision-tree input[type=button]:hover {
   border: 2px solid #ca4904;

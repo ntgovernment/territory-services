@@ -118,16 +118,22 @@
 
   // Style explicit buttons to match .btn-primary
   input[type="button"] {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border: 2px solid $secondary;
-    background: $secondary;
-    color: $ntg-color-white;
-    font-weight: bold;
-    border-radius: $border-radius;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding: 4px 32px;
+    border: 2px solid var(--btn-primary-default, #d6410a);
+    background: var(--btn-primary-default, #d6410a);
+    color: var(--btn-primary-default-text, #ffffff);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 29px;
+    border-radius: 8px;
     margin: 0 10px 24px 0;
     transition: all 300ms ease-in;
     cursor: pointer;
+    gap: 8px;
   }
 
   input[type="button"]:hover {
