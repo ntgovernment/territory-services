@@ -19286,6 +19286,7 @@ select.form-select, .sq-form-question-answer select, .decision-tree select.sq-fo
   background: #ffffff;
   border-radius: 8px;
   color: inherit;
+  font-size: 19px;
   transition: all 300ms ease-in;
   cursor: pointer;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343741' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
@@ -19310,25 +19311,59 @@ select.form-select.is-invalid,
 .decision-tree .sq-form-question-error select.sq-form-field,
 .sq-form-question-error .decision-tree select.sq-form-field {
   border: 2px solid #a60f37;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23a60f37' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
 }
 select.form-select.is-valid, .sq-form-question-answer select.is-valid, .decision-tree select.is-valid.sq-form-field {
   border: 2px solid #107810;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23107810' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343741' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E") !important;
+}
+select.form-select.is-loading, .sq-form-question-answer select.is-loading, .decision-tree select.is-loading.sq-form-field, select.form-select[data-loading=true], .sq-form-question-answer select[data-loading=true], .decision-tree select[data-loading=true].sq-form-field {
+  background-color: var(--input-readonly, #f8f8f8);
+  border: 2px solid var(--border-subtle-01, #e8e8e8);
+  color: var(--text-alt, #707070);
+  cursor: wait;
+  pointer-events: none;
+  background-image: none;
+  position: relative;
+}
+select.form-select.is-loading::after, .sq-form-question-answer select.is-loading::after, .decision-tree select.is-loading.sq-form-field::after, select.form-select[data-loading=true]::after, .sq-form-question-answer select[data-loading=true]::after, .decision-tree select[data-loading=true].sq-form-field::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid rgba(52, 55, 65, 0.2);
+  border-top-color: var(--icon-default, #343741);
+  animation: spinner 0.8s linear infinite;
 }
 select.form-select:disabled, .sq-form-question-answer select:disabled, .decision-tree select.sq-form-field:disabled, select.form-select[disabled], .sq-form-question-answer select[disabled], .decision-tree select[disabled].sq-form-field {
-  background-color: #e8e8e8;
-  border: 2px solid #e8e8e8;
+  background-color: var(--input-disabled, #e8e8e8);
+  border: none;
   cursor: not-allowed;
-  color: #707070;
+  color: var(--text-disabled, #707070);
   opacity: 1;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23707070' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
 }
 select.form-select option:first-child, .sq-form-question-answer select option:first-child, .decision-tree select.sq-form-field option:first-child {
   color: #707070;
 }
 select.form-select option:not(:first-child), .sq-form-question-answer select option:not(:first-child), .decision-tree select.sq-form-field option:not(:first-child) {
   color: inherit;
+}
+select.form-select option, .sq-form-question-answer select option, .decision-tree select.sq-form-field option {
+  padding: 16px;
+  font-size: 19px;
+  line-height: 29px;
+  color: var(--text-default, #343741);
+  background: #ffffff;
+}
+select.form-select option:checked, .sq-form-question-answer select option:checked, .decision-tree select.sq-form-field option:checked,
+select.form-select option:hover,
+.sq-form-question-answer select option:hover,
+.decision-tree select.sq-form-field option:hover {
+  background: var(--bg-default-hover, #ebf0f5);
 }
 
 @media (max-width: 600px) {
@@ -19339,6 +19374,14 @@ select.form-select option:not(:first-child), .sq-form-question-answer select opt
   select.form-select:focus, .sq-form-question-answer select:focus, .decision-tree select.sq-form-field:focus, select.form-select:focus-visible, .sq-form-question-answer select:focus-visible, .decision-tree select.sq-form-field:focus-visible {
     width: 100%;
     max-width: 100%;
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
   }
 }
 /*

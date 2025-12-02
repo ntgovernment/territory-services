@@ -63,6 +63,7 @@ select.form-select {
   background: #ffffff;
   border-radius: $border-radius; // 8px
   color: inherit;
+  font-size: 19px;
   transition: all 300ms ease-in;
   cursor: pointer;
 
@@ -93,26 +94,56 @@ select.form-select {
   // Red border for invalid selects
   &.is-invalid {
     border: 2px solid $status-error; // #a60f37
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23a60f37' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+    // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23a60f37' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
   }
 
   // Success State (validation passed)
   // Green border for validated selects
   &.is-valid {
     border: 2px solid $success; // #107810
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23107810' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343741' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E") !important;
+  }
+
+  // Loading State
+  // Grey background with spinner icon and "Please wait..." text
+  &.is-loading,
+  &[data-loading="true"] {
+    background-color: var(--input-readonly, #f8f8f8);
+    border: 2px solid var(--border-subtle-01, #e8e8e8);
+    color: var(--text-alt, #707070);
+    cursor: wait;
+    pointer-events: none;
+
+    // Remove chevron and add spinner
+    background-image: none;
+    position: relative;
+
+    // Add spinner using pseudo-element
+    &::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 3px solid rgba(52, 55, 65, 0.2);
+      border-top-color: var(--icon-default, #343741);
+      animation: spinner 0.8s linear infinite;
+    }
   }
 
   // Disabled State
-  // Grey background with not-allowed cursor
+  // Grey background with not-allowed cursor, no border
   &:disabled,
   &[disabled] {
-    background-color: $ts-grey-light; // #e8e8e8
-    border: 2px solid $ts-grey-light;
+    background-color: var(--input-disabled, #e8e8e8);
+    border: none;
     cursor: not-allowed;
-    color: $ts-grey-medium;
+    color: var(--text-disabled, #707070);
     opacity: 1; // Override Bootstrap default opacity
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23707070' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
   }
 
   // Placeholder/first option styling
@@ -122,6 +153,20 @@ select.form-select {
 
   option:not(:first-child) {
     color: inherit;
+  }
+
+  // Option element styling
+  option {
+    padding: 16px;
+    font-size: 19px;
+    line-height: 29px;
+    color: var(--text-default, #343741);
+    background: #ffffff;
+  }
+
+  option:checked,
+  option:hover {
+    background: var(--bg-default-hover, #ebf0f5);
   }
 }
 
@@ -138,5 +183,15 @@ select.form-select {
       width: 100%;
       max-width: 100%;
     }
+  }
+}
+
+// Spinner animation for loading state
+@keyframes spinner {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
   }
 }
