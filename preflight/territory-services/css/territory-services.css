@@ -2223,7 +2223,7 @@ textarea.form-control-lg {
   height: calc(1.5em + 1rem + 2px);
 }
 
-.form-select, .sq-form-question-answer select {
+.form-select, .sq-form-question-answer select, .decision-tree select.sq-form-field {
   display: block;
   width: 100%;
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
@@ -2243,23 +2243,23 @@ textarea.form-control-lg {
   appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-select, .sq-form-question-answer select {
+  .form-select, .sq-form-question-answer select, .decision-tree select.sq-form-field {
     transition: none;
   }
 }
-.form-select:focus, .sq-form-question-answer select:focus {
+.form-select:focus, .sq-form-question-answer select:focus, .decision-tree select.sq-form-field:focus {
   border-color: rgb(134, 182.5, 254);
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-.form-select[multiple], .sq-form-question-answer select[multiple], .form-select[size]:not([size="1"]), .sq-form-question-answer select[size]:not([size="1"]) {
+.form-select[multiple], .sq-form-question-answer select[multiple], .decision-tree select[multiple].sq-form-field, .form-select[size]:not([size="1"]), .sq-form-question-answer select[size]:not([size="1"]), .decision-tree select[size].sq-form-field:not([size="1"]) {
   padding-right: 0.75rem;
   background-image: none;
 }
-.form-select:disabled, .sq-form-question-answer select:disabled {
+.form-select:disabled, .sq-form-question-answer select:disabled, .decision-tree select.sq-form-field:disabled {
   background-color: #e9ecef;
 }
-.form-select:-moz-focusring, .sq-form-question-answer select:-moz-focusring {
+.form-select:-moz-focusring, .sq-form-question-answer select:-moz-focusring, .decision-tree select.sq-form-field:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #212529;
 }
@@ -2286,7 +2286,7 @@ textarea.form-control-lg {
   padding-left: 1.5em;
   margin-bottom: 0.125rem;
 }
-.form-check .form-check-input, .form-check .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-check input[type=checkbox], .form-check .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-check input[type=radio], .sq-form-question-option-list .sq-form-question-answer ul li .form-check-input, .sq-form-question-option-list .sq-form-question-answer ul li input[type=checkbox], .sq-form-question-option-list .sq-form-question-answer ul li input[type=radio], .sq-form-question-tickbox-list .sq-form-question-answer ul li .form-check-input, .sq-form-question-tickbox-list .sq-form-question-answer ul li input[type=checkbox], .sq-form-question-tickbox-list .sq-form-question-answer ul li input[type=radio] {
+.form-check .form-check-input, .form-check .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-check input[type=checkbox], .form-check .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-check input[type=radio], .sq-form-question-option-list .sq-form-question-answer ul li .form-check-input, .sq-form-question-option-list .sq-form-question-answer ul li input[type=checkbox], .sq-form-question-option-list .sq-form-question-answer ul li input[type=radio], .sq-form-question-tickbox-list .sq-form-question-answer ul li .form-check-input, .sq-form-question-tickbox-list .sq-form-question-answer ul li input[type=checkbox], .sq-form-question-tickbox-list .sq-form-question-answer ul li input[type=radio], .form-check .decision-tree input[type=radio], .decision-tree .form-check input[type=radio] {
   float: left;
   margin-left: -1.5em;
 }
@@ -2296,13 +2296,13 @@ textarea.form-control-lg {
   padding-left: 0;
   text-align: right;
 }
-.form-check-reverse .form-check-input, .form-check-reverse .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-check-reverse input[type=checkbox], .form-check-reverse .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-check-reverse input[type=radio] {
+.form-check-reverse .form-check-input, .form-check-reverse .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-check-reverse input[type=checkbox], .form-check-reverse .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-check-reverse input[type=radio], .form-check-reverse .decision-tree input[type=radio], .decision-tree .form-check-reverse input[type=radio] {
   float: right;
   margin-right: -1.5em;
   margin-left: 0;
 }
 
-.form-check-input, .sq-form-question-answer input[type=checkbox], .sq-form-question-answer input[type=radio] {
+.form-check-input, .sq-form-question-answer input[type=checkbox], .sq-form-question-answer input[type=radio], .decision-tree input[type=radio] {
   width: 1em;
   height: 1em;
   margin-top: 0.25em;
@@ -2315,41 +2315,41 @@ textarea.form-control-lg {
   appearance: none;
   print-color-adjust: exact;
 }
-.form-check-input[type=checkbox], .sq-form-question-answer input[type=checkbox], .sq-form-question-answer input[type=checkbox][type=radio] {
+.form-check-input[type=checkbox], .sq-form-question-answer input[type=checkbox], .sq-form-question-answer input[type=checkbox][type=radio], .decision-tree input[type=checkbox][type=radio] {
   border-radius: 0.25em;
 }
-.form-check-input[type=radio], .sq-form-question-answer input[type=radio][type=checkbox], .sq-form-question-answer input[type=radio] {
+.form-check-input[type=radio], .sq-form-question-answer input[type=radio][type=checkbox], .sq-form-question-answer input[type=radio], .decision-tree input[type=radio] {
   border-radius: 50%;
 }
-.form-check-input:active, .sq-form-question-answer input[type=checkbox]:active, .sq-form-question-answer input[type=radio]:active {
+.form-check-input:active, .sq-form-question-answer input[type=checkbox]:active, .sq-form-question-answer input[type=radio]:active, .decision-tree input[type=radio]:active {
   filter: brightness(90%);
 }
-.form-check-input:focus, .sq-form-question-answer input[type=checkbox]:focus, .sq-form-question-answer input[type=radio]:focus {
+.form-check-input:focus, .sq-form-question-answer input[type=checkbox]:focus, .sq-form-question-answer input[type=radio]:focus, .decision-tree input[type=radio]:focus {
   border-color: rgb(134, 182.5, 254);
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-.form-check-input:checked, .sq-form-question-answer input[type=checkbox]:checked, .sq-form-question-answer input[type=radio]:checked {
+.form-check-input:checked, .sq-form-question-answer input[type=checkbox]:checked, .sq-form-question-answer input[type=radio]:checked, .decision-tree input[type=radio]:checked {
   background-color: #336699;
   border-color: #0d6efd;
 }
-.form-check-input:checked[type=checkbox], .sq-form-question-answer input:checked[type=checkbox] {
+.form-check-input:checked[type=checkbox], .sq-form-question-answer input:checked[type=checkbox], .decision-tree input[type=radio]:checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
 }
-.form-check-input:checked[type=radio], .sq-form-question-answer input:checked[type=radio] {
+.form-check-input:checked[type=radio], .sq-form-question-answer input:checked[type=radio], .decision-tree input:checked[type=radio] {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23336699'/%3E%3C/svg%3E");
 }
-.form-check-input[type=checkbox]:indeterminate, .sq-form-question-answer input[type=checkbox]:indeterminate {
+.form-check-input[type=checkbox]:indeterminate, .sq-form-question-answer input[type=checkbox]:indeterminate, .decision-tree input[type=checkbox][type=radio]:indeterminate {
   background-color: #0d6efd;
   border-color: #0d6efd;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
-.form-check-input:disabled, .sq-form-question-answer input[type=checkbox]:disabled, .sq-form-question-answer input[type=radio]:disabled {
+.form-check-input:disabled, .sq-form-question-answer input[type=checkbox]:disabled, .sq-form-question-answer input[type=radio]:disabled, .decision-tree input[type=radio]:disabled {
   pointer-events: none;
   filter: none;
   opacity: 0.5;
 }
-.form-check-input[disabled] ~ .form-check-label, .sq-form-question-answer .form-check-input[disabled] ~ input[type=checkbox] + label, .sq-form-question-answer .form-check-input[disabled] ~ input[type=radio] + label, .sq-form-question-answer input[disabled][type=checkbox] ~ .form-check-label, .sq-form-question-answer input[disabled][type=checkbox] ~ input[type=checkbox] + label, .sq-form-question-answer input[disabled][type=checkbox] + label, .sq-form-question-answer input[disabled][type=checkbox] ~ input[type=radio] + label, .sq-form-question-answer input[disabled][type=radio] ~ .form-check-label, .sq-form-question-answer input[disabled][type=radio] ~ input[type=checkbox] + label, .sq-form-question-answer input[disabled][type=radio] ~ input[type=radio] + label, .sq-form-question-answer input[disabled][type=radio] + label, .form-check-input:disabled ~ .form-check-label, .sq-form-question-answer .form-check-input:disabled ~ input[type=checkbox] + label, .sq-form-question-answer .form-check-input:disabled ~ input[type=radio] + label, .sq-form-question-answer input[type=checkbox]:disabled ~ .form-check-label, .sq-form-question-answer input[type=checkbox]:disabled ~ input[type=checkbox] + label, .sq-form-question-answer input[type=checkbox]:disabled + label, .sq-form-question-answer input[type=checkbox]:disabled ~ input[type=radio] + label, .sq-form-question-answer input[type=radio]:disabled ~ .form-check-label, .sq-form-question-answer input[type=radio]:disabled ~ input[type=checkbox] + label, .sq-form-question-answer input[type=radio]:disabled ~ input[type=radio] + label, .sq-form-question-answer input[type=radio]:disabled + label {
+.form-check-input[disabled] ~ .form-check-label, .sq-form-question-answer .form-check-input[disabled] ~ input[type=checkbox] + label, .sq-form-question-answer .form-check-input[disabled] ~ input[type=radio] + label, .sq-form-question-answer input[disabled][type=checkbox] ~ .form-check-label, .sq-form-question-answer input[disabled][type=checkbox] ~ input[type=checkbox] + label, .sq-form-question-answer input[disabled][type=checkbox] + label, .sq-form-question-answer input[disabled][type=checkbox] ~ input[type=radio] + label, .sq-form-question-answer input[disabled][type=radio] ~ .form-check-label, .sq-form-question-answer input[disabled][type=radio] ~ input[type=checkbox] + label, .sq-form-question-answer input[disabled][type=radio] ~ input[type=radio] + label, .sq-form-question-answer input[disabled][type=radio] + label, .decision-tree input[disabled][type=radio] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label, .sq-form-question-answer .form-check-input:disabled ~ input[type=checkbox] + label, .sq-form-question-answer .form-check-input:disabled ~ input[type=radio] + label, .sq-form-question-answer input[type=checkbox]:disabled ~ .form-check-label, .sq-form-question-answer input[type=checkbox]:disabled ~ input[type=checkbox] + label, .sq-form-question-answer input[type=checkbox]:disabled + label, .sq-form-question-answer input[type=checkbox]:disabled ~ input[type=radio] + label, .sq-form-question-answer input[type=radio]:disabled ~ .form-check-label, .sq-form-question-answer input[type=radio]:disabled ~ input[type=checkbox] + label, .sq-form-question-answer input[type=radio]:disabled ~ input[type=radio] + label, .sq-form-question-answer input[type=radio]:disabled + label, .decision-tree input[type=radio]:disabled ~ .form-check-label {
   cursor: default;
   opacity: 0.5;
 }
@@ -2357,7 +2357,7 @@ textarea.form-control-lg {
 .form-switch {
   padding-left: 2.5em;
 }
-.form-switch .form-check-input, .form-switch .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-switch input[type=checkbox], .form-switch .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-switch input[type=radio] {
+.form-switch .form-check-input, .form-switch .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-switch input[type=checkbox], .form-switch .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-switch input[type=radio], .form-switch .decision-tree input[type=radio], .decision-tree .form-switch input[type=radio] {
   width: 2em;
   margin-left: -2.5em;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
@@ -2366,14 +2366,14 @@ textarea.form-control-lg {
   transition: background-position 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-switch .form-check-input, .form-switch .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-switch input[type=checkbox], .form-switch .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-switch input[type=radio] {
+  .form-switch .form-check-input, .form-switch .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-switch input[type=checkbox], .form-switch .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-switch input[type=radio], .form-switch .decision-tree input[type=radio], .decision-tree .form-switch input[type=radio] {
     transition: none;
   }
 }
-.form-switch .form-check-input:focus, .form-switch .sq-form-question-answer input[type=checkbox]:focus, .sq-form-question-answer .form-switch input[type=checkbox]:focus, .form-switch .sq-form-question-answer input[type=radio]:focus, .sq-form-question-answer .form-switch input[type=radio]:focus {
+.form-switch .form-check-input:focus, .form-switch .sq-form-question-answer input[type=checkbox]:focus, .sq-form-question-answer .form-switch input[type=checkbox]:focus, .form-switch .sq-form-question-answer input[type=radio]:focus, .sq-form-question-answer .form-switch input[type=radio]:focus, .form-switch .decision-tree input[type=radio]:focus, .decision-tree .form-switch input[type=radio]:focus {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgb%28134, 182.5, 254%29'/%3e%3c/svg%3e");
 }
-.form-switch .form-check-input:checked, .form-switch .sq-form-question-answer input[type=checkbox]:checked, .sq-form-question-answer .form-switch input[type=checkbox]:checked, .form-switch .sq-form-question-answer input[type=radio]:checked, .sq-form-question-answer .form-switch input[type=radio]:checked {
+.form-switch .form-check-input:checked, .form-switch .sq-form-question-answer input[type=checkbox]:checked, .sq-form-question-answer .form-switch input[type=checkbox]:checked, .form-switch .sq-form-question-answer input[type=radio]:checked, .sq-form-question-answer .form-switch input[type=radio]:checked, .form-switch .decision-tree input[type=radio]:checked, .decision-tree .form-switch input[type=radio]:checked {
   background-position: right center;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 }
@@ -2381,7 +2381,7 @@ textarea.form-control-lg {
   padding-right: 2.5em;
   padding-left: 0;
 }
-.form-switch.form-check-reverse .form-check-input, .form-switch.form-check-reverse .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-switch.form-check-reverse input[type=checkbox], .form-switch.form-check-reverse .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-switch.form-check-reverse input[type=radio] {
+.form-switch.form-check-reverse .form-check-input, .form-switch.form-check-reverse .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-switch.form-check-reverse input[type=checkbox], .form-switch.form-check-reverse .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-switch.form-check-reverse input[type=radio], .form-switch.form-check-reverse .decision-tree input[type=radio], .decision-tree .form-switch.form-check-reverse input[type=radio] {
   margin-right: -2.5em;
   margin-left: 0;
 }
@@ -2491,7 +2491,8 @@ textarea.form-control-lg {
 .sq-form-question-answer .form-floating > textarea, .decision-tree .form-floating > input[type=text].sq-form-field,
 .form-floating > .form-control-plaintext,
 .form-floating > .form-select,
-.sq-form-question-answer .form-floating > select {
+.sq-form-question-answer .form-floating > select,
+.decision-tree .form-floating > select.sq-form-field {
   height: calc(3.5rem + 2px);
   line-height: 1.25;
 }
@@ -2540,7 +2541,7 @@ textarea.form-control-lg {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-select, .sq-form-question-answer .form-floating > select {
+.form-floating > .form-select, .sq-form-question-answer .form-floating > select, .decision-tree .form-floating > select.sq-form-field {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
@@ -2552,7 +2553,8 @@ textarea.form-control-lg {
 .decision-tree .form-floating > input[type=text].sq-form-field:not(:placeholder-shown) ~ label,
 .form-floating > .form-control-plaintext ~ label,
 .form-floating > .form-select ~ label,
-.sq-form-question-answer .form-floating > select ~ label {
+.sq-form-question-answer .form-floating > select ~ label,
+.decision-tree .form-floating > select.sq-form-field ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
@@ -2576,6 +2578,7 @@ textarea.form-control-lg {
 .sq-form-question-answer .input-group > textarea, .decision-tree .input-group > input[type=text].sq-form-field,
 .input-group > .form-select,
 .sq-form-question-answer .input-group > select,
+.decision-tree .input-group > select.sq-form-field,
 .input-group > .form-floating {
   position: relative;
   flex: 1 1 auto;
@@ -2586,6 +2589,7 @@ textarea.form-control-lg {
 .sq-form-question-answer .input-group > textarea:focus, .decision-tree .input-group > input[type=text].sq-form-field:focus,
 .input-group > .form-select:focus,
 .sq-form-question-answer .input-group > select:focus,
+.decision-tree .input-group > select.sq-form-field:focus,
 .input-group > .form-floating:focus-within {
   z-index: 5;
 }
@@ -2616,6 +2620,7 @@ textarea.form-control-lg {
 .sq-form-question-answer .input-group-lg > textarea, .decision-tree .input-group-lg > input[type=text].sq-form-field,
 .input-group-lg > .form-select,
 .sq-form-question-answer .input-group-lg > select,
+.decision-tree .input-group-lg > select.sq-form-field,
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn {
   padding: 0.5rem 1rem;
@@ -2627,6 +2632,7 @@ textarea.form-control-lg {
 .sq-form-question-answer .input-group-sm > textarea, .decision-tree .input-group-sm > input[type=text].sq-form-field,
 .input-group-sm > .form-select,
 .sq-form-question-answer .input-group-sm > select,
+.decision-tree .input-group-sm > select.sq-form-field,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn {
   padding: 0.25rem 0.5rem;
@@ -2634,9 +2640,10 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
 }
 
-.input-group-lg > .form-select, .sq-form-question-answer .input-group-lg > select,
+.input-group-lg > .form-select, .sq-form-question-answer .input-group-lg > select, .decision-tree .input-group-lg > select.sq-form-field,
 .input-group-sm > .form-select,
-.sq-form-question-answer .input-group-sm > select {
+.sq-form-question-answer .input-group-sm > select,
+.decision-tree .input-group-sm > select.sq-form-field {
   padding-right: 3rem;
 }
 
@@ -2647,7 +2654,8 @@ textarea.form-control-lg {
 .sq-form-question-answer .input-group:not(.has-validation) > .form-floating:not(:last-child) > textarea,
 .decision-tree .input-group:not(.has-validation) > .form-floating:not(:last-child) > input[type=text].sq-form-field,
 .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select,
-.sq-form-question-answer .input-group:not(.has-validation) > .form-floating:not(:last-child) > select {
+.sq-form-question-answer .input-group:not(.has-validation) > .form-floating:not(:last-child) > select,
+.decision-tree .input-group:not(.has-validation) > .form-floating:not(:last-child) > select.sq-form-field {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -2658,7 +2666,8 @@ textarea.form-control-lg {
 .sq-form-question-answer .input-group.has-validation > .form-floating:nth-last-child(n+3) > textarea,
 .decision-tree .input-group.has-validation > .form-floating:nth-last-child(n+3) > input[type=text].sq-form-field,
 .input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-select,
-.sq-form-question-answer .input-group.has-validation > .form-floating:nth-last-child(n+3) > select {
+.sq-form-question-answer .input-group.has-validation > .form-floating:nth-last-child(n+3) > select,
+.decision-tree .input-group.has-validation > .form-floating:nth-last-child(n+3) > select.sq-form-field {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -2670,7 +2679,8 @@ textarea.form-control-lg {
 .input-group > .form-floating:not(:first-child) > .form-control, .sq-form-question-answer .input-group > .form-floating:not(:first-child) > input:not([type=checkbox]):not([type=radio]),
 .sq-form-question-answer .input-group > .form-floating:not(:first-child) > textarea, .decision-tree .input-group > .form-floating:not(:first-child) > input[type=text].sq-form-field,
 .input-group > .form-floating:not(:first-child) > .form-select,
-.sq-form-question-answer .input-group > .form-floating:not(:first-child) > select {
+.sq-form-question-answer .input-group > .form-floating:not(:first-child) > select,
+.decision-tree .input-group > .form-floating:not(:first-child) > select.sq-form-field {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -2731,16 +2741,16 @@ textarea.form-control-lg {
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .form-select:valid, .was-validated .sq-form-question-answer select:valid, .sq-form-question-answer .was-validated select:valid, .form-select.is-valid, .sq-form-question-answer select.is-valid {
+.was-validated .form-select:valid, .was-validated .sq-form-question-answer select:valid, .sq-form-question-answer .was-validated select:valid, .was-validated .decision-tree select.sq-form-field:valid, .decision-tree .was-validated select.sq-form-field:valid, .form-select.is-valid, .sq-form-question-answer select.is-valid, .decision-tree select.is-valid.sq-form-field {
   border-color: #198754;
 }
-.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .sq-form-question-answer select:valid:not([multiple]):not([size]), .sq-form-question-answer .was-validated select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .was-validated .sq-form-question-answer select:valid:not([multiple])[size="1"], .sq-form-question-answer .was-validated select:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .sq-form-question-answer select.is-valid:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"], .sq-form-question-answer select.is-valid:not([multiple])[size="1"] {
+.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .sq-form-question-answer select:valid:not([multiple]):not([size]), .sq-form-question-answer .was-validated select:valid:not([multiple]):not([size]), .was-validated .decision-tree select.sq-form-field:valid:not([multiple]):not([size]), .decision-tree .was-validated select.sq-form-field:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .was-validated .sq-form-question-answer select:valid:not([multiple])[size="1"], .sq-form-question-answer .was-validated select:valid:not([multiple])[size="1"], .was-validated .decision-tree select.sq-form-field:valid:not([multiple])[size="1"], .decision-tree .was-validated select.sq-form-field:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .sq-form-question-answer select.is-valid:not([multiple]):not([size]), .decision-tree select.is-valid.sq-form-field:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"], .sq-form-question-answer select.is-valid:not([multiple])[size="1"], .decision-tree select.is-valid.sq-form-field:not([multiple])[size="1"] {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-select:valid:focus, .was-validated .sq-form-question-answer select:valid:focus, .sq-form-question-answer .was-validated select:valid:focus, .form-select.is-valid:focus, .sq-form-question-answer select.is-valid:focus {
+.was-validated .form-select:valid:focus, .was-validated .sq-form-question-answer select:valid:focus, .sq-form-question-answer .was-validated select:valid:focus, .was-validated .decision-tree select.sq-form-field:valid:focus, .decision-tree .was-validated select.sq-form-field:valid:focus, .form-select.is-valid:focus, .sq-form-question-answer select.is-valid:focus, .decision-tree select.is-valid.sq-form-field:focus {
   border-color: #198754;
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
@@ -2749,20 +2759,20 @@ textarea.form-control-lg {
   width: calc(3rem + calc(1.5em + 0.75rem));
 }
 
-.was-validated .form-check-input:valid, .was-validated .sq-form-question-answer input[type=checkbox]:valid, .sq-form-question-answer .was-validated input[type=checkbox]:valid, .was-validated .sq-form-question-answer input[type=radio]:valid, .sq-form-question-answer .was-validated input[type=radio]:valid, .form-check-input.is-valid, .sq-form-question-answer input.is-valid[type=checkbox], .sq-form-question-answer input.is-valid[type=radio] {
+.was-validated .form-check-input:valid, .was-validated .sq-form-question-answer input[type=checkbox]:valid, .sq-form-question-answer .was-validated input[type=checkbox]:valid, .was-validated .sq-form-question-answer input[type=radio]:valid, .sq-form-question-answer .was-validated input[type=radio]:valid, .was-validated .decision-tree input[type=radio]:valid, .decision-tree .was-validated input[type=radio]:valid, .form-check-input.is-valid, .sq-form-question-answer input.is-valid[type=checkbox], .sq-form-question-answer input.is-valid[type=radio], .decision-tree input.is-valid[type=radio] {
   border-color: #198754;
 }
-.was-validated .form-check-input:valid:checked, .was-validated .sq-form-question-answer input[type=checkbox]:valid:checked, .sq-form-question-answer .was-validated input[type=checkbox]:valid:checked, .was-validated .sq-form-question-answer input[type=radio]:valid:checked, .sq-form-question-answer .was-validated input[type=radio]:valid:checked, .form-check-input.is-valid:checked, .sq-form-question-answer input.is-valid[type=checkbox]:checked, .sq-form-question-answer input.is-valid[type=radio]:checked {
+.was-validated .form-check-input:valid:checked, .was-validated .sq-form-question-answer input[type=checkbox]:valid:checked, .sq-form-question-answer .was-validated input[type=checkbox]:valid:checked, .was-validated .sq-form-question-answer input[type=radio]:valid:checked, .sq-form-question-answer .was-validated input[type=radio]:valid:checked, .was-validated .decision-tree input[type=radio]:valid:checked, .decision-tree .was-validated input[type=radio]:valid:checked, .form-check-input.is-valid:checked, .sq-form-question-answer input.is-valid[type=checkbox]:checked, .sq-form-question-answer input.is-valid[type=radio]:checked, .decision-tree input.is-valid[type=radio]:checked {
   background-color: #198754;
 }
-.was-validated .form-check-input:valid:focus, .was-validated .sq-form-question-answer input[type=checkbox]:valid:focus, .sq-form-question-answer .was-validated input[type=checkbox]:valid:focus, .was-validated .sq-form-question-answer input[type=radio]:valid:focus, .sq-form-question-answer .was-validated input[type=radio]:valid:focus, .form-check-input.is-valid:focus, .sq-form-question-answer input.is-valid[type=checkbox]:focus, .sq-form-question-answer input.is-valid[type=radio]:focus {
+.was-validated .form-check-input:valid:focus, .was-validated .sq-form-question-answer input[type=checkbox]:valid:focus, .sq-form-question-answer .was-validated input[type=checkbox]:valid:focus, .was-validated .sq-form-question-answer input[type=radio]:valid:focus, .sq-form-question-answer .was-validated input[type=radio]:valid:focus, .was-validated .decision-tree input[type=radio]:valid:focus, .decision-tree .was-validated input[type=radio]:valid:focus, .form-check-input.is-valid:focus, .sq-form-question-answer input.is-valid[type=checkbox]:focus, .sq-form-question-answer input.is-valid[type=radio]:focus, .decision-tree input.is-valid[type=radio]:focus {
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
-.was-validated .form-check-input:valid ~ .form-check-label, .was-validated .sq-form-question-answer .form-check-input:valid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated .form-check-input:valid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer .form-check-input:valid ~ input[type=radio] + label, .sq-form-question-answer .was-validated .form-check-input:valid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=checkbox]:valid ~ .form-check-label, .was-validated .sq-form-question-answer input[type=checkbox]:valid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer input[type=checkbox]:valid + label, .was-validated .sq-form-question-answer input[type=checkbox]:valid ~ input[type=radio] + label, .sq-form-question-answer .was-validated input[type=checkbox]:valid ~ .form-check-label, .sq-form-question-answer .was-validated input[type=checkbox]:valid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated input[type=checkbox]:valid + label, .sq-form-question-answer .was-validated input[type=checkbox]:valid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=radio]:valid ~ .form-check-label, .was-validated .sq-form-question-answer input[type=radio]:valid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer input[type=radio]:valid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=radio]:valid + label, .sq-form-question-answer .was-validated input[type=radio]:valid ~ .form-check-label, .sq-form-question-answer .was-validated input[type=radio]:valid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated input[type=radio]:valid ~ input[type=radio] + label, .sq-form-question-answer .was-validated input[type=radio]:valid + label, .form-check-input.is-valid ~ .form-check-label, .sq-form-question-answer .form-check-input.is-valid ~ input[type=checkbox] + label, .sq-form-question-answer .form-check-input.is-valid ~ input[type=radio] + label, .sq-form-question-answer input.is-valid[type=checkbox] ~ .form-check-label, .sq-form-question-answer input.is-valid[type=checkbox] ~ input[type=checkbox] + label, .sq-form-question-answer input.is-valid[type=checkbox] + label, .sq-form-question-answer input.is-valid[type=checkbox] ~ input[type=radio] + label, .sq-form-question-answer input.is-valid[type=radio] ~ .form-check-label, .sq-form-question-answer input.is-valid[type=radio] ~ input[type=checkbox] + label, .sq-form-question-answer input.is-valid[type=radio] ~ input[type=radio] + label, .sq-form-question-answer input.is-valid[type=radio] + label {
+.was-validated .form-check-input:valid ~ .form-check-label, .was-validated .sq-form-question-answer .form-check-input:valid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated .form-check-input:valid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer .form-check-input:valid ~ input[type=radio] + label, .sq-form-question-answer .was-validated .form-check-input:valid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=checkbox]:valid ~ .form-check-label, .was-validated .sq-form-question-answer input[type=checkbox]:valid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer input[type=checkbox]:valid + label, .was-validated .sq-form-question-answer input[type=checkbox]:valid ~ input[type=radio] + label, .sq-form-question-answer .was-validated input[type=checkbox]:valid ~ .form-check-label, .sq-form-question-answer .was-validated input[type=checkbox]:valid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated input[type=checkbox]:valid + label, .sq-form-question-answer .was-validated input[type=checkbox]:valid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=radio]:valid ~ .form-check-label, .was-validated .sq-form-question-answer input[type=radio]:valid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer input[type=radio]:valid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=radio]:valid + label, .sq-form-question-answer .was-validated input[type=radio]:valid ~ .form-check-label, .sq-form-question-answer .was-validated input[type=radio]:valid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated input[type=radio]:valid ~ input[type=radio] + label, .sq-form-question-answer .was-validated input[type=radio]:valid + label, .was-validated .decision-tree input[type=radio]:valid ~ .form-check-label, .decision-tree .was-validated input[type=radio]:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label, .sq-form-question-answer .form-check-input.is-valid ~ input[type=checkbox] + label, .sq-form-question-answer .form-check-input.is-valid ~ input[type=radio] + label, .sq-form-question-answer input.is-valid[type=checkbox] ~ .form-check-label, .sq-form-question-answer input.is-valid[type=checkbox] ~ input[type=checkbox] + label, .sq-form-question-answer input.is-valid[type=checkbox] + label, .sq-form-question-answer input.is-valid[type=checkbox] ~ input[type=radio] + label, .sq-form-question-answer input.is-valid[type=radio] ~ .form-check-label, .sq-form-question-answer input.is-valid[type=radio] ~ input[type=checkbox] + label, .sq-form-question-answer input.is-valid[type=radio] ~ input[type=radio] + label, .sq-form-question-answer input.is-valid[type=radio] + label, .decision-tree input.is-valid[type=radio] ~ .form-check-label {
   color: #198754;
 }
 
-.form-check-inline .form-check-input ~ .valid-feedback, .form-check-inline .sq-form-question-answer input[type=checkbox] ~ .valid-feedback, .sq-form-question-answer .form-check-inline input[type=checkbox] ~ .valid-feedback, .form-check-inline .sq-form-question-answer input[type=radio] ~ .valid-feedback, .sq-form-question-answer .form-check-inline input[type=radio] ~ .valid-feedback {
+.form-check-inline .form-check-input ~ .valid-feedback, .form-check-inline .sq-form-question-answer input[type=checkbox] ~ .valid-feedback, .sq-form-question-answer .form-check-inline input[type=checkbox] ~ .valid-feedback, .form-check-inline .sq-form-question-answer input[type=radio] ~ .valid-feedback, .sq-form-question-answer .form-check-inline input[type=radio] ~ .valid-feedback, .form-check-inline .decision-tree input[type=radio] ~ .valid-feedback, .decision-tree .form-check-inline input[type=radio] ~ .valid-feedback {
   margin-left: 0.5em;
 }
 
@@ -2773,8 +2783,11 @@ textarea.form-control-lg {
 .was-validated .input-group > .form-select:not(:focus):valid,
 .was-validated .sq-form-question-answer .input-group > select:not(:focus):valid,
 .sq-form-question-answer .was-validated .input-group > select:not(:focus):valid,
+.was-validated .decision-tree .input-group > select.sq-form-field:not(:focus):valid,
+.decision-tree .was-validated .input-group > select.sq-form-field:not(:focus):valid,
 .input-group > .form-select:not(:focus).is-valid,
 .sq-form-question-answer .input-group > select:not(:focus).is-valid,
+.decision-tree .input-group > select.sq-form-field:not(:focus).is-valid,
 .was-validated .input-group > .form-floating:not(:focus-within):valid,
 .input-group > .form-floating:not(:focus-within).is-valid {
   z-index: 3;
@@ -2857,32 +2870,40 @@ textarea.form-control-lg {
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .form-select:invalid, .was-validated .sq-form-question-answer select:invalid, .sq-form-question-answer .was-validated select:invalid, .form-select.is-invalid, .sq-form-question-error input.form-select,
+.was-validated .form-select:invalid, .was-validated .sq-form-question-answer select:invalid, .sq-form-question-answer .was-validated select:invalid, .was-validated .decision-tree select.sq-form-field:invalid, .decision-tree .was-validated select.sq-form-field:invalid, .form-select.is-invalid, .sq-form-question-error input.form-select,
 .sq-form-question-error select.form-select,
 .sq-form-question-error textarea.form-select, .sq-form-question-answer select.is-invalid,
 .sq-form-question-answer .sq-form-question-error select,
-.sq-form-question-error .sq-form-question-answer select {
+.sq-form-question-error .sq-form-question-answer select, .decision-tree select.is-invalid.sq-form-field,
+.decision-tree .sq-form-question-error select.sq-form-field,
+.sq-form-question-error .decision-tree select.sq-form-field {
   border-color: #dc3545;
 }
-.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .sq-form-question-answer select:invalid:not([multiple]):not([size]), .sq-form-question-answer .was-validated select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .was-validated .sq-form-question-answer select:invalid:not([multiple])[size="1"], .sq-form-question-answer .was-validated select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .sq-form-question-error input.form-select:not([multiple]):not([size]),
+.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .sq-form-question-answer select:invalid:not([multiple]):not([size]), .sq-form-question-answer .was-validated select:invalid:not([multiple]):not([size]), .was-validated .decision-tree select.sq-form-field:invalid:not([multiple]):not([size]), .decision-tree .was-validated select.sq-form-field:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .was-validated .sq-form-question-answer select:invalid:not([multiple])[size="1"], .sq-form-question-answer .was-validated select:invalid:not([multiple])[size="1"], .was-validated .decision-tree select.sq-form-field:invalid:not([multiple])[size="1"], .decision-tree .was-validated select.sq-form-field:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .sq-form-question-error input.form-select:not([multiple]):not([size]),
 .sq-form-question-error select.form-select:not([multiple]):not([size]),
 .sq-form-question-error textarea.form-select:not([multiple]):not([size]), .sq-form-question-answer select.is-invalid:not([multiple]):not([size]),
 .sq-form-question-answer .sq-form-question-error select:not([multiple]):not([size]),
-.sq-form-question-error .sq-form-question-answer select:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], .sq-form-question-error input.form-select:not([multiple])[size="1"],
+.sq-form-question-error .sq-form-question-answer select:not([multiple]):not([size]), .decision-tree select.is-invalid.sq-form-field:not([multiple]):not([size]),
+.decision-tree .sq-form-question-error select.sq-form-field:not([multiple]):not([size]),
+.sq-form-question-error .decision-tree select.sq-form-field:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], .sq-form-question-error input.form-select:not([multiple])[size="1"],
 .sq-form-question-error select.form-select:not([multiple])[size="1"],
 .sq-form-question-error textarea.form-select:not([multiple])[size="1"], .sq-form-question-answer select.is-invalid:not([multiple])[size="1"],
 .sq-form-question-answer .sq-form-question-error select:not([multiple])[size="1"],
-.sq-form-question-error .sq-form-question-answer select:not([multiple])[size="1"] {
+.sq-form-question-error .sq-form-question-answer select:not([multiple])[size="1"], .decision-tree select.is-invalid.sq-form-field:not([multiple])[size="1"],
+.decision-tree .sq-form-question-error select.sq-form-field:not([multiple])[size="1"],
+.sq-form-question-error .decision-tree select.sq-form-field:not([multiple])[size="1"] {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-select:invalid:focus, .was-validated .sq-form-question-answer select:invalid:focus, .sq-form-question-answer .was-validated select:invalid:focus, .form-select.is-invalid:focus, .sq-form-question-error input.form-select:focus,
+.was-validated .form-select:invalid:focus, .was-validated .sq-form-question-answer select:invalid:focus, .sq-form-question-answer .was-validated select:invalid:focus, .was-validated .decision-tree select.sq-form-field:invalid:focus, .decision-tree .was-validated select.sq-form-field:invalid:focus, .form-select.is-invalid:focus, .sq-form-question-error input.form-select:focus,
 .sq-form-question-error select.form-select:focus,
 .sq-form-question-error textarea.form-select:focus, .sq-form-question-answer select.is-invalid:focus,
 .sq-form-question-answer .sq-form-question-error select:focus,
-.sq-form-question-error .sq-form-question-answer select:focus {
+.sq-form-question-error .sq-form-question-answer select:focus, .decision-tree select.is-invalid.sq-form-field:focus,
+.decision-tree .sq-form-question-error select.sq-form-field:focus,
+.sq-form-question-error .decision-tree select.sq-form-field:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
@@ -2893,28 +2914,28 @@ textarea.form-control-lg {
   width: calc(3rem + calc(1.5em + 0.75rem));
 }
 
-.was-validated .form-check-input:invalid, .was-validated .sq-form-question-answer input[type=checkbox]:invalid, .sq-form-question-answer .was-validated input[type=checkbox]:invalid, .was-validated .sq-form-question-answer input[type=radio]:invalid, .sq-form-question-answer .was-validated input[type=radio]:invalid, .form-check-input.is-invalid, .sq-form-question-error input.form-check-input,
+.was-validated .form-check-input:invalid, .was-validated .sq-form-question-answer input[type=checkbox]:invalid, .sq-form-question-answer .was-validated input[type=checkbox]:invalid, .was-validated .sq-form-question-answer input[type=radio]:invalid, .sq-form-question-answer .was-validated input[type=radio]:invalid, .was-validated .decision-tree input[type=radio]:invalid, .decision-tree .was-validated input[type=radio]:invalid, .form-check-input.is-invalid, .sq-form-question-error input.form-check-input,
 .sq-form-question-error select.form-check-input,
-.sq-form-question-error textarea.form-check-input, .sq-form-question-answer input.is-invalid[type=checkbox], .sq-form-question-answer .sq-form-question-error input[type=checkbox], .sq-form-question-error .sq-form-question-answer input[type=checkbox], .sq-form-question-answer input.is-invalid[type=radio], .sq-form-question-answer .sq-form-question-error input[type=radio], .sq-form-question-error .sq-form-question-answer input[type=radio] {
+.sq-form-question-error textarea.form-check-input, .sq-form-question-answer input.is-invalid[type=checkbox], .sq-form-question-answer .sq-form-question-error input[type=checkbox], .sq-form-question-error .sq-form-question-answer input[type=checkbox], .sq-form-question-answer input.is-invalid[type=radio], .sq-form-question-answer .sq-form-question-error input[type=radio], .sq-form-question-error .sq-form-question-answer input[type=radio], .decision-tree input.is-invalid[type=radio], .decision-tree .sq-form-question-error input[type=radio], .sq-form-question-error .decision-tree input[type=radio] {
   border-color: #dc3545;
 }
-.was-validated .form-check-input:invalid:checked, .was-validated .sq-form-question-answer input[type=checkbox]:invalid:checked, .sq-form-question-answer .was-validated input[type=checkbox]:invalid:checked, .was-validated .sq-form-question-answer input[type=radio]:invalid:checked, .sq-form-question-answer .was-validated input[type=radio]:invalid:checked, .form-check-input.is-invalid:checked, .sq-form-question-error input.form-check-input:checked,
+.was-validated .form-check-input:invalid:checked, .was-validated .sq-form-question-answer input[type=checkbox]:invalid:checked, .sq-form-question-answer .was-validated input[type=checkbox]:invalid:checked, .was-validated .sq-form-question-answer input[type=radio]:invalid:checked, .sq-form-question-answer .was-validated input[type=radio]:invalid:checked, .was-validated .decision-tree input[type=radio]:invalid:checked, .decision-tree .was-validated input[type=radio]:invalid:checked, .form-check-input.is-invalid:checked, .sq-form-question-error input.form-check-input:checked,
 .sq-form-question-error select.form-check-input:checked,
-.sq-form-question-error textarea.form-check-input:checked, .sq-form-question-answer input.is-invalid[type=checkbox]:checked, .sq-form-question-answer .sq-form-question-error input[type=checkbox]:checked, .sq-form-question-error .sq-form-question-answer input[type=checkbox]:checked, .sq-form-question-answer input.is-invalid[type=radio]:checked, .sq-form-question-answer .sq-form-question-error input[type=radio]:checked, .sq-form-question-error .sq-form-question-answer input[type=radio]:checked {
+.sq-form-question-error textarea.form-check-input:checked, .sq-form-question-answer input.is-invalid[type=checkbox]:checked, .sq-form-question-answer .sq-form-question-error input[type=checkbox]:checked, .sq-form-question-error .sq-form-question-answer input[type=checkbox]:checked, .sq-form-question-answer input.is-invalid[type=radio]:checked, .sq-form-question-answer .sq-form-question-error input[type=radio]:checked, .sq-form-question-error .sq-form-question-answer input[type=radio]:checked, .decision-tree input.is-invalid[type=radio]:checked, .decision-tree .sq-form-question-error input[type=radio]:checked, .sq-form-question-error .decision-tree input[type=radio]:checked {
   background-color: #dc3545;
 }
-.was-validated .form-check-input:invalid:focus, .was-validated .sq-form-question-answer input[type=checkbox]:invalid:focus, .sq-form-question-answer .was-validated input[type=checkbox]:invalid:focus, .was-validated .sq-form-question-answer input[type=radio]:invalid:focus, .sq-form-question-answer .was-validated input[type=radio]:invalid:focus, .form-check-input.is-invalid:focus, .sq-form-question-error input.form-check-input:focus,
+.was-validated .form-check-input:invalid:focus, .was-validated .sq-form-question-answer input[type=checkbox]:invalid:focus, .sq-form-question-answer .was-validated input[type=checkbox]:invalid:focus, .was-validated .sq-form-question-answer input[type=radio]:invalid:focus, .sq-form-question-answer .was-validated input[type=radio]:invalid:focus, .was-validated .decision-tree input[type=radio]:invalid:focus, .decision-tree .was-validated input[type=radio]:invalid:focus, .form-check-input.is-invalid:focus, .sq-form-question-error input.form-check-input:focus,
 .sq-form-question-error select.form-check-input:focus,
-.sq-form-question-error textarea.form-check-input:focus, .sq-form-question-answer input.is-invalid[type=checkbox]:focus, .sq-form-question-answer .sq-form-question-error input[type=checkbox]:focus, .sq-form-question-error .sq-form-question-answer input[type=checkbox]:focus, .sq-form-question-answer input.is-invalid[type=radio]:focus, .sq-form-question-answer .sq-form-question-error input[type=radio]:focus, .sq-form-question-error .sq-form-question-answer input[type=radio]:focus {
+.sq-form-question-error textarea.form-check-input:focus, .sq-form-question-answer input.is-invalid[type=checkbox]:focus, .sq-form-question-answer .sq-form-question-error input[type=checkbox]:focus, .sq-form-question-error .sq-form-question-answer input[type=checkbox]:focus, .sq-form-question-answer input.is-invalid[type=radio]:focus, .sq-form-question-answer .sq-form-question-error input[type=radio]:focus, .sq-form-question-error .sq-form-question-answer input[type=radio]:focus, .decision-tree input.is-invalid[type=radio]:focus, .decision-tree .sq-form-question-error input[type=radio]:focus, .sq-form-question-error .decision-tree input[type=radio]:focus {
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
-.was-validated .form-check-input:invalid ~ .form-check-label, .was-validated .sq-form-question-answer .form-check-input:invalid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated .form-check-input:invalid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer .form-check-input:invalid ~ input[type=radio] + label, .sq-form-question-answer .was-validated .form-check-input:invalid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=checkbox]:invalid ~ .form-check-label, .was-validated .sq-form-question-answer input[type=checkbox]:invalid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer input[type=checkbox]:invalid + label, .was-validated .sq-form-question-answer input[type=checkbox]:invalid ~ input[type=radio] + label, .sq-form-question-answer .was-validated input[type=checkbox]:invalid ~ .form-check-label, .sq-form-question-answer .was-validated input[type=checkbox]:invalid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated input[type=checkbox]:invalid + label, .sq-form-question-answer .was-validated input[type=checkbox]:invalid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=radio]:invalid ~ .form-check-label, .was-validated .sq-form-question-answer input[type=radio]:invalid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer input[type=radio]:invalid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=radio]:invalid + label, .sq-form-question-answer .was-validated input[type=radio]:invalid ~ .form-check-label, .sq-form-question-answer .was-validated input[type=radio]:invalid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated input[type=radio]:invalid ~ input[type=radio] + label, .sq-form-question-answer .was-validated input[type=radio]:invalid + label, .form-check-input.is-invalid ~ .form-check-label, .sq-form-question-error input.form-check-input ~ .form-check-label,
+.was-validated .form-check-input:invalid ~ .form-check-label, .was-validated .sq-form-question-answer .form-check-input:invalid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated .form-check-input:invalid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer .form-check-input:invalid ~ input[type=radio] + label, .sq-form-question-answer .was-validated .form-check-input:invalid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=checkbox]:invalid ~ .form-check-label, .was-validated .sq-form-question-answer input[type=checkbox]:invalid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer input[type=checkbox]:invalid + label, .was-validated .sq-form-question-answer input[type=checkbox]:invalid ~ input[type=radio] + label, .sq-form-question-answer .was-validated input[type=checkbox]:invalid ~ .form-check-label, .sq-form-question-answer .was-validated input[type=checkbox]:invalid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated input[type=checkbox]:invalid + label, .sq-form-question-answer .was-validated input[type=checkbox]:invalid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=radio]:invalid ~ .form-check-label, .was-validated .sq-form-question-answer input[type=radio]:invalid ~ input[type=checkbox] + label, .was-validated .sq-form-question-answer input[type=radio]:invalid ~ input[type=radio] + label, .was-validated .sq-form-question-answer input[type=radio]:invalid + label, .sq-form-question-answer .was-validated input[type=radio]:invalid ~ .form-check-label, .sq-form-question-answer .was-validated input[type=radio]:invalid ~ input[type=checkbox] + label, .sq-form-question-answer .was-validated input[type=radio]:invalid ~ input[type=radio] + label, .sq-form-question-answer .was-validated input[type=radio]:invalid + label, .was-validated .decision-tree input[type=radio]:invalid ~ .form-check-label, .decision-tree .was-validated input[type=radio]:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label, .sq-form-question-error input.form-check-input ~ .form-check-label,
 .sq-form-question-error select.form-check-input ~ .form-check-label,
-.sq-form-question-error textarea.form-check-input ~ .form-check-label, .sq-form-question-answer .form-check-input.is-invalid ~ input[type=checkbox] + label, .sq-form-question-answer .form-check-input.is-invalid ~ input[type=radio] + label, .sq-form-question-answer input.is-invalid[type=checkbox] ~ .form-check-label, .sq-form-question-answer .sq-form-question-error input[type=checkbox] ~ .form-check-label, .sq-form-question-error .sq-form-question-answer input[type=checkbox] ~ .form-check-label, .sq-form-question-answer input.is-invalid[type=checkbox] ~ input[type=checkbox] + label, .sq-form-question-answer .sq-form-question-error input[type=checkbox] ~ input[type=checkbox] + label, .sq-form-question-error .sq-form-question-answer input[type=checkbox] ~ input[type=checkbox] + label, .sq-form-question-answer input.is-invalid[type=checkbox] + label, .sq-form-question-answer .sq-form-question-error input[type=checkbox] + label, .sq-form-question-error .sq-form-question-answer input[type=checkbox] + label, .sq-form-question-answer input.is-invalid[type=checkbox] ~ input[type=radio] + label, .sq-form-question-answer input.is-invalid[type=radio] ~ .form-check-label, .sq-form-question-answer .sq-form-question-error input[type=radio] ~ .form-check-label, .sq-form-question-error .sq-form-question-answer input[type=radio] ~ .form-check-label, .sq-form-question-answer input.is-invalid[type=radio] ~ input[type=checkbox] + label, .sq-form-question-answer input.is-invalid[type=radio] ~ input[type=radio] + label, .sq-form-question-answer .sq-form-question-error input[type=radio] ~ input[type=radio] + label, .sq-form-question-error .sq-form-question-answer input[type=radio] ~ input[type=radio] + label, .sq-form-question-answer input.is-invalid[type=radio] + label, .sq-form-question-answer .sq-form-question-error input[type=radio] + label, .sq-form-question-error .sq-form-question-answer input[type=radio] + label {
+.sq-form-question-error textarea.form-check-input ~ .form-check-label, .sq-form-question-answer .form-check-input.is-invalid ~ input[type=checkbox] + label, .sq-form-question-answer .form-check-input.is-invalid ~ input[type=radio] + label, .sq-form-question-answer input.is-invalid[type=checkbox] ~ .form-check-label, .sq-form-question-answer .sq-form-question-error input[type=checkbox] ~ .form-check-label, .sq-form-question-error .sq-form-question-answer input[type=checkbox] ~ .form-check-label, .sq-form-question-answer input.is-invalid[type=checkbox] ~ input[type=checkbox] + label, .sq-form-question-answer .sq-form-question-error input[type=checkbox] ~ input[type=checkbox] + label, .sq-form-question-error .sq-form-question-answer input[type=checkbox] ~ input[type=checkbox] + label, .sq-form-question-answer input.is-invalid[type=checkbox] + label, .sq-form-question-answer .sq-form-question-error input[type=checkbox] + label, .sq-form-question-error .sq-form-question-answer input[type=checkbox] + label, .sq-form-question-answer input.is-invalid[type=checkbox] ~ input[type=radio] + label, .sq-form-question-answer input.is-invalid[type=radio] ~ .form-check-label, .sq-form-question-answer .sq-form-question-error input[type=radio] ~ .form-check-label, .sq-form-question-error .sq-form-question-answer input[type=radio] ~ .form-check-label, .sq-form-question-answer input.is-invalid[type=radio] ~ input[type=checkbox] + label, .sq-form-question-answer input.is-invalid[type=radio] ~ input[type=radio] + label, .sq-form-question-answer .sq-form-question-error input[type=radio] ~ input[type=radio] + label, .sq-form-question-error .sq-form-question-answer input[type=radio] ~ input[type=radio] + label, .sq-form-question-answer input.is-invalid[type=radio] + label, .sq-form-question-answer .sq-form-question-error input[type=radio] + label, .sq-form-question-error .sq-form-question-answer input[type=radio] + label, .decision-tree input.is-invalid[type=radio] ~ .form-check-label, .decision-tree .sq-form-question-error input[type=radio] ~ .form-check-label, .sq-form-question-error .decision-tree input[type=radio] ~ .form-check-label {
   color: #dc3545;
 }
 
-.form-check-inline .form-check-input ~ .invalid-feedback, .form-check-inline .sq-form-question-error .form-check-input ~ .sq-form-error, .sq-form-question-error .form-check-inline .form-check-input ~ .sq-form-error, .form-check-inline .sq-form-question-answer input[type=checkbox] ~ .invalid-feedback, .form-check-inline .sq-form-question-answer .sq-form-question-error input[type=checkbox] ~ .sq-form-error, .sq-form-question-error .form-check-inline .sq-form-question-answer input[type=checkbox] ~ .sq-form-error, .sq-form-question-answer .form-check-inline input[type=checkbox] ~ .invalid-feedback, .sq-form-question-answer .form-check-inline .sq-form-question-error input[type=checkbox] ~ .sq-form-error, .sq-form-question-error .sq-form-question-answer .form-check-inline input[type=checkbox] ~ .sq-form-error, .form-check-inline .sq-form-question-answer input[type=radio] ~ .invalid-feedback, .form-check-inline .sq-form-question-answer .sq-form-question-error input[type=radio] ~ .sq-form-error, .sq-form-question-error .form-check-inline .sq-form-question-answer input[type=radio] ~ .sq-form-error, .sq-form-question-answer .form-check-inline input[type=radio] ~ .invalid-feedback, .sq-form-question-answer .form-check-inline .sq-form-question-error input[type=radio] ~ .sq-form-error, .sq-form-question-error .sq-form-question-answer .form-check-inline input[type=radio] ~ .sq-form-error {
+.form-check-inline .form-check-input ~ .invalid-feedback, .form-check-inline .sq-form-question-error .form-check-input ~ .sq-form-error, .sq-form-question-error .form-check-inline .form-check-input ~ .sq-form-error, .form-check-inline .sq-form-question-answer input[type=checkbox] ~ .invalid-feedback, .form-check-inline .sq-form-question-answer .sq-form-question-error input[type=checkbox] ~ .sq-form-error, .sq-form-question-error .form-check-inline .sq-form-question-answer input[type=checkbox] ~ .sq-form-error, .sq-form-question-answer .form-check-inline input[type=checkbox] ~ .invalid-feedback, .sq-form-question-answer .form-check-inline .sq-form-question-error input[type=checkbox] ~ .sq-form-error, .sq-form-question-error .sq-form-question-answer .form-check-inline input[type=checkbox] ~ .sq-form-error, .form-check-inline .sq-form-question-answer input[type=radio] ~ .invalid-feedback, .form-check-inline .sq-form-question-answer .sq-form-question-error input[type=radio] ~ .sq-form-error, .sq-form-question-error .form-check-inline .sq-form-question-answer input[type=radio] ~ .sq-form-error, .sq-form-question-answer .form-check-inline input[type=radio] ~ .invalid-feedback, .sq-form-question-answer .form-check-inline .sq-form-question-error input[type=radio] ~ .sq-form-error, .sq-form-question-error .sq-form-question-answer .form-check-inline input[type=radio] ~ .sq-form-error, .form-check-inline .decision-tree input[type=radio] ~ .invalid-feedback, .form-check-inline .decision-tree .sq-form-question-error input[type=radio] ~ .sq-form-error, .sq-form-question-error .form-check-inline .decision-tree input[type=radio] ~ .sq-form-error, .decision-tree .form-check-inline input[type=radio] ~ .invalid-feedback, .decision-tree .form-check-inline .sq-form-question-error input[type=radio] ~ .sq-form-error, .sq-form-question-error .decision-tree .form-check-inline input[type=radio] ~ .sq-form-error {
   margin-left: 0.5em;
 }
 
@@ -2929,6 +2950,8 @@ textarea.form-control-lg {
 .was-validated .input-group > .form-select:not(:focus):invalid,
 .was-validated .sq-form-question-answer .input-group > select:not(:focus):invalid,
 .sq-form-question-answer .was-validated .input-group > select:not(:focus):invalid,
+.was-validated .decision-tree .input-group > select.sq-form-field:not(:focus):invalid,
+.decision-tree .was-validated .input-group > select.sq-form-field:not(:focus):invalid,
 .input-group > .form-select:not(:focus).is-invalid,
 .sq-form-question-error .input-group > input.form-select:not(:focus),
 .sq-form-question-error .input-group > select.form-select:not(:focus),
@@ -2936,6 +2959,9 @@ textarea.form-control-lg {
 .sq-form-question-answer .input-group > select:not(:focus).is-invalid,
 .sq-form-question-answer .sq-form-question-error .input-group > select:not(:focus),
 .sq-form-question-error .sq-form-question-answer .input-group > select:not(:focus),
+.decision-tree .input-group > select.sq-form-field:not(:focus).is-invalid,
+.decision-tree .sq-form-question-error .input-group > select.sq-form-field:not(:focus),
+.sq-form-question-error .decision-tree .input-group > select.sq-form-field:not(:focus),
 .was-validated .input-group > .form-floating:not(:focus-within):invalid,
 .input-group > .form-floating:not(:focus-within).is-invalid,
 .sq-form-question-error .input-group > input.form-floating:not(:focus-within),
@@ -18388,7 +18414,6 @@ main ul.marker-chevron li::before {
 }
 .decision-tree {
   margin: 24px 0;
-  /*dropdown field*/
 }
 .decision-tree .sq_question_wrapper {
   position: relative;
@@ -18427,29 +18452,16 @@ main ul.marker-chevron li::before {
   display: none;
 }
 .decision-tree input[type=radio] {
-  position: absolute;
-  top: 0;
-  left: -9999px;
-  opacity: 0;
+  vertical-align: middle;
+  margin-right: 1em;
 }
-.decision-tree input + label {
+.decision-tree input[type=radio] + label {
   display: inline-block;
-  padding: 14px 40px;
-  border: 2px solid #1f1f5f;
-  background: #ffffff;
-  color: #1f1f5f;
-  margin-right: 10px;
-  transition: all 300ms ease-in;
+  padding-left: 12px;
+  padding-right: 1em;
   cursor: pointer;
-}
-.decision-tree input:focus + label {
-  outline: 2px solid #1f1f5f;
-  outline-offset: 2px;
-}
-.decision-tree input:checked + label {
-  border: 2px solid #1f1f5f;
-  background: #1f1f5f;
-  color: #ffffff;
+  user-select: none;
+  vertical-align: middle;
 }
 .decision-tree .sq_result_bodycopy {
   position: relative;
@@ -18466,12 +18478,6 @@ main ul.marker-chevron li::before {
   left: 35px;
   content: "\f05a";
   color: #707070;
-}
-.decision-tree .sq-form-field {
-  margin: 15px 0px 10px 0px;
-  padding: 14px;
-  border: 2px solid #1f1f5f;
-  color: #1f1f5f;
 }
 .decision-tree input[type=reset] {
   display: inline-block;
@@ -18821,12 +18827,13 @@ main ul.marker-chevron li::before {
  * - textarea elements
  * 
  * INPUT STATES:
- * 1. Default    - Standard input appearance with dark border
- * 2. Focus      - Expanded with blue border and enhanced visual prominence
- * 3. Read-only  - Grey background indicating non-editable state
- * 4. Error      - Red border for validation failures (.is-invalid or :invalid)
- * 5. Success    - Green border for validated inputs (.is-valid)
- * 6. Disabled   - Grey background with reduced cursor interaction
+ * 1. Default    - 455×48px with dark border (#343741)
+ * 2. Focus      - 455×48px input with 2px blue outline ring (#336699) at 2px offset
+ *                 Creates 464×56px visual boundary, no Bootstrap orange shadow
+ * 3. Read-only  - Grey background (#f8f8f8) indicating non-editable state
+ * 4. Error      - Red border (#a60f37) for validation failures (.is-invalid or :invalid)
+ * 5. Success    - Green border (#107810) for validated inputs (.is-valid)
+ * 6. Disabled   - Grey background (#e8e8e8) with not-allowed cursor
  * 
  * USAGE:
  * Apply .form-control class to text inputs for automatic styling:
@@ -18839,14 +18846,26 @@ main ul.marker-chevron li::before {
  *   <input type="text" class="form-control is-invalid" />
  *   <input type="text" class="form-control is-valid" />
  * 
+ * INTEGRATION:
+ * Decision tree inputs automatically inherit these styles via @extend:
+ * 
+ *   input[type="text"].sq-form-field {
+ *     @extend .form-control;
+ *   }
+ * 
  * VARIABLES USED:
  * - $input-border-default: #343741 (default border color)
- * - $primary: #336699 (focus border color)
- * - $ts-grey-white: #f8f8f8 (read-only/disabled background)
- * - $ts-grey-light: #e8e8e8 (read-only/disabled border)
+ * - var(--border-strong-01, #343741) (focus border color)
+ * - #336699 (focus outline ring color)
+ * - $ts-grey-white: #f8f8f8 (read-only background)
+ * - $ts-grey-light: #e8e8e8 (read-only/disabled border and disabled background)
  * - $status-error: #a60f37 (error border color)
  * - $success: #107810 (success border color)
- * - $border-radius: 8px (corner rounding)
+ * - $border-radius: 8px (default corner rounding)
+ * - 12px (focus state border-radius)
+ * 
+ * RESPONSIVE:
+ * Mobile (max-width: 600px): Inputs expand to 100% width
  */
 input[type=text].form-control, .sq-form-question-answer input[type=text]:not([type=checkbox]):not([type=radio]), .decision-tree input[type=text].sq-form-field,
 input[type=email].form-control,
@@ -19206,6 +19225,243 @@ textarea.form-control:focus,
     height: auto;
   }
 }
+/*
+ * Territory Services - Dropdown Styling
+ * ======================================
+ * 
+ * Global dropdown/select styling system providing consistent states across all form selects.
+ * 
+ * SUPPORTED ELEMENTS:
+ * - select elements with .form-select class
+ * 
+ * DROPDOWN STATES:
+ * 1. Default    - 455×48px with dark border (#343741) and chevron-down icon
+ * 2. Focus      - 455×48px select with 2px blue outline ring (#336699) at 2px offset
+ *                 Creates 464×56px visual boundary, no Bootstrap orange shadow
+ * 3. Disabled   - Grey background (#e8e8e8) with not-allowed cursor
+ * 4. Error      - Red border (#a60f37) for validation failures (.is-invalid)
+ * 5. Success    - Green border (#107810) for validated selects (.is-valid)
+ * 
+ * USAGE:
+ * Apply .form-select class to select elements for automatic styling:
+ * 
+ *   <select class="form-select">
+ *     <option>Option 1</option>
+ *     <option>Option 2</option>
+ *   </select>
+ * 
+ * For validation states, add Bootstrap validation classes:
+ * 
+ *   <select class="form-select is-invalid">...</select>
+ *   <select class="form-select is-valid">...</select>
+ * 
+ * INTEGRATION:
+ * Decision tree selects automatically inherit these styles via @extend:
+ * 
+ *   select.sq-form-field {
+ *     @extend .form-select;
+ *   }
+ * 
+ * VARIABLES USED:
+ * - $input-border-default: #343741 (default border color)
+ * - var(--border-strong-01, #343741) (focus border color)
+ * - #336699 (focus outline ring color)
+ * - $ts-grey-light: #e8e8e8 (disabled background and border)
+ * - $status-error: #a60f37 (error border color)
+ * - $success: #107810 (success border color)
+ * - $border-radius: 8px (default corner rounding)
+ * - 12px (focus state border-radius)
+ * 
+ * RESPONSIVE:
+ * Mobile (max-width: 600px): Selects expand to 100% width
+ */
+select.form-select, .sq-form-question-answer select, .decision-tree select.sq-form-field {
+  display: inline-block;
+  width: 455px;
+  height: 48px;
+  min-height: 48px;
+  padding: 0 3rem 0 2rem;
+  margin: 15px 0px 10px 0px;
+  border: 2px solid #343741;
+  background: #ffffff;
+  border-radius: 8px;
+  color: inherit;
+  transition: all 300ms ease-in;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343741' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+select.form-select:focus, .sq-form-question-answer select:focus, .decision-tree select.sq-form-field:focus, select.form-select:focus-visible, .sq-form-question-answer select:focus-visible, .decision-tree select.sq-form-field:focus-visible {
+  border: 2px solid var(--border-strong-01, #343741);
+  outline: 2px solid #336699;
+  outline-offset: 2px;
+  border-radius: 12px;
+  box-shadow: none !important;
+}
+select.form-select.is-invalid,
+.sq-form-question-error select.form-select, .sq-form-question-answer select.is-invalid,
+.sq-form-question-answer .sq-form-question-error select,
+.sq-form-question-error .sq-form-question-answer select, .decision-tree select.is-invalid.sq-form-field,
+.decision-tree .sq-form-question-error select.sq-form-field,
+.sq-form-question-error .decision-tree select.sq-form-field {
+  border: 2px solid #a60f37;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23a60f37' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+select.form-select.is-valid, .sq-form-question-answer select.is-valid, .decision-tree select.is-valid.sq-form-field {
+  border: 2px solid #107810;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23107810' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+select.form-select:disabled, .sq-form-question-answer select:disabled, .decision-tree select.sq-form-field:disabled, select.form-select[disabled], .sq-form-question-answer select[disabled], .decision-tree select[disabled].sq-form-field {
+  background-color: #e8e8e8;
+  border: 2px solid #e8e8e8;
+  cursor: not-allowed;
+  color: #707070;
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+select.form-select option:first-child, .sq-form-question-answer select option:first-child, .decision-tree select.sq-form-field option:first-child {
+  color: #707070;
+}
+select.form-select option:not(:first-child), .sq-form-question-answer select option:not(:first-child), .decision-tree select.sq-form-field option:not(:first-child) {
+  color: inherit;
+}
+
+@media (max-width: 600px) {
+  select.form-select, .sq-form-question-answer select, .decision-tree select.sq-form-field {
+    width: 100%;
+    max-width: 100%;
+  }
+  select.form-select:focus, .sq-form-question-answer select:focus, .decision-tree select.sq-form-field:focus, select.form-select:focus-visible, .sq-form-question-answer select:focus-visible, .decision-tree select.sq-form-field:focus-visible {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/*
+ * Territory Services - Radio Button Styling
+ * ==========================================
+ * 
+ * Global radio button styling system providing consistent states across all form radio inputs.
+ * 
+ * SUPPORTED ELEMENTS:
+ * - input[type="radio"] with .form-check-input class
+ * 
+ * RADIO BUTTON STATES:
+ * 1. Default (Unselected) - 40×40px container with 36×36px circle, dark border (#343741)
+ * 2. Focus                - 2px blue outline ring (#336699) around the entire 40×40px container
+ * 3. Checked              - 36×36px circle with 24×24px blue inner dot (#336699)
+ * 4. Error                - Red border (#A60F37) for validation failures
+ * 5. Disabled             - Grey border (#707070) with not-allowed cursor
+ * 
+ * USAGE:
+ * Apply .form-check-input class to radio inputs for automatic styling:
+ * 
+ *   <input type="radio" class="form-check-input" name="option" id="option1" />
+ *   <label for="option1">Option 1</label>
+ * 
+ * For error state, add .is-invalid class:
+ * 
+ *   <input type="radio" class="form-check-input is-invalid" />
+ * 
+ * INTEGRATION:
+ * Decision tree radio buttons automatically inherit these styles via @extend:
+ * 
+ *   input[type="radio"].sq-form-field {
+ *     @extend .form-check-input;
+ *   }
+ * 
+ * VARIABLES USED:
+ * - var(--border-strong-01, #343741) (default border color)
+ * - var(--icon-interactive, #336699) (checked state inner dot color)
+ * - var(--border-focus, #336699) (focus outline ring color)
+ * - var(--status-error, #A60F37) (error border color)
+ * - var(--border-strong-02, #707070) (disabled border color)
+ * 
+ * DIMENSIONS:
+ * - Container: 40×40px (accommodates focus ring)
+ * - Radio circle: 36×36px (at position 2px, 2px)
+ * - Inner dot (checked): 24×24px (at position 8px, 8px)
+ * - Border width: 2px
+ * - Focus ring: 2px solid outline around 40×40px container
+ */
+input[type=radio].form-check-input, .sq-form-question-answer input[type=radio][type=checkbox], .sq-form-question-answer input[type=radio], .decision-tree input[type=radio] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 1998px;
+}
+input[type=radio].form-check-input::before, .sq-form-question-answer input[type=radio][type=checkbox]::before, .sq-form-question-answer input[type=radio]::before, .decision-tree input[type=radio]::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  border: 2px solid var(--border-strong-01, #343741);
+  background: #ffffff;
+  transition: all 300ms ease-in;
+  box-sizing: border-box;
+}
+input[type=radio].form-check-input:focus, .sq-form-question-answer input[type=radio]:focus, .decision-tree input[type=radio]:focus, input[type=radio].form-check-input:focus-visible, .sq-form-question-answer input[type=radio]:focus-visible, .decision-tree input[type=radio]:focus-visible {
+  outline: 2px solid var(--border-focus, #336699);
+  outline-offset: 0;
+  box-shadow: none !important;
+}
+input[type=radio].form-check-input:checked::before, .sq-form-question-answer input[type=radio]:checked::before, .decision-tree input[type=radio]:checked::before {
+  border-color: var(--border-strong-01, #343741);
+  background: #ffffff;
+}
+input[type=radio].form-check-input:checked::after, .sq-form-question-answer input[type=radio]:checked::after, .decision-tree input[type=radio]:checked::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: var(--icon-interactive, #336699);
+  transition: all 300ms ease-in;
+}
+input[type=radio].form-check-input:checked, .sq-form-question-answer input[type=radio]:checked, .decision-tree input[type=radio]:checked {
+  background-color: transparent !important;
+}
+input[type=radio].form-check-input.is-invalid::before, .sq-form-question-error input[type=radio].form-check-input::before, .sq-form-question-answer input[type=radio].is-invalid::before, .sq-form-question-answer .sq-form-question-error input[type=radio]::before, .sq-form-question-error .sq-form-question-answer input[type=radio]::before, .decision-tree input[type=radio].is-invalid::before, .decision-tree .sq-form-question-error input[type=radio]::before, .sq-form-question-error .decision-tree input[type=radio]::before, input[type=radio].form-check-input:invalid::before, .sq-form-question-answer input[type=radio]:invalid::before, .decision-tree input[type=radio]:invalid::before {
+  border-color: var(--status-error, #a60f37);
+}
+input[type=radio].form-check-input:not(:checked):hover::before, .sq-form-question-answer input[type=radio]:not(:checked):hover::before, .decision-tree input[type=radio]:not(:checked):hover::before {
+  border-color: #336699;
+}
+input[type=radio].form-check-input:disabled, .sq-form-question-answer input[type=radio]:disabled, .decision-tree input[type=radio]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+input[type=radio].form-check-input:disabled::before, .sq-form-question-answer input[type=radio]:disabled::before, .decision-tree input[type=radio]:disabled::before {
+  background: #ffffff;
+  border-color: var(--border-strong-02, #707070);
+}
+input[type=radio].form-check-input:disabled:checked::after, .sq-form-question-answer input[type=radio]:disabled:checked::after, .decision-tree input[type=radio]:disabled:checked::after {
+  background: var(--border-strong-02, #707070);
+}
+
+input[type=radio].form-check-input, .sq-form-question-answer input[type=radio][type=checkbox], .sq-form-question-answer input[type=radio], .decision-tree input[type=radio] {
+  background-image: none !important;
+}
+
 .bg-primary {
   color: #fff;
 }
@@ -19381,25 +19637,27 @@ Alerts
 .sq-form-question-answer textarea:focus, .decision-tree input[type=text].sq-form-field:focus,
 .form-select:focus,
 .sq-form-question-answer select:focus,
+.decision-tree select.sq-form-field:focus,
 .form-check-input:focus,
 .sq-form-question-answer input[type=checkbox]:focus,
 .sq-form-question-answer input[type=radio]:focus,
+.decision-tree input[type=radio]:focus,
 .form-switch .form-check-input:focus {
   box-shadow: 0 0 0 0.25rem rgba(250, 100, 0, 0.25);
 }
 
-.form-check-input:checked[type=radio], .sq-form-question-answer input:checked[type=radio] {
+.form-check-input:checked[type=radio], .sq-form-question-answer input:checked[type=radio], .decision-tree input:checked[type=radio] {
   background-color: #FFFFFF;
 }
 
-.form-switch .form-check-input, .form-switch .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-switch input[type=checkbox], .form-switch .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-switch input[type=radio] {
+.form-switch .form-check-input, .form-switch .sq-form-question-answer input[type=checkbox], .sq-form-question-answer .form-switch input[type=checkbox], .form-switch .sq-form-question-answer input[type=radio], .sq-form-question-answer .form-switch input[type=radio], .form-switch .decision-tree input[type=radio], .decision-tree .form-switch input[type=radio] {
   height: 25px;
 }
-.form-switch .form-check-input:focus, .form-switch .sq-form-question-answer input[type=checkbox]:focus, .sq-form-question-answer .form-switch input[type=checkbox]:focus, .form-switch .sq-form-question-answer input[type=radio]:focus, .sq-form-question-answer .form-switch input[type=radio]:focus {
+.form-switch .form-check-input:focus, .form-switch .sq-form-question-answer input[type=checkbox]:focus, .sq-form-question-answer .form-switch input[type=checkbox]:focus, .form-switch .sq-form-question-answer input[type=radio]:focus, .sq-form-question-answer .form-switch input[type=radio]:focus, .form-switch .decision-tree input[type=radio]:focus, .decision-tree .form-switch input[type=radio]:focus {
   box-shadow: 0 0 0 0.25rem rgba(52, 55, 65, 0.2);
 }
 
-.form-switch .form-check-input:disabled, .form-switch .sq-form-question-answer input[type=checkbox]:disabled, .sq-form-question-answer .form-switch input[type=checkbox]:disabled, .form-switch .sq-form-question-answer input[type=radio]:disabled, .sq-form-question-answer .form-switch input[type=radio]:disabled {
+.form-switch .form-check-input:disabled, .form-switch .sq-form-question-answer input[type=checkbox]:disabled, .sq-form-question-answer .form-switch input[type=checkbox]:disabled, .form-switch .sq-form-question-answer input[type=radio]:disabled, .sq-form-question-answer .form-switch input[type=radio]:disabled, .form-switch .decision-tree input[type=radio]:disabled, .decision-tree .form-switch input[type=radio]:disabled {
   background-color: #707070;
   border-color: #707070;
 }

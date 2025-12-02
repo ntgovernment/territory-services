@@ -1,0 +1,142 @@
+/*
+ * Territory Services - Dropdown Styling
+ * ======================================
+ * 
+ * Global dropdown/select styling system providing consistent states across all form selects.
+ * 
+ * SUPPORTED ELEMENTS:
+ * - select elements with .form-select class
+ * 
+ * DROPDOWN STATES:
+ * 1. Default    - 455×48px with dark border (#343741) and chevron-down icon
+ * 2. Focus      - 455×48px select with 2px blue outline ring (#336699) at 2px offset
+ *                 Creates 464×56px visual boundary, no Bootstrap orange shadow
+ * 3. Disabled   - Grey background (#e8e8e8) with not-allowed cursor
+ * 4. Error      - Red border (#a60f37) for validation failures (.is-invalid)
+ * 5. Success    - Green border (#107810) for validated selects (.is-valid)
+ * 
+ * USAGE:
+ * Apply .form-select class to select elements for automatic styling:
+ * 
+ *   <select class="form-select">
+ *     <option>Option 1</option>
+ *     <option>Option 2</option>
+ *   </select>
+ * 
+ * For validation states, add Bootstrap validation classes:
+ * 
+ *   <select class="form-select is-invalid">...</select>
+ *   <select class="form-select is-valid">...</select>
+ * 
+ * INTEGRATION:
+ * Decision tree selects automatically inherit these styles via @extend:
+ * 
+ *   select.sq-form-field {
+ *     @extend .form-select;
+ *   }
+ * 
+ * VARIABLES USED:
+ * - $input-border-default: #343741 (default border color)
+ * - var(--border-strong-01, #343741) (focus border color)
+ * - #336699 (focus outline ring color)
+ * - $ts-grey-light: #e8e8e8 (disabled background and border)
+ * - $status-error: #a60f37 (error border color)
+ * - $success: #107810 (success border color)
+ * - $border-radius: 8px (default corner rounding)
+ * - 12px (focus state border-radius)
+ * 
+ * RESPONSIVE:
+ * Mobile (max-width: 600px): Selects expand to 100% width
+ */
+
+// Base dropdown/select styling
+select.form-select {
+  // Default State
+  // 455×48px dimensions, white background, dark border with chevron-down icon
+  display: inline-block;
+  width: 455px;
+  height: 48px;
+  min-height: 48px;
+  padding: 0 3rem 0 2rem; // Right padding for chevron icon, left padding for text
+  margin: 15px 0px 10px 0px;
+  border: 2px solid $input-border-default;
+  background: #ffffff;
+  border-radius: $border-radius; // 8px
+  color: inherit;
+  transition: all 300ms ease-in;
+  cursor: pointer;
+
+  // Custom chevron-down icon using SVG
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343741' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px 12px;
+
+  // Remove default browser arrow
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  // Focus State
+  // Select maintains 455×48px dimensions with focus ring around it
+  // Focus ring creates visual effect of 464×56px outer boundary
+  &:focus,
+  &:focus-visible {
+    border: 2px solid var(--border-strong-01, #343741);
+    outline: 2px solid #336699; // #336699 blue focus ring
+    outline-offset: 2px; // 2px gap + 2px outline = 4px total on each side
+    border-radius: 12px; // Larger radius for focus state
+    box-shadow: none !important; // Remove Bootstrap's orange box-shadow
+  }
+
+  // Error State (validation failure)
+  // Red border for invalid selects
+  &.is-invalid {
+    border: 2px solid $status-error; // #a60f37
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23a60f37' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  }
+
+  // Success State (validation passed)
+  // Green border for validated selects
+  &.is-valid {
+    border: 2px solid $success; // #107810
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23107810' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  }
+
+  // Disabled State
+  // Grey background with not-allowed cursor
+  &:disabled,
+  &[disabled] {
+    background-color: $ts-grey-light; // #e8e8e8
+    border: 2px solid $ts-grey-light;
+    cursor: not-allowed;
+    color: $ts-grey-medium;
+    opacity: 1; // Override Bootstrap default opacity
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  }
+
+  // Placeholder/first option styling
+  option:first-child {
+    color: $ts-grey-medium;
+  }
+
+  option:not(:first-child) {
+    color: inherit;
+  }
+}
+
+// Responsive behavior for mobile devices
+@media (max-width: 600px) {
+  select.form-select {
+    // Full width on mobile
+    width: 100%;
+    max-width: 100%;
+
+    // Focus ring maintained on mobile
+    &:focus,
+    &:focus-visible {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}

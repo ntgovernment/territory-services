@@ -46,33 +46,22 @@
     }
   }
 
+  // Radio buttons inherit global styles from ts-radio-button.scss
+  // Apply .form-check-input class to radio inputs for consistent styling across all states
   input[type="radio"] {
-    position: absolute;
-    top: 0;
-    left: -9999px;
-    opacity: 0;
+    @extend .form-check-input;
+    vertical-align: middle;
+    margin-right: 1em;
   }
 
-  input + label {
+  // Radio button labels
+  input[type="radio"] + label {
     display: inline-block;
-    padding: 14px 40px;
-    border: 2px solid $ntg-arafura-blue;
-    background: $ntg-color-white;
-    color: $ntg-arafura-blue;
-    margin-right: 10px;
-    transition: all 300ms ease-in;
+    padding-left: 12px;
+    padding-right: 1em;
     cursor: pointer;
-  }
-
-  // Keyboard focus ring for radios (labels styled via adjacent selector)
-  input:focus + label {
-    @include ts-focus-ring($ntg-arafura-blue);
-  }
-
-  input:checked + label {
-    border: 2px solid $ntg-arafura-blue;
-    background: $ntg-arafura-blue;
-    color: $ntg-color-white;
+    user-select: none;
+    vertical-align: middle;
   }
 
   .sq_result_bodycopy {
@@ -93,12 +82,10 @@
     }
   }
 
-  /*dropdown field*/
-  .sq-form-field {
-    margin: 15px 0px 10px 0px;
-    padding: 14px;
-    border: 2px solid $ntg-arafura-blue;
-    color: $ntg-arafura-blue;
+  // Dropdown fields inherit global styles from ts-dropdown.scss
+  // Apply .form-select class to select elements for consistent styling across all states
+  select.sq-form-field {
+    @extend .form-select;
   }
 
   // Text input fields inherit global styles from ts-text-input.scss

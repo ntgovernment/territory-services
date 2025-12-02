@@ -1,0 +1,152 @@
+/*
+ * Territory Services - Radio Button Styling
+ * ==========================================
+ * 
+ * Global radio button styling system providing consistent states across all form radio inputs.
+ * 
+ * SUPPORTED ELEMENTS:
+ * - input[type="radio"] with .form-check-input class
+ * 
+ * RADIO BUTTON STATES:
+ * 1. Default (Unselected) - 40×40px container with 36×36px circle, dark border (#343741)
+ * 2. Focus                - 2px blue outline ring (#336699) around the entire 40×40px container
+ * 3. Checked              - 36×36px circle with 24×24px blue inner dot (#336699)
+ * 4. Error                - Red border (#A60F37) for validation failures
+ * 5. Disabled             - Grey border (#707070) with not-allowed cursor
+ * 
+ * USAGE:
+ * Apply .form-check-input class to radio inputs for automatic styling:
+ * 
+ *   <input type="radio" class="form-check-input" name="option" id="option1" />
+ *   <label for="option1">Option 1</label>
+ * 
+ * For error state, add .is-invalid class:
+ * 
+ *   <input type="radio" class="form-check-input is-invalid" />
+ * 
+ * INTEGRATION:
+ * Decision tree radio buttons automatically inherit these styles via @extend:
+ * 
+ *   input[type="radio"].sq-form-field {
+ *     @extend .form-check-input;
+ *   }
+ * 
+ * VARIABLES USED:
+ * - var(--border-strong-01, #343741) (default border color)
+ * - var(--icon-interactive, #336699) (checked state inner dot color)
+ * - var(--border-focus, #336699) (focus outline ring color)
+ * - var(--status-error, #A60F37) (error border color)
+ * - var(--border-strong-02, #707070) (disabled border color)
+ * 
+ * DIMENSIONS:
+ * - Container: 40×40px (accommodates focus ring)
+ * - Radio circle: 36×36px (at position 2px, 2px)
+ * - Inner dot (checked): 24×24px (at position 8px, 8px)
+ * - Border width: 2px
+ * - Focus ring: 2px solid outline around 40×40px container
+ */
+
+// Base radio button styling
+input[type="radio"].form-check-input {
+  // Default State (Unselected)
+  // 40×40px container with 36×36px circular radio button
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 1998px; // Large radius for circular focus ring
+
+  // Create the 36×36px radio circle using ::before pseudo-element
+  &::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px; // Fully circular
+    border: 2px solid var(--border-strong-01, #343741);
+    background: #ffffff;
+    transition: all 300ms ease-in;
+    box-sizing: border-box;
+  }
+
+  // Focus State
+  // Blue outline ring around the entire 40×40px container
+  &:focus,
+  &:focus-visible {
+    outline: 2px solid var(--border-focus, #336699); // Blue focus ring
+    outline-offset: 0; // No gap, outline directly on container edge
+    box-shadow: none !important; // Remove Bootstrap's default box-shadow
+  }
+
+  // Checked State
+  // Inner blue dot appears in the center (24×24px at position 8px, 8px)
+  &:checked::before {
+    border-color: var(--border-strong-01, #343741);
+    background: #ffffff;
+  }
+
+  &:checked::after {
+    content: "";
+    position: absolute;
+    left: 8px; // Position 24px dot centered (40-24)/2 = 8
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    background: var(--icon-interactive, #336699); // Blue fill
+    transition: all 300ms ease-in;
+  }
+
+  // Remove Bootstrap's default background-color when checked
+  &:checked {
+    background-color: transparent !important;
+  }
+
+  // Error State
+  // Red border for validation failures
+  &.is-invalid::before,
+  &:invalid::before {
+    border-color: var(--status-error, #a60f37); // Red border
+  }
+
+  // Hover State (not checked)
+  &:not(:checked):hover::before {
+    border-color: #336699; // Blue border on hover
+  }
+
+  // Disabled State
+  // Grey border with not-allowed cursor
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &::before {
+      background: #ffffff;
+      border-color: var(--border-strong-02, #707070); // Grey border
+    }
+
+    &:checked::after {
+      background: var(
+        --border-strong-02,
+        #707070
+      ); // Grey dot when checked and disabled
+    }
+  }
+}
+
+// Remove Bootstrap's default background-image for radio buttons
+input[type="radio"].form-check-input {
+  background-image: none !important;
+}
