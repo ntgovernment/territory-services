@@ -169,6 +169,10 @@ $ts-grey-medium: #707070;
 $ts-grey-light: #e8e8e8;
 $ts-grey-white: #f8f8f8;
 
+//Input States
+$input-border-default: #343741;
+$status-error: #a60f37;
+
 $ts-light-blue: #cee4f2;
 $ts-alice-blue: #ebf4fa;
 
@@ -202,10 +206,10 @@ $spacers: (
 
 $border-radius: 8px;
 
-$font-family-sans-serif: "Roboto", system-ui, -apple-system, "Segoe UI",
-  Roboto, "Helvetica Neue", Arial, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";  //Removed "Noto Sans", "Lato", "Liberation Sans", 
-$font-icons: "Font Awesome 6 Pro";
+$font-family-sans-serif: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol", "Noto Color Emoji"; //Removed "Noto Sans", "Lato", "Liberation Sans",
+$font-icons: "Font Awesome 6 Pro"; // single source of truth (removed duplicate below)
 
 $font-size-lg: $font-size-base * 1.2;
 $font-size-sm: math.div($font-size-base, 1.2);
@@ -292,3 +296,9 @@ $gutters: (
   4: $spacer * 2,
   5: $spacer * 3,
 );
+
+// Accessibility / focus helper
+@mixin ts-focus-ring($color: $primary, $offset: 2px) {
+  outline: 2px solid $color;
+  outline-offset: $offset;
+}

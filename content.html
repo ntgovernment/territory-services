@@ -312,6 +312,55 @@
 
               </section>
             </div>
+            <div id="component_1459694">
+              <div class="decision-tree">
+                <div id="questions">
+                  <div id="q1">
+                    <div id="q1459705_wrapper" class="sq_question_wrapper">
+                      <div id="component_1459697">
+                        <label for="q1459705">What is your first question?</label> <br> <select name="q1459705"
+                          id="q1459705" onchange="get_next_step(this.value,1459705)" class="sq-form-field">
+                          <option value="EMPTY" selected="selected">Please Select</option>
+                          <option value="First_option">First option</option>
+                          <option value="Second_option">Second option</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div id="q2"><input id="q1459706_points" name="q1459706_points" type="hidden" value="0">
+                      <div id="q1459706_wrapper" class="sq_question_wrapper">
+                        <div id="component_1459697">
+                          <label id="q1459706_label">What is your second question?</label> <br>
+                          <ul role="radiogroup" aria-labelledby="q1459706_label">
+                            <li><input type="radio" name="What is your second question?" value="Yes" id="q1459706"
+                                onclick="get_next_step(this.value,1459706) " class="sq-form-field"><label
+                                for="q1459706">Yes</label>
+                            </li>
+                            <li><input type="radio" name="What is your second question?" value="No" id="q1459706_1"
+                                onclick="get_next_step(this.value,1459706) " class="sq-form-field"><label
+                                for="q1459706_1">No</label></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div id="q3"><input id="q1459709_points" name="q1459709_points" type="hidden" value="0">
+                        <div id="q1459709_wrapper" class="sq_question_wrapper">
+                          <div id="component_1459700">
+                            <label for="q1459709">What is your third question?</label> <br> <input type="text"
+                              name="q1459709" value="" size="30" maxlength="300" id="q1459709" class="sq-form-field">
+                            &nbsp; <input type="button" name="q1459709_button" id="q1459709_button" value="Submit"
+                              onclick="get_next_step(document.getElementById('q1459709').value, 1459709) "
+                              class="sq-form-field">
+                          </div>
+                        </div>
+                        <div id="q4"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <br> <input type="reset" name="qReset" value="Reset" onclick="reset_questions() " class="sq-form-field"
+                  id="qReset">
+              </div>
+            </div>
             <div id="component_1274978">
               <p><a href="https://mvr.nt.gov.au/mvrquickpay/" class="btn btn-primary external">Start now</a></p>
               <p>This takes about 5 to 10 minutes.</p>
@@ -808,65 +857,7 @@
                   name="SQ_FORM_1273029_PAGE" value="1" class="sq-form-field" id="SQ_FORM_1273029_PAGE"><input
                   type="hidden" name="form_email_1273029_referral_url"
                   value="https://service.nt.gov.au/services/driving-transport/licences/get-free-year-driver-licence">
-                <style>
-                  #thumbs-feedback-form {
-                    /*display:none;*/
-                  }
-
-                  #message {
-                    display: none;
-                  }
-
-                  .feedback-yes {
-                    display: none;
-                  }
-
-                  .feedback-no {
-                    display: none;
-                  }
-
-                  .feedback-yes li:before {
-                    content: none !important;
-                    /* Remove the content */
-                    display: none !important;
-                    /* Hide the bullet point */
-                    padding-right: 10px;
-                  }
-
-                  .feedback-yes ul {
-                    padding-left: 0rem;
-                  }
-
-                  .feedback-no li:before {
-                    content: none !important;
-                    /* Remove the content */
-                    display: none !important;
-                    /* Hide the bullet point */
-                    padding-right: 10px;
-                  }
-
-                  .feedback-no ul {
-                    padding-left: 0rem;
-                  }
-
-                  .checkbox-large {
-                    width: 32px;
-                    height: 32px;
-                  }
-
-                  .feedback-yes ul li label,
-                  .feedback-no ul li label {
-                    margin-top: -38px;
-                    margin-left: 38px;
-                    padding-bottom: 12px;
-                    display: block;
-                  }
-
-                  /* Hide empty content__main elements */
-                  .content__main:empty {
-                    display: none;
-                  }
-                </style>
+                <!-- Inline styles moved to ts-feedback-form.scss -->
 
                 <div class="ntg-feedback-form mb-3" id="thumbs-feedback-form" data-asset="1278799">
                   <div>

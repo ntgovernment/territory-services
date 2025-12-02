@@ -1,0 +1,213 @@
+.decision-tree {
+  margin: 24px 0;
+  // variable for custom mobile breakpoint used originally (600px)
+  $decision-tree-mobile-max: 600px;
+
+  .sq_question_wrapper {
+    position: relative;
+    padding: 34px 24px 24px 104px;
+    background: $ts-grey-light;
+    margin-bottom: 14px;
+    // background: #f5f4f2;
+    border-left: 5px solid $ts-grey-medium;
+
+    &:before {
+      font-family: $font-icons;
+      font-size: 44px;
+      position: absolute;
+      top: 14px;
+      left: 35px;
+      content: "\f059";
+      color: $ts-grey-medium;
+    }
+
+    & > label {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      position: relative;
+      margin: 24px 0 14px 0;
+      /*individual radio buttons*/
+      margin: 1px !important;
+    }
+
+    ul li:before {
+      display: none;
+    }
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    opacity: 0;
+  }
+
+  input + label {
+    display: inline-block;
+    padding: 14px 40px;
+    border: 2px solid $ntg-arafura-blue;
+    background: $ntg-color-white;
+    color: $ntg-arafura-blue;
+    margin-right: 10px;
+    transition: all 300ms ease-in;
+    cursor: pointer;
+  }
+
+  // Keyboard focus ring for radios (labels styled via adjacent selector)
+  input:focus + label {
+    @include ts-focus-ring($ntg-arafura-blue);
+  }
+
+  input:checked + label {
+    border: 2px solid $ntg-arafura-blue;
+    background: $ntg-arafura-blue;
+    color: $ntg-color-white;
+  }
+
+  .sq_result_bodycopy {
+    position: relative;
+    padding: 34px 24px 24px 104px;
+    background: $ts-grey-light;
+    margin-bottom: 14px;
+    border-left: 5px solid $ts-grey-medium;
+
+    &:before {
+      font-family: $font-icons;
+      font-size: 44px;
+      position: absolute;
+      top: 14px;
+      left: 35px;
+      content: "\f05a";
+      color: $ts-grey-medium;
+    }
+  }
+
+  /*dropdown field*/
+  .sq-form-field {
+    margin: 15px 0px 10px 0px;
+    padding: 14px;
+    border: 2px solid $ntg-arafura-blue;
+    color: $ntg-arafura-blue;
+  }
+
+  // Text input fields inherit global styles from ts-text-input.scss
+  // Apply .form-control class to text inputs for consistent styling across all states
+  input[type="text"].sq-form-field {
+    @extend .form-control;
+  }
+
+  input[type="reset"] {
+    display: inline-block;
+    padding: 14px 40px;
+    border: 2px solid $ntg-arafura-blue;
+    background: $ntg-color-white;
+    color: $ntg-arafura-blue;
+    margin: 0 10px 24px 0;
+    transition: all 300ms ease-in;
+    cursor: pointer;
+  }
+
+  input[type="reset"]:hover {
+    border: 2px solid $ntg-arafura-blue;
+    background: $ntg-arafura-blue;
+    color: $ntg-color-white;
+  }
+
+  input[type="reset"]:focus,
+  input[type="reset"]:focus-visible {
+    @include ts-focus-ring($ntg-arafura-blue);
+  }
+
+  // Style explicit buttons to match .btn-primary
+  input[type="button"] {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 2px solid $secondary;
+    background: $secondary;
+    color: $ntg-color-white;
+    font-weight: bold;
+    border-radius: $border-radius;
+    margin: 0 10px 24px 0;
+    transition: all 300ms ease-in;
+    cursor: pointer;
+  }
+
+  input[type="button"]:hover {
+    border: 2px solid $secondary-mid;
+    background: $secondary-mid;
+    color: $ntg-color-white;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  input[type="button"]:active {
+    border: 2px solid $secondary-dark;
+    background: $secondary-dark;
+    color: $ntg-color-white;
+  }
+
+  input[type="button"]:disabled {
+    border: 2px solid $ts-grey-medium;
+    background: $ts-grey-medium;
+    color: $ntg-color-white;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  input[type="button"]:focus,
+  input[type="button"]:focus-visible {
+    @include ts-focus-ring($secondary);
+  }
+}
+
+// Decision tree: responsive select width using bootstrap mixin (md = 768px)
+@include media-breakpoint-down(md) {
+  .decision-tree select.sq-form-field {
+    white-space: normal;
+    width: 100%;
+  }
+}
+
+// Custom smaller breakpoint (originally 600px)
+@media (max-width: 600px) {
+  .decision-tree {
+    .sq_question_wrapper,
+    .sq_result_bodycopy {
+      padding-top: 10px !important;
+      padding-right: 14px !important;
+      padding-bottom: 14px !important;
+      padding-left: 20px !important;
+    }
+
+    // FontAwesome icon reposition for narrow screens
+    .sq_question_wrapper:before,
+    .sq_result_bodycopy:before {
+      padding-left: 0;
+      top: 0;
+      position: static;
+    }
+
+    // dropdown field
+    .sq-form-field {
+      margin: 5px 0 5px 0;
+      padding: 10px;
+    }
+
+    // radio buttons
+    input + label {
+      display: inline-block;
+      padding: 10px;
+      margin: 5px 0 5px 0;
+    }
+  }
+}

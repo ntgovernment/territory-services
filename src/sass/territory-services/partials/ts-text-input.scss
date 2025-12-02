@@ -1,0 +1,170 @@
+/*
+ * Territory Services - Text Input Styling
+ * ========================================
+ * 
+ * Global text input styling system providing consistent states across all form inputs.
+ * 
+ * SUPPORTED INPUT TYPES:
+ * - text, email, password, number, tel, url, search, date, time, datetime-local
+ * - textarea elements
+ * 
+ * INPUT STATES:
+ * 1. Default    - 455×48px with dark border (#343741)
+ * 2. Focus      - 455×48px input with 2px blue outline ring (#336699) at 2px offset
+ *                 Creates 464×56px visual boundary, no Bootstrap orange shadow
+ * 3. Read-only  - Grey background (#f8f8f8) indicating non-editable state
+ * 4. Error      - Red border (#a60f37) for validation failures (.is-invalid or :invalid)
+ * 5. Success    - Green border (#107810) for validated inputs (.is-valid)
+ * 6. Disabled   - Grey background (#e8e8e8) with not-allowed cursor
+ * 
+ * USAGE:
+ * Apply .form-control class to text inputs for automatic styling:
+ * 
+ *   <input type="text" class="form-control" />
+ *   <textarea class="form-control"></textarea>
+ * 
+ * For validation states, add Bootstrap validation classes:
+ * 
+ *   <input type="text" class="form-control is-invalid" />
+ *   <input type="text" class="form-control is-valid" />
+ * 
+ * INTEGRATION:
+ * Decision tree inputs automatically inherit these styles via @extend:
+ * 
+ *   input[type="text"].sq-form-field {
+ *     @extend .form-control;
+ *   }
+ * 
+ * VARIABLES USED:
+ * - $input-border-default: #343741 (default border color)
+ * - var(--border-strong-01, #343741) (focus border color)
+ * - #336699 (focus outline ring color)
+ * - $ts-grey-white: #f8f8f8 (read-only background)
+ * - $ts-grey-light: #e8e8e8 (read-only/disabled border and disabled background)
+ * - $status-error: #a60f37 (error border color)
+ * - $success: #107810 (success border color)
+ * - $border-radius: 8px (default corner rounding)
+ * - 12px (focus state border-radius)
+ * 
+ * RESPONSIVE:
+ * Mobile (max-width: 600px): Inputs expand to 100% width
+ */
+
+// Base text input styling
+input[type="text"].form-control,
+input[type="email"].form-control,
+input[type="password"].form-control,
+input[type="number"].form-control,
+input[type="tel"].form-control,
+input[type="url"].form-control,
+input[type="search"].form-control,
+input[type="date"].form-control,
+input[type="time"].form-control,
+input[type="datetime-local"].form-control,
+textarea.form-control {
+  // Default State
+  // 455×48px dimensions, white background, dark border
+  display: inline-block;
+  width: 455px;
+  height: 48px;
+  min-height: 48px;
+  padding: 0 2rem; // p-4 spacing (32px horizontal padding)
+  margin: 15px 0px 10px 0px;
+  border: 2px solid $input-border-default;
+  background: #ffffff;
+  border-radius: $border-radius; // 8px
+  color: inherit;
+  transition: all 300ms ease-in;
+
+  // Focus State
+  // Input maintains 455×48px dimensions with focus ring around it
+  // Focus ring creates visual effect of 464×56px outer boundary
+  &:focus,
+  &:focus-visible {
+    border: 2px solid var(--border-strong-01, #343741);
+    outline: 2px solid #336699; // #336699 blue focus ring
+    outline-offset: 2px; // 2px gap + 2px outline = 4px total on each side
+    border-radius: 12px; // Larger radius for focus state
+    box-shadow: none !important; // Remove Bootstrap's orange box-shadow
+  }
+
+  // Read-only State
+  // Grey background and border indicate non-editable
+  &:read-only,
+  &[readonly] {
+    background: $ts-grey-white; // #f8f8f8
+    border: 2px solid $ts-grey-light; // #e8e8e8
+    cursor: default;
+  }
+
+  // Error State (validation failure)
+  // Red border for invalid inputs
+  &.is-invalid,
+  &:invalid {
+    border: 2px solid $status-error; // #a60f37
+    background-image: none !important; // Remove Bootstrap's default checkmark icon
+  }
+
+  // Success State (validation passed)
+  // Green border for validated inputs
+  &.is-valid {
+    border: 2px solid $success; // #107810
+    background-image: none !important; // Remove Bootstrap's default checkmark icon
+  }
+
+  // Disabled State
+  // Grey background with not-allowed cursor
+  &:disabled,
+  &[disabled] {
+    background: $ts-grey-light; // #e8e8e8
+    border: 2px solid $ts-grey-light;
+    cursor: not-allowed;
+    color: $ts-grey-medium;
+  }
+}
+
+// Textarea-specific adjustments
+textarea.form-control {
+  min-height: 120px; // Allow textarea to be taller
+  height: auto;
+  padding: 1rem 2rem; // Vertical padding for multi-line text
+  resize: vertical; // Allow vertical resizing only
+
+  &:focus,
+  &:focus-visible {
+    height: auto; // Don't constrain height on focus for textarea
+  }
+}
+
+// Responsive behavior for mobile devices
+@media (max-width: 600px) {
+  input[type="text"].form-control,
+  input[type="email"].form-control,
+  input[type="password"].form-control,
+  input[type="number"].form-control,
+  input[type="tel"].form-control,
+  input[type="url"].form-control,
+  input[type="search"].form-control,
+  input[type="date"].form-control,
+  input[type="time"].form-control,
+  input[type="datetime-local"].form-control,
+  textarea.form-control {
+    // Full width on mobile
+    width: 100%;
+    max-width: 100%;
+
+    // Focus ring maintained on mobile
+    &:focus,
+    &:focus-visible {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  textarea.form-control {
+    &:focus,
+    &:focus-visible {
+      height: auto; // Allow textarea natural height on mobile
+    }
+  }
+}
