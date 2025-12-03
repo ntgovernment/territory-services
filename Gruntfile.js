@@ -13,40 +13,41 @@ module.exports = function (grunt) {
     shell: {
       // Command to remove old design system files from TS space
       removeOldDesignSystemFiles: {
-        command: 'rm -rf NTGov-DS', // Delete old NTGov-DS files
+        command: "rm -rf NTGov-DS", // Delete old NTGov-DS files
         options: {
-          failOnError: false
-        }
+          failOnError: false,
+        },
       },
       // Command to fetch new design system files from NTGov-DS repo
       fetchNewDesignSystemFiles: {
-        command: 'git clone --depth 1 --branch main https://github.com/ntgovernment/ntg-web-design-system NTGov-DS',
+        command:
+          "git clone --depth 1 --branch main https://github.com/ntgovernment/ntg-web-design-system NTGov-DS",
         options: {
-          failOnError: false
-        }
+          failOnError: false,
+        },
       },
       // Command to remove global DS files from TS space
       removeGlobalDSFiles: {
-        command: 'rm -rf dist/globals',
+        command: "rm -rf dist/globals",
         options: {
-          failOnError: false
-        }
+          failOnError: false,
+        },
       },
       // Command to fetch new global DS files from NTGov-DS repo
       fetchGlobalDSFiles: {
-        command: 'mv NTGov-DS/dist/globals dist/globals',
+        command: "mv NTGov-DS/dist/globals dist/globals",
         options: {
-          failOnError: false
-        }
+          failOnError: false,
+        },
       },
-
     },
-    // SASS configuration. 
+    // SASS configuration.
     // Note: These are blended NTGov-DS with TS files. Refer to territory-services.scss as to which files from NTGov-DS are used or excluded.
     sass: {
       territoryServices: {
         files: {
-          "preflight/territory-services/css/territory-services.css": "src/sass/territory-services.scss",
+          "preflight/territory-services/css/territory-services.css":
+            "src/sass/territory-services.scss",
         },
       },
     },
@@ -103,9 +104,7 @@ module.exports = function (grunt) {
         dest: "dist/territory-services/territory-services-plugins.js",
       },
       territoryServices: {
-        src: [
-          "preflight/territory-services/js/main.min.js",
-        ],
+        src: ["preflight/territory-services/js/main.min.js"],
         dest: "dist/territory-services/territory-services-main.min.js",
       },
     },
@@ -128,7 +127,12 @@ module.exports = function (grunt) {
     watch: {
       territoryServicesSass: {
         files: ["src/sass/territory-services/*.scss"],
-        tasks: ["sass:territoryServices", "cssmin:territoryServices", "uglify:territoryServices", "concat:territoryServices"],
+        tasks: [
+          "sass:territoryServices",
+          "cssmin:territoryServices",
+          "uglify:territoryServices",
+          "concat:territoryServices",
+        ],
       },
     },
   });
@@ -144,19 +148,24 @@ module.exports = function (grunt) {
 
   // Register custom tasks
   grunt.registerTask("territory-services", [
+    "shell:removeOldDesignSystemFiles",
+    "shell:removeGlobalDSFiles",
+    "shell:fetchNewDesignSystemFiles",
+    "shell:fetchGlobalDSFiles",
     "sass:territoryServices",
     "cssmin:territoryServices",
     "uglify:territoryServices",
     "concat:territoryServices",
     "concat:territoryServicesComponents",
     "concat:territoryServicesPlugins",
+    "shell:removeOldDesignSystemFiles",
   ]);
 
   grunt.registerTask("pullDesignSystem", [
     "shell:removeOldDesignSystemFiles", // Delete old cloned repository
-    "shell:removeGlobalDSFiles", // Delete globals folder and files     
-    "shell:fetchNewDesignSystemFiles",   // Clone the new repository   
-    "shell:fetchGlobalDSFiles" // Move globals folder and files
+    "shell:removeGlobalDSFiles", // Delete globals folder and files
+    "shell:fetchNewDesignSystemFiles", // Clone the new repository
+    "shell:fetchGlobalDSFiles", // Move globals folder and files
   ]);
 
   grunt.registerTask("removeDesignSystem", [
