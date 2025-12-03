@@ -46,11 +46,12 @@
   }
 
   &-outline-primary {
-    --bs-btn-color: #{$secondary};
-    --bs-btn-border-color: #{$secondary};
+    --bs-btn-color: #343741;
+    --bs-btn-border-color: #343741;
     --bs-btn-hover-color: #{$white};
     --bs-btn-active-color: #{$white};
 
+    --bs-btn-bg: #{$white};
     --bs-btn-hover-bg: #{$secondary-mid};
     --bs-btn-hover-border-color: #{$secondary-mid};
     --bs-btn-active-bg: #{$secondary-dark};
@@ -61,6 +62,20 @@
     --bs-btn-disabled-bg: #{$ts-grey-medium};
     --bs-btn-disabled-border-color: #{$ts-grey-medium};
     --bs-btn-disabled-opacity: 1;
+
+    // Secondary button styling
+    height: 52px;
+    padding: 4px 32px;
+    border-radius: 8px;
+    border: 2px solid #343741;
+    background-color: #{$white};
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 29px;
+    gap: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     &:focus-visible {
       background-color: #{$secondary};

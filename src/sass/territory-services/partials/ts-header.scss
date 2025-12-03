@@ -350,21 +350,32 @@
   }
 
   .ntg-header-search {
+    .input-group {
+      align-items: center;
+    }
+
     .form-control {
       border-color: $primary;
-      border-width: 1px;
+      border-width: 2px;
+      height: 52px;
       padding: 11px 12px 11px 10px;
+      margin: 0;
       &.is-valid {
         background-image: none !important;
       }
     }
 
     button[type="submit"] {
-      border-color: $primary;
+      border: 2px solid $primary;
       background-color: $primary;
-      padding-top: 2px;
-      padding-bottom: 2px;
+      height: 52px;
+      padding-top: 4px;
+      padding-bottom: 4px;
       border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
       transition: 0.2s background ease-in-out;
 
       &:hover {

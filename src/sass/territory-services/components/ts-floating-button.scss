@@ -1,3 +1,22 @@
+.floating-button {
+  // Ensure buttons inside floating button use primary button styling
+  .btn-primary {
+    height: 52px !important;
+    padding: 4px 32px !important;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 29px;
+    gap: 8px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: var(--btn-primary-default, #d6410a);
+    border-color: var(--btn-primary-default, #d6410a);
+    color: var(--btn-primary-default-text, #ffffff);
+  }
+}
+
 .floating-button.is-fixed {
   position: fixed !important;
   left: 0;

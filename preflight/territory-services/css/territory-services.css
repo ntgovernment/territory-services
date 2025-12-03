@@ -17093,10 +17093,11 @@ div[data-component=ntg-sticky-nav] {
   border-color: var(--bs-btn-bg);
 }
 .btn-outline-primary {
-  --bs-btn-color: #d6410a;
-  --bs-btn-border-color: #d6410a;
+  --bs-btn-color: #343741;
+  --bs-btn-border-color: #343741;
   --bs-btn-hover-color: #fff;
   --bs-btn-active-color: #fff;
+  --bs-btn-bg: #fff;
   --bs-btn-hover-bg: #ca4904;
   --bs-btn-hover-border-color: #ca4904;
   --bs-btn-active-bg: #b14004;
@@ -17106,6 +17107,18 @@ div[data-component=ntg-sticky-nav] {
   --bs-btn-disabled-bg: #707070;
   --bs-btn-disabled-border-color: #707070;
   --bs-btn-disabled-opacity: 1;
+  height: 52px;
+  padding: 4px 32px;
+  border-radius: 8px;
+  border: 2px solid #343741;
+  background-color: #fff;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 29px;
+  gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .btn-outline-primary:focus-visible {
   background-color: #d6410a;
@@ -17641,12 +17654,17 @@ i[class*=fa-instagram] {
     font-size: 1.5rem;
   }
 }
+.ntg-header .ntg-header-search .input-group {
+  align-items: center;
+}
 .ntg-header .ntg-header-search .form-control, .ntg-header .ntg-header-search .sq-form-question-answer input:not([type=checkbox]):not([type=radio]), .sq-form-question-answer .ntg-header .ntg-header-search input:not([type=checkbox]):not([type=radio]),
 .ntg-header .ntg-header-search .sq-form-question-answer textarea,
 .sq-form-question-answer .ntg-header .ntg-header-search textarea, .ntg-header .ntg-header-search .decision-tree input[type=text].sq-form-field, .decision-tree .ntg-header .ntg-header-search input[type=text].sq-form-field {
   border-color: #343741;
-  border-width: 1px;
+  border-width: 2px;
+  height: 52px;
   padding: 11px 12px 11px 10px;
+  margin: 0;
 }
 .ntg-header .ntg-header-search .form-control.is-valid, .ntg-header .ntg-header-search .sq-form-question-answer input.is-valid:not([type=checkbox]):not([type=radio]), .sq-form-question-answer .ntg-header .ntg-header-search input.is-valid:not([type=checkbox]):not([type=radio]),
 .ntg-header .ntg-header-search .sq-form-question-answer textarea.is-valid,
@@ -17654,11 +17672,16 @@ i[class*=fa-instagram] {
   background-image: none !important;
 }
 .ntg-header .ntg-header-search button[type=submit] {
-  border-color: #343741;
+  border: 2px solid #343741;
   background-color: #343741;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  height: 52px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
   transition: 0.2s background ease-in-out;
 }
 .ntg-header .ntg-header-search button[type=submit]:hover {
@@ -18490,23 +18513,32 @@ main ul.marker-chevron li::before {
   color: #707070;
 }
 .decision-tree input[type=reset] {
-  display: inline-block;
-  padding: 14px 40px;
-  border: 2px solid #1f1f5f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 4px 32px;
+  border: 2px solid #343741;
   background: #ffffff;
-  color: #1f1f5f;
+  color: #343741;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 29px;
+  border-radius: 8px;
   margin: 0 10px 24px 0;
   transition: all 300ms ease-in;
   cursor: pointer;
+  gap: 8px;
 }
 .decision-tree input[type=reset]:hover {
-  border: 2px solid #1f1f5f;
-  background: #1f1f5f;
+  border: 2px solid #ca4904;
+  background: #ca4904;
   color: #ffffff;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
 }
 .decision-tree input[type=reset]:focus,
 .decision-tree input[type=reset]:focus-visible {
-  outline: 2px solid #1f1f5f;
+  outline: 2px solid #d6410a;
   outline-offset: 2px;
 }
 .decision-tree input[type=button] {
@@ -20255,6 +20287,22 @@ Alerts
 }
 .ntg-group-topics.landing-page i {
   transition: 0.2s;
+}
+
+.floating-button .btn-primary {
+  height: 52px !important;
+  padding: 4px 32px !important;
+  border-radius: 8px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 29px;
+  gap: 8px;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--btn-primary-default, #d6410a);
+  border-color: var(--btn-primary-default, #d6410a);
+  color: var(--btn-primary-default-text, #ffffff);
 }
 
 .floating-button.is-fixed {
