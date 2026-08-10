@@ -21,7 +21,7 @@ Clone the Git repository to your local machine.
 npm install
 ```
 
-The Sass task uses `grunt-contrib-sass`, which requires Ruby and the Ruby Sass executable to be available on `PATH`.
+The Sass task uses `grunt-contrib-sass`, which requires Ruby and the Ruby Sass executable to be available on `PATH`. The full Grunt build also invokes Unix shell commands (`rm` and `mv`) while refreshing the NT Government Design System dependency.
 
 ### 3. Run locally
 
@@ -46,6 +46,18 @@ Other useful commands:
 | `npm run build` | Refresh the NT Government Design System dependency and build CSS and JavaScript. |
 | `npm run sass` | Compile Territory Services Sass into the preflight CSS bundle. |
 | `npx grunt cssmin:territoryServices` | Minify the preflight CSS into the distribution bundle. |
+
+### Windows troubleshooting
+
+`grunt run` and `npm run dev` perform a full design-system refresh before starting the server. On Windows, they can fail if Ruby Sass is not installed or if the shell cannot run the build's Unix commands (`rm` and `mv`). The `--force` option does not resolve these missing prerequisites and can leave incomplete build output.
+
+To view the existing compiled site without running the build, use:
+
+```bash
+npm run serve
+```
+
+For a full build on Windows, run the commands from a Unix-compatible environment such as WSL, install Ruby Sass, and ensure Git is available on `PATH`. The design-system checkout must be present as `NTGov-DS` before running the Sass task. After the build completes, `npm run serve` can be used to view the result.
 
 ## Decision tree radio buttons
 
