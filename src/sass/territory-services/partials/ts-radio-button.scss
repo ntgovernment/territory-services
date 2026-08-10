@@ -24,13 +24,6 @@
  * 
  *   <input type="radio" class="form-check-input is-invalid" />
  * 
- * INTEGRATION:
- * Decision tree radio buttons automatically inherit these styles via @extend:
- * 
- *   input[type="radio"].sq-form-field {
- *     @extend .form-check-input;
- *   }
- * 
  * VARIABLES USED:
  * - var(--border-strong-01, #343741) (default border color)
  * - var(--icon-interactive, #336699) (checked state inner dot color)

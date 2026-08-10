@@ -11,33 +11,81 @@ This project is primarily targeted towards developers, contractors, and stakehol
 ## Getting Started
 To begin using Territory Services in your project, follow these steps:
 
-### 1. Clone the Repository:
+### 1. Clone the repository
 
+Clone the Git repository to your local machine.
 
-Clone the GIT repository to your local machine.
-
-
-### 2. Install Dependencies:
-
-
-Install the following dependencies via NPM (Node Package Manager):
+### 2. Install dependencies
 
 ```bash
-npm install grunt-contrib --save-dev
-npm install grunt-contrib-concat --save-dev
-npm install grunt-contrib-connect --save-dev
-npm install grunt-contrib-cssmin --save-dev
-npm install grunt-contrib-sass --save-dev
-npm install grunt-contrib-uglify --save-dev
-npm install grunt-contrib-watch --save-dev
-npm install grunt-css --save-dev
+npm install
 ```
 
-### 3. Run Locally:
+The Sass task uses `grunt-contrib-sass`, which requires Ruby and the Ruby Sass executable to be available on `PATH`.
 
+### 3. Run locally
 
-Once installed, access the localhost environment with 'grunt run'.
+Build the project and start the local development server:
 
+```bash
+npm run dev
+```
+
+The site is served at [http://localhost:8080](http://localhost:8080). The default page includes a decision-tree radio-button example immediately below the hero.
+
+To serve existing build output without rebuilding it, run:
+
+```bash
+npm run serve
+```
+
+Other useful commands:
+
+| Command | Purpose |
+| --- | --- |
+| `npm run build` | Refresh the NT Government Design System dependency and build CSS and JavaScript. |
+| `npm run sass` | Compile Territory Services Sass into the preflight CSS bundle. |
+| `npx grunt cssmin:territoryServices` | Minify the preflight CSS into the distribution bundle. |
+
+## Decision tree radio buttons
+
+Radio choices inside `.decision-tree` are presented as a wrapping group of buttons. Unselected choices use the outlined button treatment, while the selected choice uses the primary button treatment.
+
+Use native radio inputs immediately followed by their associated labels. Give every input a unique `id`, and use the same `name` for all choices in a group:
+
+```html
+<div class="decision-tree">
+	<div class="sq_question_wrapper">
+		<fieldset>
+			<legend>How would you like to access this service?</legend>
+			<ul>
+				<li>
+					<input
+						type="radio"
+						class="sq-form-field"
+						name="service-access"
+						id="service-access-online"
+						value="online"
+					>
+					<label for="service-access-online">Online</label>
+				</li>
+				<li>
+					<input
+						type="radio"
+						class="sq-form-field"
+						name="service-access"
+						id="service-access-phone"
+						value="phone"
+					>
+					<label for="service-access-phone">By phone</label>
+				</li>
+			</ul>
+		</fieldset>
+	</div>
+</div>
+```
+
+The native inputs remain keyboard accessible and submit their values normally. Do not hide them with `display: none`, remove the associated labels, or replace the radios with JavaScript-only buttons. The component styles provide checked, hover, active, focus-visible, invalid, and disabled states. Radio inputs outside `.decision-tree` retain the standard circular radio treatment.
 
 ### Submit Issues
 
