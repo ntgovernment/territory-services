@@ -1,11 +1,33 @@
 // Required Grunt extensions/modules:
 // npm i grunt-cli --save-dev
-// npm i grunt-contrib-sass --save-dev
+// npm i grunt-sass sass --save-dev
 // npm i grunt-contrib-cssmin --save-dev
 // npm i grunt-contrib-uglify --save-dev
 // npm i grunt-contrib-concat --save-dev
 // npm i grunt-contrib-watch --save-dev
 // npm i grunt-shell --save-dev
+
+const sass = require("sass");
+
+// NTGov-DS is vendored (git-cloned fresh on every pull) so its deprecation
+// warnings can't be fixed here. quietDeps doesn't suppress them because it's
+// imported via a relative path, not an includePaths/importer load path, so
+// Dart Sass doesn't count it as a "dependency". Filter by source file instead.
+const vendorWarnLogger = {
+  warn(message, options) {
+    if (
+      options.deprecation &&
+      options.deprecationType &&
+      options.deprecationType.id === "legacy-js-api"
+    ) {
+      return;
+    }
+    if (options.span && options.span.url && String(options.span.url).includes("/NTGov-DS/")) {
+      return;
+    }
+    console.warn(message);
+  },
+};
 
 module.exports = function (grunt) {
   grunt.initConfig({
@@ -44,6 +66,10 @@ module.exports = function (grunt) {
     // SASS configuration.
     // Note: These are blended NTGov-DS with TS files. Refer to territory-services.scss as to which files from NTGov-DS are used or excluded.
     sass: {
+      options: {
+        implementation: sass,
+        logger: vendorWarnLogger,
+      },
       territoryServices: {
         files: {
           "preflight/territory-services/css/territory-services.css":
@@ -138,7 +164,7 @@ module.exports = function (grunt) {
   });
 
   // Load Grunt tasks
-  grunt.loadNpmTasks("grunt-contrib-sass");
+  grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-concat");

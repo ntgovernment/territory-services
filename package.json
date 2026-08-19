@@ -21,10 +21,11 @@
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-connect": "^5.0.1",
     "grunt-contrib-cssmin": "^4.0.0",
-    "grunt-contrib-sass": "^2.0.0",
     "grunt-contrib-uglify": "^5.2.2",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-css": "^0.4.1"
+    "grunt-css": "^0.4.1",
+    "grunt-sass": "^3.1.0",
+    "sass": "^1.102.0"
   },
   "dependencies": {
     "grunt-shell": "^4.0.0"
