@@ -1,0 +1,157 @@
+.ntg-content-and-image-block {
+    padding-block: pxToRem(32px);
+
+    @include media-breakpoint-up(lg) {
+        padding-block: pxToRem(48px);
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: pxToRem(24px);
+
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+            align-items: center;
+            gap: pxToRem(32px);
+        }
+    }
+
+    &__media {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            // Default ratio: media 1 : content 3
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 239px;
+        height: auto;
+    }
+
+    &__content {
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        @include media-breakpoint-up(lg) {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Reverse media/content order. Mobile always stacks media above content.
+    &--reverse {
+        @include media-breakpoint-up(lg) {
+            .ntg-content-and-image-block__media {
+                order: 2;
+            }
+
+            .ntg-content-and-image-block__content {
+                order: 1;
+            }
+        }
+    }
+
+    // Column width ratio options (media : content), desktop only.
+    &--ratio-1-1 {
+        @include media-breakpoint-up(lg) {
+            .ntg-content-and-image-block__media,
+            .ntg-content-and-image-block__content {
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+        }
+    }
+
+    &--ratio-1-2 {
+        @include media-breakpoint-up(lg) {
+            .ntg-content-and-image-block__media {
+                flex-basis: 33.3333%;
+                max-width: 33.3333%;
+            }
+
+            .ntg-content-and-image-block__content {
+                flex-basis: 66.6667%;
+                max-width: 66.6667%;
+            }
+        }
+    }
+
+    &--ratio-2-1 {
+        @include media-breakpoint-up(lg) {
+            .ntg-content-and-image-block__media {
+                flex-basis: 66.6667%;
+                max-width: 66.6667%;
+            }
+
+            .ntg-content-and-image-block__content {
+                flex-basis: 33.3333%;
+                max-width: 33.3333%;
+            }
+        }
+    }
+
+    &--ratio-1-3 {
+        @include media-breakpoint-up(lg) {
+            .ntg-content-and-image-block__media {
+                flex-basis: 25%;
+                max-width: 25%;
+            }
+
+            .ntg-content-and-image-block__content {
+                flex-basis: 75%;
+                max-width: 75%;
+            }
+        }
+    }
+
+    &--ratio-3-1 {
+        @include media-breakpoint-up(lg) {
+            .ntg-content-and-image-block__media {
+                flex-basis: 75%;
+                max-width: 75%;
+            }
+
+            .ntg-content-and-image-block__content {
+                flex-basis: 25%;
+                max-width: 25%;
+            }
+        }
+    }
+
+    // Cross-axis alignment of the media/content columns, desktop only.
+    &--align-start {
+        @include media-breakpoint-up(lg) {
+            .ntg-content-and-image-block__row {
+                align-items: flex-start;
+            }
+        }
+    }
+
+    &--align-center {
+        @include media-breakpoint-up(lg) {
+            .ntg-content-and-image-block__row {
+                align-items: center;
+            }
+        }
+    }
+
+    &--align-end {
+        @include media-breakpoint-up(lg) {
+            .ntg-content-and-image-block__row {
+                align-items: flex-end;
+            }
+        }
+    }
+}

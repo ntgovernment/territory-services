@@ -1,0 +1,73 @@
+.ntg-wysiwyg-and-highlights {
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: 50%;
+        width: auto;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        z-index: 0;
+        background-color: #fde9e1;
+    }
+
+    &__bg-graphic {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        // transform: translateX(-50%);
+        height: 50%;
+        max-height: 50%;
+        width: auto;
+        aspect-ratio: 1440 / 330;
+
+        svg, img {
+            display: block;
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &__row {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__eyebrow {
+        font-size: pxToRem(16px);
+        line-height: pxToRem(24px);
+    }
+
+    &__card {
+        --bs-card-border-radius: #{pxToRem(12px)};
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    &__card-image {
+        width: pxToRem(120px);
+        height: pxToRem(120px);
+        object-fit: cover;
+    }
+
+    &__card-title {
+        font-size: pxToRem(21px);
+        line-height: pxToRem(29px);
+    }
+
+    // Reverse content/cards order, desktop only. Mobile always stacks
+    // content above cards.
+    &--reverse {
+        @include media-breakpoint-up(lg) {
+            .ntg-wysiwyg-and-highlights__content {
+                order: 2;
+            }
+
+            .ntg-wysiwyg-and-highlights__cards {
+                order: 1;
+            }
+        }
+    }
+}

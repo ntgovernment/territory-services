@@ -57,6 +57,8 @@ $ntg-theme-colours: (
   ntg-background-light: $ntg-background-light,
   ts-light-blue: $semantic-colours-bg-emphasis-blue-100,
   warning-yellow: $semantic-colours-bg-alert-warning-orange-50,
+  gray-dark-400: $grey-dark-400,
+  ntg-background-silver: $ntg-background-silver
 );
 
 $ts-table-variant: (
@@ -182,6 +184,7 @@ $ts-grey-medium: $primitive-colours-neutral-grey-500;
 @import "../../NTGov-DS/src/sass/ntgbase/partials/ntgovau-print.scss";
 
 // Layout Partials
+@import "territory-services/partials/ts-globals.scss";
 @import "territory-services/partials/ts-back-to-top.scss";
 @import "territory-services/partials/ts-breadcrumb.scss";
 @import "territory-services/partials/ts-buttons.scss";
@@ -222,4 +225,10 @@ $ts-grey-medium: $primitive-colours-neutral-grey-500;
 @import "territory-services/components/ts-image-cards.scss";
 @import "territory-services/components/ts-rich-media.scss";
 @import "territory-services/components/ts-topic-cards.scss";
+@import "territory-services/components/ts-content-and-image-block.scss";
+@import "territory-services/components/ts-featured-content.scss";
+@import "territory-services/components/ts-wysiwyg-and-highlights.scss";
+@import "territory-services/components/ts-two-column-grid.scss";
+@import "territory-services/components/ts-promo-banner.scss";
+@import "territory-services/components/ts-icon-cards.scss";
 @import "territory-services/components/ts-floating-button.scss";

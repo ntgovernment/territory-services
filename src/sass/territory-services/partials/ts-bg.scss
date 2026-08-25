@@ -3,3 +3,22 @@
         color: $white;
     }
 }
+
+.bg-bleed {
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: 50%;
+        width: auto;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        z-index: -1;
+        background-color: inherit;
+    }
+}

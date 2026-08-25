@@ -1,0 +1,22 @@
+.ntg-icon-cards {
+    &__eyebrow {
+        font-size: pxToRem(16px);
+        line-height: pxToRem(24px);
+    }
+
+    &__card {
+        --bs-card-bg: #f5f5f5;
+        --bs-card-border-color: #e8e8e8;
+        --bs-card-border-radius: #{pxToRem(12px)};
+    }
+
+    &__icon {
+        font-size: pxToRem(48px);
+        color: $grey-dark-400;
+    }
+
+    .card-title {
+        font-size: pxToRem(21px);
+        line-height: pxToRem(29px);
+    }
+}

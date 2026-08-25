@@ -1,0 +1,64 @@
+.ntg-promo-banner {
+    &__card {
+        --bs-card-border-radius: #{pxToRem(12px)};
+        --bs-card-border-color: #e8e8e8;
+        --bs-card-bg: #fde9e1;
+        position: relative;
+        overflow: hidden; // clip the decorative graphic to the card's rounded corners
+    }
+
+    &__bg-graphic {
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 50%;
+        max-height: 50%;
+        width: auto;
+        aspect-ratio: 1440 / 330;
+        z-index: 0;
+
+        svg {
+            display: block;
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &__content,
+    &__image {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__illustration {
+        width: pxToRem(257px);
+        max-width: 100%;
+        height: auto;
+    }
+
+    &--align-start {
+        .ntg-promo-banner__image {
+            align-self: flex-start;
+        }
+    }
+
+    &--align-center {
+        .ntg-promo-banner__image {
+            align-self: center;
+        }
+    }
+
+    &--align-end {
+        .ntg-promo-banner__image {
+            align-self: flex-end;
+        }
+    }
+
+
+    &--center-image {
+        .ntg-promo-banner__card {
+            padding-bottom: pxToRem(32px);
+        }
+    }
+}

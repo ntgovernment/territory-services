@@ -48,6 +48,17 @@ small {
   }
 }
 
+// Display headings
+.display-1 {
+  // line-height: pxToRem(60px);
+}
+
+.display-3 {
+  // font-weight: $ntg-font-65-medium;
+  // line-height: pxToRem(40px);
+  letter-spacing: normal;
+}
+
 .font-awesome-family-pro {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -171,6 +182,29 @@ h6 {
 
 .content__main:empty {
   display: none;
+}
+
+// Reusable WYSIWYG-safe text utilities
+.text-orange {
+  color: $secondary;
+}
+
+.fw-500 {
+  font-weight: $ntg-font-55-normal !important;
+}
+
+.list-style-none {
+  list-style: none;
+
+  li::before {
+    content: none;
+  }
+}
+
+.text-xxl {
+  font-size: pxToRem(36px);
+  line-height: 1.11;
+  font-weight: $ntg-font-55-normal;
 }
 
 .content__main h3 {
