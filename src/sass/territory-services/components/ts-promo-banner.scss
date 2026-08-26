@@ -5,6 +5,7 @@
         --bs-card-bg: #fde9e1;
         position: relative;
         overflow: hidden; // clip the decorative graphic to the card's rounded corners
+        pointer-events: none;
     }
 
     &__bg-graphic {

@@ -1,4 +1,5 @@
 .ntg-icon-cards {
+
     &__eyebrow {
         font-size: pxToRem(16px);
         line-height: pxToRem(24px);
@@ -8,6 +9,18 @@
         --bs-card-bg: #f5f5f5;
         --bs-card-border-color: #e8e8e8;
         --bs-card-border-radius: #{pxToRem(12px)};
+        pointer-events: none;
+        transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        border: 1px solid transparent !important;
+
+        &:has(.stretched-link) {
+            pointer-events: auto;
+
+            &:hover {
+                box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+                border: 1px solid #E8E8E8 !important;
+            }
+        }
     }
 
     &__icon {
@@ -15,8 +28,38 @@
         color: $grey-dark-400;
     }
 
+    &__arrow {
+        position: absolute;
+        bottom: 1rem;
+    }
+
     .card-title {
         font-size: pxToRem(21px);
         line-height: pxToRem(29px);
+
+        a {
+            color: inherit;
+            
+
+            &:hover {
+                color: inherit;
+            }
+
+            &.stretched-link {
+                &:focus {
+                    background-color: unset;
+                }
+
+                &:focus-visible {
+                    outline: unset;
+                    
+                    &::after {
+                        border-radius: 16px;
+                        outline: 3px solid var(--border-focus, #369);
+                        outline-offset: 2px;
+                    }
+                }
+            }
+        }
     }
 }

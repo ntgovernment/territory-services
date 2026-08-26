@@ -30,8 +30,13 @@
         --bs-card-border-radius: #{pxToRem(12px)};
         --bs-card-border-color: #e8e8e8;
 
+        &:hover {
+            box-shadow: unset;
+        }
+
         > * {
             margin-bottom: pxToRem(24px);
+            pointer-events: auto;
 
             &:last-child {
                 margin-bottom: 0;

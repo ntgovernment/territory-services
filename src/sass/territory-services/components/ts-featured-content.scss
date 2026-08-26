@@ -3,6 +3,7 @@
         --bs-card-border-radius: #{pxToRem(12px)};
         --bs-card-border-color: #e8e8e8;
         overflow: hidden; // keep the image's corners clipped to the card radius
+        pointer-events: none;
     }
 
     &__eyebrow {

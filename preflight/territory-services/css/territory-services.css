@@ -20786,6 +20786,7 @@ Alerts
   --bs-card-border-radius: 0.75rem;
   --bs-card-border-color: #e8e8e8;
   overflow: hidden;
+  pointer-events: none;
 }
 .ntg-featured-content__eyebrow {
   font-size: 1rem;
@@ -20893,6 +20894,16 @@ Alerts
 .ntg-wysiwyg-and-highlights__card {
   --bs-card-border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  transition: box-shadow 0.2s ease-in-out;
+  border: 1px solid transparent !important;
+}
+.ntg-wysiwyg-and-highlights__card:has(.stretched-link) {
+  pointer-events: auto;
+}
+.ntg-wysiwyg-and-highlights__card:has(.stretched-link):hover {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  border: 1px solid #E8E8E8 !important;
 }
 .ntg-wysiwyg-and-highlights__card-image {
   width: 7.5rem;
@@ -20902,6 +20913,23 @@ Alerts
 .ntg-wysiwyg-and-highlights__card-title {
   font-size: 1.3125rem;
   line-height: 1.8125rem;
+}
+.ntg-wysiwyg-and-highlights__card-title a {
+  color: inherit;
+}
+.ntg-wysiwyg-and-highlights__card-title a:hover {
+  color: inherit;
+}
+.ntg-wysiwyg-and-highlights__card-title a.stretched-link:focus {
+  background-color: unset;
+}
+.ntg-wysiwyg-and-highlights__card-title a.stretched-link:focus-visible {
+  outline: unset;
+}
+.ntg-wysiwyg-and-highlights__card-title a.stretched-link:focus-visible::after {
+  border-radius: 16px;
+  outline: 3px solid var(--border-focus, #369);
+  outline-offset: 2px;
 }
 @media (min-width: 992px) {
   .ntg-wysiwyg-and-highlights--reverse .ntg-wysiwyg-and-highlights__content {
@@ -20940,8 +20968,12 @@ Alerts
   --bs-card-border-radius: 0.75rem;
   --bs-card-border-color: #e8e8e8;
 }
+.ntg-two-column-grid__col:hover {
+  box-shadow: unset;
+}
 .ntg-two-column-grid__col > * {
   margin-bottom: 1.5rem;
+  pointer-events: auto;
 }
 .ntg-two-column-grid__col > *:last-child {
   margin-bottom: 0;
@@ -20975,6 +21007,7 @@ Alerts
   --bs-card-bg: #fde9e1;
   position: relative;
   overflow: hidden;
+  pointer-events: none;
 }
 .ntg-promo-banner__bg-graphic {
   position: absolute;
@@ -21021,14 +21054,45 @@ Alerts
   --bs-card-bg: #f5f5f5;
   --bs-card-border-color: #e8e8e8;
   --bs-card-border-radius: 0.75rem;
+  pointer-events: none;
+  transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  border: 1px solid transparent !important;
+}
+.ntg-icon-cards__card:has(.stretched-link) {
+  pointer-events: auto;
+}
+.ntg-icon-cards__card:has(.stretched-link):hover {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  border: 1px solid #E8E8E8 !important;
 }
 .ntg-icon-cards__icon {
   font-size: 3rem;
   color: #343741;
 }
+.ntg-icon-cards__arrow {
+  position: absolute;
+  bottom: 1rem;
+}
 .ntg-icon-cards .card-title {
   font-size: 1.3125rem;
   line-height: 1.8125rem;
+}
+.ntg-icon-cards .card-title a {
+  color: inherit;
+}
+.ntg-icon-cards .card-title a:hover {
+  color: inherit;
+}
+.ntg-icon-cards .card-title a.stretched-link:focus {
+  background-color: unset;
+}
+.ntg-icon-cards .card-title a.stretched-link:focus-visible {
+  outline: unset;
+}
+.ntg-icon-cards .card-title a.stretched-link:focus-visible::after {
+  border-radius: 16px;
+  outline: 3px solid var(--border-focus, #369);
+  outline-offset: 2px;
 }
 
 .floating-button .btn-primary {
