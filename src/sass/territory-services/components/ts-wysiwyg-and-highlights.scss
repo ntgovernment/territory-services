@@ -52,7 +52,7 @@
             pointer-events: auto;
 
             &:hover {
-                box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+                box-shadow: 0 5px 8px rgba(0,0,0,.25);
                 border: 1px solid #E8E8E8 !important;
             }
         }
@@ -76,6 +76,10 @@
             }
 
             &.stretched-link {
+                &::after {
+                    content: "" !important;
+                }
+
                 &:focus {
                     background-color: unset;
                 }

@@ -83,6 +83,11 @@
 
         a.stretched-link {
             text-decoration: none !important;
+            
+            &::after {
+                content: "" !important;
+            }
+
             &:hover {
                 text-decoration: underline !important;
                 i {

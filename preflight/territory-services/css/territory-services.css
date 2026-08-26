@@ -20651,6 +20651,9 @@ Alerts
 .ntg-group-topics.landing-page a.stretched-link {
   text-decoration: none !important;
 }
+.ntg-group-topics.landing-page a.stretched-link::after {
+  content: "" !important;
+}
 .ntg-group-topics.landing-page a.stretched-link:hover {
   text-decoration: underline !important;
 }
@@ -20786,7 +20789,9 @@ Alerts
   --bs-card-border-radius: 0.75rem;
   --bs-card-border-color: #e8e8e8;
   overflow: hidden;
-  pointer-events: none;
+}
+.ntg-featured-content.card:hover {
+  box-shadow: unset;
 }
 .ntg-featured-content__eyebrow {
   font-size: 1rem;
@@ -20902,7 +20907,7 @@ Alerts
   pointer-events: auto;
 }
 .ntg-wysiwyg-and-highlights__card:has(.stretched-link):hover {
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
   border: 1px solid #E8E8E8 !important;
 }
 .ntg-wysiwyg-and-highlights__card-image {
@@ -20919,6 +20924,9 @@ Alerts
 }
 .ntg-wysiwyg-and-highlights__card-title a:hover {
   color: inherit;
+}
+.ntg-wysiwyg-and-highlights__card-title a.stretched-link::after {
+  content: "" !important;
 }
 .ntg-wysiwyg-and-highlights__card-title a.stretched-link:focus {
   background-color: unset;
@@ -21009,6 +21017,30 @@ Alerts
   overflow: hidden;
   pointer-events: none;
 }
+.ntg-promo-banner__card:has(.stretched-link) {
+  pointer-events: auto;
+}
+.ntg-promo-banner__card a.stretched-link {
+  color: inherit;
+  text-decoration: none !important;
+}
+.ntg-promo-banner__card a.stretched-link::after {
+  content: "" !important;
+}
+.ntg-promo-banner__card a.stretched-link:hover {
+  color: inherit;
+}
+.ntg-promo-banner__card a.stretched-link:focus {
+  background-color: unset;
+}
+.ntg-promo-banner__card a.stretched-link:focus-visible {
+  outline: unset;
+}
+.ntg-promo-banner__card a.stretched-link:focus-visible::after {
+  border-radius: 12px;
+  outline: 3px solid var(--border-focus, #369);
+  outline-offset: 2px;
+}
 .ntg-promo-banner__bg-graphic {
   position: absolute;
   left: 0;
@@ -21025,7 +21057,6 @@ Alerts
   width: auto;
 }
 .ntg-promo-banner__content, .ntg-promo-banner__image {
-  position: relative;
   z-index: 1;
 }
 .ntg-promo-banner__illustration {
@@ -21082,6 +21113,9 @@ Alerts
 }
 .ntg-icon-cards .card-title a:hover {
   color: inherit;
+}
+.ntg-icon-cards .card-title a.stretched-link::after {
+  content: "" !important;
 }
 .ntg-icon-cards .card-title a.stretched-link:focus {
   background-color: unset;

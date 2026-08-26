@@ -6,6 +6,38 @@
         position: relative;
         overflow: hidden; // clip the decorative graphic to the card's rounded corners
         pointer-events: none;
+
+        &:has(.stretched-link) {
+            pointer-events: auto;
+        }
+
+        a.stretched-link {
+            color: inherit;
+            text-decoration: none !important;
+
+            &::after {
+                content: "" !important;
+            }
+
+            &:hover {
+                color: inherit;
+            }
+
+            
+            &:focus {
+                background-color: unset;
+            }
+
+            &:focus-visible {
+                outline: unset;
+                
+                &::after {
+                    border-radius: 12px;
+                    outline: 3px solid var(--border-focus, #369);
+                    outline-offset: 2px;
+                }
+            }
+        }
     }
 
     &__bg-graphic {
@@ -28,7 +60,7 @@
 
     &__content,
     &__image {
-        position: relative;
+        // position: relative;
         z-index: 1;
     }
 

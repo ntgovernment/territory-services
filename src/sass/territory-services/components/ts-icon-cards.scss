@@ -46,6 +46,10 @@
             }
 
             &.stretched-link {
+                &::after {
+                    content: "" !important;
+                }
+
                 &:focus {
                     background-color: unset;
                 }
